@@ -135,5 +135,11 @@
         </Compile>
         <Compile Include="CustomOverlay.cs" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.iOS\Omnicasa.Mobile.BlinkID.iOS.csproj">
+        <Project>{F1D8623A-348E-496A-BBB5-B81F4070F2C2}</Project>
+        <Name>Omnicasa.Mobile.BlinkID.iOS</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

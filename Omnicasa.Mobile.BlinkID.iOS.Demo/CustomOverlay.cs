@@ -1,11 +1,38 @@
 ﻿using System;
 namespace Omnicasa.Mobile.BlinkID.iOS.Demo
 {
-	public class CustomOverlay
-	{
+    public class CustomMBFirstSideFinishedRecognizerRunnerViewControllerDelegate
+        : MBFirstSideFinishedRecognizerRunnerViewControllerDelegate
+    {
+        public override void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide(
+            IMBRecognizerRunnerViewController recognizerRunnerViewController)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class CustomMBScanningRecognizerRunnerViewControllerDelegate
+        : MBScanningRecognizerRunnerViewControllerDelegate
+    {
+        public override void DidFinishScanningWithState(
+            IMBRecognizerRunnerViewController recognizerRunnerViewController,
+            MBRecognizerResultState state)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class CustomOverlay :
+    {
 		public CustomOverlay()
 		{
 		}
+
+        public override void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide
+            (IMBRecognizerRunnerViewController recognizerRunnerViewController)
+        {
+            throw new NotImplementedException();
+        }
     }
 	/*
 
