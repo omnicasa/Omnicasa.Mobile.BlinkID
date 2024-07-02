@@ -5,7 +5,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS.Demo
         : MBFirstSideFinishedRecognizerRunnerViewControllerDelegate
     {
         public override void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide(
-            IMBRecognizerRunnerViewController recognizerRunnerViewController)
+            MBRecognizerRunnerViewController recognizerRunnerViewController)
         {
             throw new NotImplementedException();
         }
@@ -14,24 +14,28 @@ namespace Omnicasa.Mobile.BlinkID.iOS.Demo
     public class CustomMBScanningRecognizerRunnerViewControllerDelegate
         : MBScanningRecognizerRunnerViewControllerDelegate
     {
-        public override void DidFinishScanningWithState(
-            IMBRecognizerRunnerViewController recognizerRunnerViewController,
+        public override void State(
+            MBRecognizerRunnerViewController recognizerRunnerViewController,
             MBRecognizerResultState state)
         {
             throw new NotImplementedException();
         }
     }
 
-    public class CustomOverlay :
+    public class CustomOverlay : MBCustomOverlayViewController
     {
 		public CustomOverlay()
 		{
 		}
 
-        public override void RecognizerRunnerViewControllerDidFinishRecognitionOfFirstSide
-            (IMBRecognizerRunnerViewController recognizerRunnerViewController)
+        public override void ViewDidLoad()
         {
-            throw new NotImplementedException();
+            base.ViewDidLoad();
+            this.ScanningRecognizerRunnerViewControllerDelegate =
+                new CustomMBScanningRecognizerRunnerViewControllerDelegate();
+            this.MetadataDelegates
+                .FirstSideFinishedRecognizerRunnerViewControllerDelegate =
+                new CustomMBFirstSideFinishedRecognizerRunnerViewControllerDelegate();
         }
     }
 	/*
