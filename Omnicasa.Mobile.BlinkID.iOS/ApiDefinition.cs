@@ -14,7 +14,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     delegate void MBBlock();
 
     // @interface MBMicroblinkApp : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBMicroblinkApp
     {
@@ -74,7 +74,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBCameraSettings : NSObject <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBCameraSettings : INSCopying
     {
@@ -255,7 +255,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBOverlayViewController : UIViewController
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(UIViewController))]
     [DisableDefaultCtor]
     interface MBOverlayViewController
@@ -266,7 +266,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBRecognizerResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerResult
@@ -305,7 +305,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDateResult : NSObject <MBNativeResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDateResult : IMBNativeResult
@@ -346,7 +346,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDate : NSObject <MBNativeResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDate : IMBNativeResult
@@ -411,7 +411,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBMrzResult : NSObject <MBAgeResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBMrzResult : IMBAgeResult
@@ -522,7 +522,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBarcodeElements : NSObject <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBBarcodeElements : INSCopying
@@ -537,7 +537,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBarcodeResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBBarcodeResult
@@ -676,7 +676,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDriverLicenseDetailedInfo : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDriverLicenseDetailedInfo
@@ -703,7 +703,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBVizResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBVizResult
@@ -867,7 +867,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBImage : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBImage
     {
@@ -920,7 +920,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBStringResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBStringResult
@@ -1075,7 +1075,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBClassInfo : NSObject <NSSecureCoding>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBClassInfo : INSSecureCoding
@@ -1114,7 +1114,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBImageAnalysisResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBImageAnalysisResult
@@ -1180,7 +1180,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBFieldState : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBFieldState
@@ -1199,7 +1199,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDataMatchResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBDataMatchResult
@@ -1218,7 +1218,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBAdditionalProcessingInfo : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBAdditionalProcessingInfo
     {
@@ -1236,7 +1236,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdMultiSideRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBEncodedFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedCombinedFullDocumentImageResult, MBAgeResult, MBDocumentExpirationCheckResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBBlinkIdMultiSideRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedCombinedFullDocumentImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
@@ -1453,7 +1453,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     delegate void MBScanningOverlayCloseButtonTappedBlock();
 
     // @interface MBViewControllerFactory : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBViewControllerFactory
     {
@@ -1482,7 +1482,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     delegate void MBLicenseErrorBlock(MBLicenseError arg0);
 
     // @interface MBMicroblinkSDK : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBMicroblinkSDK
     {
@@ -1535,7 +1535,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBProductIntegrationInfo : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBProductIntegrationInfo
     {
@@ -1624,7 +1624,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBSignedPayload : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBSignedPayload
@@ -1682,7 +1682,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBOcrLayout : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrLayout
@@ -1726,7 +1726,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBOcrBlock : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrBlock
@@ -1750,7 +1750,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBOcrLine : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrLine
@@ -1774,7 +1774,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBCharWithVariants : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBCharWithVariants
@@ -1794,7 +1794,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBOcrChar : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBOcrChar
@@ -1830,7 +1830,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBPosition : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBPosition
@@ -1907,7 +1907,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBRecognizerRunnerViewControllerMetadataDelegates : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBRecognizerRunnerViewControllerMetadataDelegates
     {
@@ -2080,7 +2080,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBRecognizerRunnerMetadataDelegates : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBRecognizerRunnerMetadataDelegates
     {
@@ -2159,7 +2159,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBRecognizerRunner : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerRunner
@@ -2223,14 +2223,14 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBEntity : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBEntity
     {
     }
 
     // @interface MBRecognizer : MBEntity
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBEntity))]
     interface MBRecognizer
     {
@@ -2248,7 +2248,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBFrameGrabberRecognizer : MBRecognizer <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBFrameGrabberRecognizer : INSCopying
@@ -2278,7 +2278,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBSuccessFrameGrabberRecognizerResult : MBRecognizerResult <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBSuccessFrameGrabberRecognizerResult : INSCopying
@@ -2289,7 +2289,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBSuccessFrameGrabberRecognizer : MBRecognizer <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBSuccessFrameGrabberRecognizer : INSCopying
@@ -2328,7 +2328,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBQuadrangle : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBQuadrangle
     {
@@ -2366,7 +2366,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDocumentFaceRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBFaceImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBDocumentFaceRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBFaceImageResult
@@ -2476,7 +2476,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDocumentFaceRecognizer : MBRecognizer <NSCopying, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi, MBFullDocumentImageExtensionFactors>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBDocumentFaceRecognizer : INSCopying, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBFullDocumentImageExtensionFactors
     {
@@ -2513,7 +2513,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdSingleSideRecognizerResult : MBRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult, MBFaceImageResult, MBEncodedFaceImageResult, MBAgeResult, MBDocumentExpirationCheckResult, MBSignatureImageResult, MBEncodedSignatureImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBBlinkIdSingleSideRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBAgeResult, IMBDocumentExpirationCheckResult, IMBSignatureImageResult, IMBEncodedSignatureImageResult
@@ -2734,7 +2734,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBRecognitionModeFilter : NSObject <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBRecognitionModeFilter : INSCopying
     {
@@ -2840,7 +2840,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDocumentNumberAnonymizationSettings : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBDocumentNumberAnonymizationSettings
     {
@@ -2858,7 +2858,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBClassAnonymizationSettings : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBClassAnonymizationSettings
     {
@@ -2982,7 +2982,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdSingleSideRecognizer : MBRecognizer <NSCopying, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBSignatureImage, MBSignatureImageDpi, MBEncodeSignatureImage, MBCameraFrames, MBClassAnonymization>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBBlinkIdSingleSideRecognizer : INSCopying, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage, IMBCameraFrames, IMBClassAnonymization
     {
@@ -3091,7 +3091,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdMultiSideRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBSignatureImage, MBSignatureImageDpi, MBEncodeSignatureImage, MBCameraFrames, MBClassAnonymization>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBBlinkIdMultiSideRecognizer : INSCopying, IMBCombinedRecognizer, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBSignatureImage, IMBSignatureImageDpi, IMBEncodeSignatureImage, IMBCameraFrames, IMBClassAnonymization
     {
@@ -3193,7 +3193,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBIdBarcodeRecognizerResult : MBRecognizerResult <NSCopying, MBAgeResult, MBDocumentExpirationCheckResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBIdBarcodeRecognizerResult : INSCopying, IMBAgeResult, IMBDocumentExpirationCheckResult
@@ -3340,7 +3340,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBIdBarcodeRecognizer : MBRecognizer <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBIdBarcodeRecognizer : INSCopying
     {
@@ -3350,7 +3350,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBTemplatingRecognizerResult : MBRecognizerResult
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBTemplatingRecognizerResult
@@ -3361,7 +3361,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBTemplatingRecognizer : MBRecognizer
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     [DisableDefaultCtor]
     interface MBTemplatingRecognizer
@@ -3422,7 +3422,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBMrtdRecognizerResult : MBTemplatingRecognizerResult <NSCopying, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBTemplatingRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMrtdRecognizerResult : INSCopying, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
@@ -3437,7 +3437,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBMrtdSpecification : NSObject <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBMrtdSpecification : INSCopying
@@ -3525,7 +3525,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBMrtdRecognizer : MBTemplatingRecognizer <NSCopying, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBGlareDetection>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBTemplatingRecognizer))]
     interface MBMrtdRecognizer : INSCopying, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBGlareDetection
     {
@@ -3583,7 +3583,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBMrtdCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBCombinedFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedCombinedFullDocumentImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBMrtdCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBCombinedFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedCombinedFullDocumentImageResult
@@ -3594,7 +3594,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBMrtdCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBMrtdCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi
     {
@@ -3652,7 +3652,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBPassportRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBPassportRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
@@ -3663,7 +3663,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBPassportRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBPassportRecognizer : INSCopying, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
     {
@@ -3677,7 +3677,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBVisaRecognizerResult : MBRecognizerResult <NSCopying, MBFaceImageResult, MBEncodedFaceImageResult, MBFullDocumentImageResult, MBEncodedFullDocumentImageResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBVisaRecognizerResult : INSCopying, IMBFaceImageResult, IMBEncodedFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFullDocumentImageResult
@@ -3688,7 +3688,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBVisaRecognizer : MBRecognizer <NSCopying, MBGlareDetection, MBFaceImage, MBEncodeFaceImage, MBFaceImageDpi, MBFullDocumentImage, MBEncodeFullDocumentImage, MBFullDocumentImageDpi, MBFullDocumentImageExtensionFactors>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBVisaRecognizer : INSCopying, IMBGlareDetection, IMBFaceImage, IMBEncodeFaceImage, IMBFaceImageDpi, IMBFullDocumentImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageDpi, IMBFullDocumentImageExtensionFactors
     {
@@ -3698,7 +3698,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBUsdlCombinedRecognizerResult : MBRecognizerResult <NSCopying, MBCombinedRecognizerResult, MBFaceImageResult, MBFullDocumentImageResult, MBEncodedFaceImageResult, MBEncodedFullDocumentImageResult, MBAgeResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBUsdlCombinedRecognizerResult : INSCopying, IMBCombinedRecognizerResult, IMBFaceImageResult, IMBFullDocumentImageResult, IMBEncodedFaceImageResult, IMBEncodedFullDocumentImageResult, IMBAgeResult
@@ -3778,7 +3778,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBUsdlCombinedRecognizer : MBRecognizer <NSCopying, MBCombinedRecognizer, MBFullDocumentImage, MBFullDocumentImageDpi, MBFaceImage, MBFaceImageDpi, MBEncodeFaceImage, MBEncodeFullDocumentImage, MBFullDocumentImageExtensionFactors>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBUsdlCombinedRecognizer : INSCopying, IMBCombinedRecognizer, IMBFullDocumentImage, IMBFullDocumentImageDpi, IMBFaceImage, IMBFaceImageDpi, IMBEncodeFaceImage, IMBEncodeFullDocumentImage, IMBFullDocumentImageExtensionFactors
     {
@@ -3808,7 +3808,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBProcessorResult : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBProcessorResult
@@ -3819,7 +3819,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBProcessor : MBEntity
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBEntity))]
     interface MBProcessor
     {
@@ -3829,7 +3829,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBParserGroupProcessorResult : MBProcessorResult <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBProcessorResult))]
     [DisableDefaultCtor]
     interface MBParserGroupProcessorResult : INSCopying
@@ -3841,7 +3841,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
 
     /*
     // @interface MBParserGroupProcessor : MBProcessor <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBProcessor))]
     [DisableDefaultCtor]
     interface MBParserGroupProcessor : INSCopying
@@ -3866,7 +3866,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     */
 
     // @interface MBImageReturnProcessorResult : MBProcessorResult <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBProcessorResult))]
     [DisableDefaultCtor]
     interface MBImageReturnProcessorResult : INSCopying
@@ -3881,7 +3881,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBImageReturnProcessor : MBProcessor <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBProcessor))]
     interface MBImageReturnProcessor : INSCopying
     {
@@ -3895,7 +3895,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBProcessorGroup : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBProcessorGroup
@@ -3911,7 +3911,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBTemplatingClass : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBTemplatingClass
     {
@@ -3957,14 +3957,14 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDewarpPolicy : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBDewarpPolicy
     {
     }
 
     // @interface MBFixedDewarpPolicy : MBDewarpPolicy
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBDewarpPolicy))]
     interface MBFixedDewarpPolicy
     {
@@ -3979,7 +3979,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDPIBasedDewarpPolicy : MBDewarpPolicy
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBDewarpPolicy))]
     interface MBDPIBasedDewarpPolicy
     {
@@ -3994,7 +3994,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBNoUpScalingDewarpPolicy : MBDewarpPolicy
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBDewarpPolicy))]
     interface MBNoUpScalingDewarpPolicy
     {
@@ -4009,7 +4009,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDisplayableObject : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBDisplayableObject
     {
@@ -4019,7 +4019,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDisplayableDetection : MBDisplayableObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBDisplayableObject))]
     [DisableDefaultCtor]
     interface MBDisplayableDetection
@@ -4035,7 +4035,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDisplayableQuadDetection : MBDisplayableDetection
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBDisplayableDetection))]
     interface MBDisplayableQuadDetection
     {
@@ -4070,7 +4070,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBarcodeVehicleClassInfo : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBBarcodeVehicleClassInfo
@@ -4098,7 +4098,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBarcodeDriverLicenseDetailedInfo : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBBarcodeDriverLicenseDetailedInfo
@@ -4125,7 +4125,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBVehicleClassInfo : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBVehicleClassInfo
@@ -4153,7 +4153,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBUsdlRecognizerResult : MBRecognizerResult <NSCopying, MBAgeResult>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizerResult))]
     [DisableDefaultCtor]
     interface MBUsdlRecognizerResult : INSCopying, IMBAgeResult
@@ -4249,7 +4249,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBUsdlRecognizer : MBRecognizer <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBRecognizer))]
     interface MBUsdlRecognizer : INSCopying
     {
@@ -4271,7 +4271,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBaseOverlayViewController : MBOverlayViewController
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBOverlayViewController))]
     interface MBBaseOverlayViewController
     {
@@ -4281,7 +4281,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBRecognizerCollection : NSObject <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBRecognizerCollection : INSCopying
@@ -4313,7 +4313,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBOverlaySettings : NSObject <NSCopying>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBOverlaySettings : INSCopying
     {
@@ -4327,7 +4327,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBaseOverlaySettings : MBOverlaySettings
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBOverlaySettings))]
     interface MBBaseOverlaySettings
     {
@@ -4357,7 +4357,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBaseOcrOverlaySettings : MBBaseOverlaySettings
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOverlaySettings))]
     interface MBBaseOcrOverlaySettings
     {
@@ -4367,7 +4367,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDocumentOverlaySettings : MBBaseOcrOverlaySettings
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOcrOverlaySettings))]
     interface MBDocumentOverlaySettings
     {
@@ -4389,7 +4389,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDocumentOverlayViewController : MBBaseOverlayViewController
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOverlayViewController))]
     interface MBDocumentOverlayViewController
     {
@@ -4431,7 +4431,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBLegacyDocumentVerificationOverlaySettings : MBBaseOcrOverlaySettings
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOcrOverlaySettings))]
     interface MBLegacyDocumentVerificationOverlaySettings
     {
@@ -4481,7 +4481,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBLegacyDocumentVerificationOverlayViewController : MBBaseOverlayViewController
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOverlayViewController))]
     interface MBLegacyDocumentVerificationOverlayViewController
     {
@@ -4527,7 +4527,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdOverlayViewController : MBBaseOverlayViewController <MBBlinkIdMultiSideRecognizerDelegate, MBBlinkIdSingleSideRecognizerDelegate>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOverlayViewController))]
     interface MBBlinkIdOverlayViewController : IMBBlinkIdMultiSideRecognizerDelegate, IMBBlinkIdSingleSideRecognizerDelegate
     {
@@ -4569,7 +4569,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdOverlaySettings : MBBaseOverlaySettings
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBBaseOverlaySettings))]
     interface MBBlinkIdOverlaySettings
     {
@@ -4683,7 +4683,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBCustomOverlayViewController : MBOverlayViewController
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBOverlayViewController))]
     interface MBCustomOverlayViewController
     {
@@ -4742,7 +4742,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBSubview : UIView
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(UIView))]
     interface MBSubview
     {
@@ -4773,7 +4773,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
 
     /*
     // @interface MBDocumentSubview : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBDocumentSubview
     {
@@ -4800,7 +4800,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     */
 
     // @interface MBLegacyDocumentVerificationSubview : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBLegacyDocumentVerificationSubview
     {
@@ -4837,7 +4837,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBLegacyDocumentVerificationInstructionsSubview : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBLegacyDocumentVerificationInstructionsSubview
     {
@@ -4851,7 +4851,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBCameraReticle : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBCameraReticle
     {
@@ -4905,7 +4905,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBErrorReticle : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBErrorReticle
     {
@@ -4919,7 +4919,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBDisplayablePointsDetection : MBDisplayableDetection
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBDisplayableDetection))]
     interface MBDisplayablePointsDetection
     {
@@ -4955,7 +4955,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
 
     /*
     // @interface MBDotsSubview : MBSubview <MBPointDetectorSubview>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     [DisableDefaultCtor]
     interface MBDotsSubview : IMBPointDetectorSubview
@@ -4991,7 +4991,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     */
 
     // @interface MBDotsResultSubview : MBSubview <MBPointDetectorSubview>
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBDotsResultSubview : IMBPointDetectorSubview
     {
@@ -5017,7 +5017,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBTapToFocusSubview : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     interface MBTapToFocusSubview
     {
@@ -5052,7 +5052,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBGlareStatusSubview : MBSubview
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(MBSubview))]
     [DisableDefaultCtor]
     interface MBGlareStatusSubview
@@ -5088,7 +5088,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     */
 
     // @interface MBLogger : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     interface MBLogger
     {
@@ -5112,7 +5112,7 @@ namespace Omnicasa.Mobile.BlinkID.iOS
     }
 
     // @interface MBBlinkIdOverlayTheme : NSObject
-    [iOS(13, 0)]
+    [Introduced(PlatformName.iOS, 13, 0)]
     [BaseType(typeof(NSObject))]
     [DisableDefaultCtor]
     interface MBBlinkIdOverlayTheme
