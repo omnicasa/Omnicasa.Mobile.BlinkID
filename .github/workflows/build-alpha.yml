@@ -1,0 +1,30 @@
+name: CI-Alpha-Xamarin-Nuget
+
+on:
+  pull_request:
+    branches: [ alpha ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-12
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Xamarin iOS generating package version
+        uses: EduardSergeev/project-version-action@v6
+        with:
+            version-file: Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
+            version-stub: '65534.65534.65534.65534'
+
+      - name: Print version
+        run: echo "${{ env.VERSION }}"
+
+      - name: Xamarin iOS .nuspec package version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.iOS/nu.nuspec"
+          version: ${{ env.VERSION }}

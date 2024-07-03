@@ -1,0 +1,17 @@
+name: Dev
+on:
+  pull_request:
+    branches:
+      - master2
+jobs:
+  publish:
+    name: dev
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install .NET MAUI
+        run: dotnet workload install maui
+        
+      - name: Build iOS project
+        run: dotnet build -c Release Omnicasa.Mobile.Maui.BlinkID.iOS/Omnicasa.Mobile.Maui.BlinkID.iOS.csproj
