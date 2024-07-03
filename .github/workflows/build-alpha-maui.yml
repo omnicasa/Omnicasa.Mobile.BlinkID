@@ -14,6 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Install .NET MAUI
+        run: dotnet workload install maui 
+
       - name: Generate version
         id: generate_version
         run: |
@@ -33,10 +36,6 @@ jobs:
       - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.iOS
         run: nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
 
-      - name: Install .NET MAUI
-        run: dotnet workload install maui   
-         
-      # Publish
       - name: iOS Publish Omnicasa.Mobile.BlinkID.iOS on version change
         uses: linch90/publish-nuget@v1.0.2
         with:
