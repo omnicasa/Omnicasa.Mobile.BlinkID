@@ -18,7 +18,7 @@ jobs:
         id: generate_version
         run: |
           DATE=$(date +'%Y.%m.%d.%H%M%S')
-          VERSION="$DATE"
+          VERSION="$DATE-preview"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Set Omnicasa.Mobile.BlinkID.iOS.csproj version
