@@ -1616,12 +1616,14 @@ namespace Omnicasa.Mobile.BlinkID.iOS
         NSString MBInvalidArgumentException { get; }
     }
 
+    /*
     // @interface MBBgraImage : MBImage
     [BaseType(typeof(MBImage))]
     [DisableDefaultCtor]
     interface MBBgraImage
     {
     }
+    */
 
     // @interface MBSignedPayload : NSObject
     [Introduced(PlatformName.iOS, 13, 0)]
