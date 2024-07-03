@@ -12,7 +12,7 @@
     <Authors>HoangQuach</Authors>
     <Company>Omnicasa</Company>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/omnicasa/Omnicasa.Mobile.Maui.BlinkID</RepositoryUrl> 
+    <RepositoryUrl>https://github.com/omnicasa/Omnicasa.Mobile.BlinkID</RepositoryUrl> 
     <RepositoryType>git</RepositoryType> 
   </PropertyGroup>
 
