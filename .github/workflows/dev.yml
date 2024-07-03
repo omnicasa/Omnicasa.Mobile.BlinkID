@@ -1,8 +1,8 @@
-name: Dev
+name: CI-Development
 on:
   pull_request:
     branches:
-      - master2
+      - development
 jobs:
   publish:
     name: dev
@@ -10,8 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Build Xamarin iOS project
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
+
       - name: Install .NET MAUI
         run: dotnet workload install maui
         
-      - name: Build iOS project
-        run: dotnet build -c Release Omnicasa.Mobile.Maui.BlinkID.iOS/Omnicasa.Mobile.Maui.BlinkID.iOS.csproj
+      - name: Build Maui iOS project
+        run: dotnet build -c Release Omnicasa.Mobile.BlinkID.Maui.iOS/Omnicasa.Mobile.BlinkID.Maui.iOS.csproj
