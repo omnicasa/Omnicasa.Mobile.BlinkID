@@ -4,8 +4,46 @@ using UIKit;
 
 namespace Omnicasa.Mobile.BlinkID.iOS.Demo
 {
-    public partial class ViewController : UIViewController
+    interface IMBBlinkIdOverlayViewControllerDelegate
     {
+        void BlinkIdOverlayViewControllerDidFinishScanning(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController,
+            MBRecognizerResultState state);
+
+        void BlinkIdOverlayViewControllerDidTapClose(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController);
+    }
+
+    class CustomMBBlinkIdOverlayViewControllerDelegate : MBBlinkIdOverlayViewControllerDelegate
+    {
+        private IMBBlinkIdOverlayViewControllerDelegate controllerDelegate;
+
+        public CustomMBBlinkIdOverlayViewControllerDelegate(
+            IMBBlinkIdOverlayViewControllerDelegate controllerDelegate)
+        {
+            this.controllerDelegate = controllerDelegate;
+        }
+
+        public override void BlinkIdOverlayViewControllerDidFinishScanning(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController,
+            MBRecognizerResultState state)
+        {
+            controllerDelegate.BlinkIdOverlayViewControllerDidFinishScanning(
+                blinkIdOverlayViewController,
+                state);
+        }
+
+        public override void BlinkIdOverlayViewControllerDidTapClose(MBBlinkIdOverlayViewController blinkIdOverlayViewController)
+        {
+            controllerDelegate.BlinkIdOverlayViewControllerDidTapClose(blinkIdOverlayViewController);
+        }
+    }
+
+    public partial class ViewController : UIViewController, IMBBlinkIdOverlayViewControllerDelegate
+    {
+        private MBBlinkIdMultiSideRecognizer mBBlinkIdMultiSideRecognizer;
+        public const string iOSLic = "sRwAAAETY29tLm9tbmljYXNhLm1vYmlsZXEPe6POZt4PSoCbv7EneOY6qMOcReFvL6VLejgXyGu/S7xlYbv6QgiyU/fYd8harXPQGCVH4xKMRD0blOjniQtx5Fv97rt7lrlNpr885nqSXcb83vXEjvxGkhLbN8VFIXCWV/GZpQonCwmVPTgs9jF9a2HX1pu3/mROCDKCQ5KiT5h8MRhMLyih2g2aXWKgtbQ0bcWU";
+
         public ViewController (IntPtr handle) : base (handle)
         {
         }
@@ -14,12 +52,59 @@ namespace Omnicasa.Mobile.BlinkID.iOS.Demo
         {
             base.ViewDidLoad ();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic, (MBLicenseError arg0) =>
+            {
+                System.Diagnostics.Debug.WriteLine(arg0.ToString());
+            });
+
+            mBBlinkIdMultiSideRecognizer = new MBBlinkIdMultiSideRecognizer();
+            mBBlinkIdMultiSideRecognizer.ReturnFullDocumentImage = true;
+
+            MBBlinkIdOverlaySettings mBBlinkIdOverlaySettings = new MBBlinkIdOverlaySettings();
+            MBRecognizerCollection mBRecognizerCollection = new MBRecognizerCollection(new[] { mBBlinkIdMultiSideRecognizer } );
+
+
+            MBBlinkIdOverlayViewController mBBlinkIdOverlayViewController = new MBBlinkIdOverlayViewController(
+                mBBlinkIdOverlaySettings,
+                mBRecognizerCollection,
+                new CustomMBBlinkIdOverlayViewControllerDelegate(this)
+                );
+
+            var recognizerRunneViewController = MBViewControllerFactory
+                .RecognizerRunnerViewControllerWithOverlayViewController(mBBlinkIdOverlayViewController);
+
+            this.PresentViewController(
+                ObjCRuntime.Runtime.GetINativeObject<UIViewController>(recognizerRunneViewController.Handle, false),
+                true,
+                null);
         }
 
         public override void DidReceiveMemoryWarning ()
         {
             base.DidReceiveMemoryWarning ();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        public void BlinkIdOverlayViewControllerDidFinishScanning(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController,
+            MBRecognizerResultState state)
+        {
+            System.Diagnostics.Debug.WriteLine($"DidFinishScanning with state={state}");
+            if (state == MBRecognizerResultState.Valid)
+            {
+                var result = mBBlinkIdMultiSideRecognizer.Result;
+                if (result != null)
+                {
+                    System.Diagnostics.Debug.WriteLine(result.FirstName?.ToString() ?? "");
+                    System.Diagnostics.Debug.WriteLine(result.LastName?.ToString() ?? "");
+                }
+            }
+        }
+
+        public void BlinkIdOverlayViewControllerDidTapClose(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController)
+        {
         }
     }
 }

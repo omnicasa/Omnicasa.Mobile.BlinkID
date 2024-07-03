@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1706.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID", "Omnicasa.Mobile.BlinkID\Omnicasa.Mobile.BlinkID.csproj", "{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MAUI", "MAUI", "{B4B6646D-E71D-47F7-AAD6-41788AD31019}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XamarinLegacy", "XamarinLegacy", "{B4B6646D-E71D-47F7-AAD6-41788AD31019}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.iOS", "Omnicasa.Mobile.BlinkID.iOS\Omnicasa.Mobile.BlinkID.iOS.csproj", "{F1D8623A-348E-496A-BBB5-B81F4070F2C2}"
 EndProject
@@ -21,14 +19,6 @@ Global
 		Release|iPhone = Release|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Debug|iPhone.Build.0 = Debug|iPhone
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Release|iPhone.ActiveCfg = Release|iPhone
-		{128BAAA0-F8E1-48AA-B89C-F93712EA8A76}.Release|iPhone.Build.0 = Release|iPhone
 		{F1D8623A-348E-496A-BBB5-B81F4070F2C2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
 		{F1D8623A-348E-496A-BBB5-B81F4070F2C2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{F1D8623A-348E-496A-BBB5-B81F4070F2C2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU

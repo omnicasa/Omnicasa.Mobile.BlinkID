@@ -47,7 +47,7 @@
     <ObjcBindingCoreSource Include="Structs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\NativeLib\BlinkID.xcframework\ios-arm64_x86_64-simulator\BlinkID.framework">
+    <NativeReference Include="..\NativeLib\BlinkID.xcframework\ios-arm64\BlinkID.framework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
