@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Install .NET MAUI
         run: dotnet workload install maui 
@@ -20,8 +22,9 @@ jobs:
       - name: Generate version
         id: generate_version
         run: |
-          DATE=$(date +'%Y.%m.%d.%H%M%S')
-          VERSION="$DATE-preview"
+          DATE=$(date +'%Y.%m.%d')
+          BUILD_NUMBER=$(git rev-list --count HEAD)
+          VERSION="$DATE.$BUILD_NUMBER-preview"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Set Omnicasa.Mobile.BlinkID.Maui.iOS.csproj version
