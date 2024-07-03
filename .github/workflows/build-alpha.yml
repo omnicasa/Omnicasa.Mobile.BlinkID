@@ -14,17 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Xamarin iOS generating package version
-        uses: EduardSergeev/project-version-action@v6
-        with:
-            version-file: Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
-            version-stub: '65534.65534.65534.65534'
+      - name: Generate version
+        id: generate_version
+        run: |
+          DATE=$(date +'%Y.%m.%d')
+          BUILD_NUMBER=$(git rev-list --count HEAD)
+          VERSION="$DATE.$BUILD_NUMBER"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
 
       - name: Print version
-        run: echo "${{ env.VERSION }}"
-
-      - name: Xamarin iOS .nuspec package version
-        uses: Thundernerd/dotnet-project-version-updater@v1.2
-        with:
-          file: "Omnicasa.Mobile.BlinkID.iOS/nu.nuspec"
-          version: ${{ env.VERSION }}
+        run: echo "Version: $VERSION"
