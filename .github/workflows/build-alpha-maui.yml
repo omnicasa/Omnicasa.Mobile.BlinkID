@@ -1,0 +1,46 @@
+name: CI-Alpha-Maui-Nuget
+
+on:
+  pull_request:
+    branches: [ alpha ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Generate version
+        id: generate_version
+        run: |
+          DATE=$(date +'%Y.%m.%d.%H%M%S')
+          VERSION="$DATE"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Set Omnicasa.Mobile.BlinkID.Maui.iOS.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Maui.iOS/Omnicasa.Mobile.BlinkID.Maui.iOS.csproj"
+          version: ${{ env.VERSION }} 
+          
+      - name: Build Omnicasa.Mobile.BlinkID.Maui.iOS project
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Maui.iOS/Omnicasa.Mobile.BlinkID.Maui.iOS.csproj
+
+      - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.iOS
+        run: nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
+
+      - name: Install .NET MAUI
+        run: dotnet workload install maui   
+         
+      # Publish
+      - name: iOS Publish Omnicasa.Mobile.BlinkID.iOS on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{env.VERSION}}
