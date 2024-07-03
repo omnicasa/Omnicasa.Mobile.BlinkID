@@ -1461,13 +1461,13 @@ namespace Omnicasa.Mobile.BlinkID.iOS
         [Static]
         [Export("recognizerRunnerViewControllerWithOverlayViewController:")]
         [return: NullAllowed]
-        MBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
+        IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithOverlayViewController(MBOverlayViewController overlayViewController);
 
         // +(UIViewController<MBRecognizerRunnerViewController> * _Nullable)recognizerRunnerViewControllerWithResult:(MBScanningResultBlock _Nonnull)result closeButtonTapped:(MBScanningOverlayCloseButtonTappedBlock _Nonnull)closeButtonTapped __attribute__((swift_name("recognizerRunnerViewController(withResult:closeButtonTapped:)")));
         [Static]
         [Export("recognizerRunnerViewControllerWithResult:closeButtonTapped:")]
         [return: NullAllowed]
-        MBRecognizerRunnerViewController RecognizerRunnerViewControllerWithResult(MBScanningResultBlock result, MBScanningOverlayCloseButtonTappedBlock closeButtonTapped);
+        IMBRecognizerRunnerViewController RecognizerRunnerViewControllerWithResult(MBScanningResultBlock result, MBScanningOverlayCloseButtonTappedBlock closeButtonTapped);
     }
 
     [Static]

@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using CoreGraphics;
+using Foundation;
 using System;
 using UIKit;
 
@@ -53,16 +54,30 @@ namespace Omnicasa.Mobile.BlinkID.iOS.Demo
             base.ViewDidLoad ();
             // Perform any additional setup after loading the view, typically from a nib.
 
+            var but = new UIButton(new CGRect(100, 100, 100, 100))
+            {
+                BackgroundColor = UIColor.Red,
+                AutoresizingMask = UIViewAutoresizing.All,
+            };
+            but.SetTitle("Start scan", UIControlState.Normal);
+            but.TouchUpInside += But_TouchUpInside;
+            this.View.AddSubview(but);
+
             MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic, (MBLicenseError arg0) =>
             {
                 System.Diagnostics.Debug.WriteLine(arg0.ToString());
             });
 
+            
+        }
+
+        private void But_TouchUpInside(object sender, EventArgs e)
+        {
             mBBlinkIdMultiSideRecognizer = new MBBlinkIdMultiSideRecognizer();
             mBBlinkIdMultiSideRecognizer.ReturnFullDocumentImage = true;
 
             MBBlinkIdOverlaySettings mBBlinkIdOverlaySettings = new MBBlinkIdOverlaySettings();
-            MBRecognizerCollection mBRecognizerCollection = new MBRecognizerCollection(new[] { mBBlinkIdMultiSideRecognizer } );
+            MBRecognizerCollection mBRecognizerCollection = new MBRecognizerCollection(new[] { mBBlinkIdMultiSideRecognizer });
 
 
             MBBlinkIdOverlayViewController mBBlinkIdOverlayViewController = new MBBlinkIdOverlayViewController(
