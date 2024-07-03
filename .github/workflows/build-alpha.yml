@@ -35,13 +35,13 @@ jobs:
           version: ${{ env.VERSION }}    
           
       - name: Build Omnicasa.Mobile.BlinkID.iOS project
-        run: dotnet build -c Release Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
 
       - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.iOS
-        run: dotnet nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
+        run: nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
 
       - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.iOS
-        run: dotnet nuget push ./output/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json
+        run: nuget push ./output/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
 
       - name: Print version
         run: echo "${{ env.VERSION }}"
