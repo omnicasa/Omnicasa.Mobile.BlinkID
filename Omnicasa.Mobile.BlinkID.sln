@@ -27,6 +27,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.Mau
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.Maui.Droid.Demo", "Omnicasa.Mobile.BlinkID.Maui.Droid.Demo\Omnicasa.Mobile.BlinkID.Maui.Droid.Demo.csproj", "{617A5AD1-4BC3-4B83-A19F-4FE6132782DB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{34DD4707-E9F1-47D6-95E3-F486C4B598F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.Shared", "Omnicasa.Mobile.BlinkID.Shared\Omnicasa.Mobile.BlinkID.Shared.csproj", "{6D00078E-8DCD-48DB-9230-7DC3F23BA577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -101,6 +105,18 @@ Global
 		{617A5AD1-4BC3-4B83-A19F-4FE6132782DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{617A5AD1-4BC3-4B83-A19F-4FE6132782DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{617A5AD1-4BC3-4B83-A19F-4FE6132782DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Release|iPhone.Build.0 = Release|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,5 +135,6 @@ Global
 		{35DEA394-EE32-4602-8094-1D8FA14DD45F} = {615299F2-38FB-424E-9547-109ED39D9325}
 		{C2204CAB-F400-41B5-884E-BFBF2A6F5069} = {809BD0DD-BD25-4843-8425-DC0BCEBC8759}
 		{617A5AD1-4BC3-4B83-A19F-4FE6132782DB} = {D474ADFF-7AD2-4383-B14D-C0E01DADC3AD}
+		{6D00078E-8DCD-48DB-9230-7DC3F23BA577} = {34DD4707-E9F1-47D6-95E3-F486C4B598F3}
 	EndGlobalSection
 EndGlobal
