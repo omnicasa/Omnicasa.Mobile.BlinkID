@@ -1,10 +1,69 @@
-﻿<metadata>
-  <!--
-  This sample removes the class: android.support.v4.content.AsyncTaskLoader.LoadTask:
-  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='AsyncTaskLoader.LoadTask']" />
-  
-  This sample removes the method: android.support.v4.content.CursorLoader.loadInBackground:
-  <remove-node path="/api/package[@name='android.support.v4.content']/class[@name='CursorLoader']/method[@name='loadInBackground']" />
-  -->
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.blinkid.secured')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.library')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.hardware')]/class[@name!='CameraSettings' and @extends!='java.lang.Enum']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.ocr')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]/class[@name!='BaseLegacyRecognizerWrapper' and @name!='BaseLegacyRecognizerWrapper.Result' and @name!='RecognizerSettings' and @name!='BaseRecognitionResult']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.recognizers')]/interface[@name!='MRTDResult']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.detectors')]" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.geometry')]/class[@name!='Point' and @name!='Quadrilateral']" />
+	<remove-node path="/api/package[@name='com.microblink.image']/class[@name!='Image']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.recognition')]/class[@name!='RecognizerSuccessType']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.recognition')]/interface" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.settings')]" />
+	<remove-node path="/api/package[@name='com.microblink.util']/class[not(starts-with(@name, 'RecognizerCompatibility') or @name='Log')]" />
+	<remove-node path="/api/package[@name='com.microblink.util']/interface" />
+	<remove-node path="/api/package[@name='com.microblink.activity']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.view')]/class[@extends!='java.lang.Enum']" />
+	<remove-node path="//*[@visibility!='public']" />
+	<remove-node path="/api/package[@name='com.microblink.entities']/class[@name='Entity']/method[@name!='writeToParcel' and @name!='describeContents' and @name!='getResult']" />
+	<remove-node path="/api/package[@name='com.microblink.entities']/class[@name='Entity.Result']/method[@name!='writeToParcel' and @name!='describeContents']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class[substring(@name, string-length(@name) - string-length('.RecognizerCreator') + 1) = '.RecognizerCreator']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/*/field[@name='CLASS_NAME']" />
+	<remove-node path="/api/package[@name='com.microblink.entities.parsers']/class[@name='Parser']/method[@name='consumeResult']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='consumeResultFrom']" />
+	<remove-node path="/api/package[starts-with(@name, 'com.microblink.entities')]/class/method[@name='clone']" />
+	<remove-node path="/api/package[@name='com.microblink.fragment']/class[@name='RecognizerRunnerFragment']/method[@name='onRequestPermissionsResult' and count(parameter)=3 and parameter[1][@type='int'] and parameter[2][@type='java.lang.String[]'] and parameter[3][@type='int[]']]" />
+	<remove-node path="/api/package[@name='com.microblink.licence']/class[@name!='InvalidLicenceKeyException' and @name!='LicenceKeyException' and @name!='LicenceLockedException' and @name!='NetworkRequiredException' and @name!='RemoteLicenceCheckException']" />
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.processors.imageReturn']/class[@name='ImageReturnProcessor']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.viewfinder.points']/class[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.util']/class[@name='IlIllIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.util']/class[@name='llIIlIlIIl']/field[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view']/class[@name='IllIIIllII']/field[@name='IllIIIllII']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view']/class[@name='llIIlIlIIl']/field[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.framegrabber']/class[@name='FrameGrabberRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkbarcode.usdl']/class[@name='UsdlRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers']/class[@name='Recognizer']/method[@name='clone' and count(parameter)=0]"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.documentface']/class[@name='DocumentFaceRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.generic']/class[@name='BlinkIdMultiSideRecognizer.Result']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.uisettings']/class[@name='BaseBlinkIdUiSettings']/method[@name='createOverlayController' and count(parameter)=2 and parameter[1][@type='android.app.Activity'] and parameter[2][@type='com.microblink.blinkid.view.recognition.ScanResultListener']]"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.generic']/class[@name='BlinkIdMultiSideRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.generic']/class[@name='BlinkIdSingleSideRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.generic']/class[@name='BlinkIdSingleSideRecognizer.Result']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.idbarcode']/class[@name='IdBarcodeRecognizer.Result']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers']/class[@name='Recognizer.Result']/method[@name='clone' and count(parameter)=0]"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.results.date']/class[@name='Date']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.successframe']/class[@name='SuccessFrameGrabberRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.idbarcode']/class[@name='IdBarcodeRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.uisettings']/class[@name='BlinkIdUISettings']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.uisettings']/class[@name='DocumentUISettings']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view']/class[@name='CameraViewGroup']/method[@name='setInitialOrientation' and count(parameter)=1 and parameter[1][@type='com.microblink.blinkid.hardware.orientation.Orientation']]"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.mrtd']/class[@name='MrtdCombinedRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.uisettings']/class[@name='LegacyDocumentVerificationUISettings']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.ocrResult']/class[@name='OcrResultDotsView']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.geometry']/class[@name='QuadrangleEvaluator']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.mrtd']/class[@name='MrtdRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.passport']/class[@name='PassportRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.usdl']/class[@name='UsdlCombinedRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.entities.recognizers.blinkid.visa']/class[@name='VisaRecognizer']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.surface']/class[@name='IllIIIllII']/field[@name='IllIIIllII']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.surface']/class[@name='lIlIIIIlIl']/field[@name='lIlIIIIlIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.surface']/class[@name='llIIlIIlll']/field[@name='llIIlIIlll']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.viewfinder']/class[@name='llIIlIlIIl']/field[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.surface']/class[@name='llIIlIlIIl']/field[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.viewfinder.managers']/class[@name='IllIIIllII']/field[@name='IllIIIllII']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.viewfinder.managers']/class[@name='llIIlIlIIl']/field[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.recognition']/class[@name='llIIlIlIIl']/field[@name='llIIlIlIIl']"/>
+	<remove-node path="/api/package[@name='com.microblink.blinkid.view.recognition']/class[@name='RecognizerRunnerView']"/>
 </metadata>
-
