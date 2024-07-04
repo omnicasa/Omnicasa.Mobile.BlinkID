@@ -34,13 +34,34 @@ jobs:
         uses: Thundernerd/dotnet-project-version-updater@v1.2
         with:
           file: "Omnicasa.Mobile.BlinkID.iOS/nu.nuspec"
+          version: ${{ env.VERSION }}
+      
+      - name: Set Omnicasa.Mobile.BlinkID.Droid.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Droid/Omnicasa.Mobile.BlinkID.Droid.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: Set Omnicasa.Mobile.BlinkID.Droid.nuspec version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Droid/nu.nuspec"
           version: ${{ env.VERSION }}   
           
       - name: Build Omnicasa.Mobile.BlinkID.iOS project
         run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
 
+      - name: Build Omnicasa.Mobile.BlinkID.Droid project
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Droid/Omnicasa.Mobile.BlinkID.Droid.csproj
+
       - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.iOS
         run: nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
 
+      - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.Droid
+        run: nuget pack Omnicasa.Mobile.BlinkID.Droid/nu.nuspec -OutputDirectory ./outputDroid
+
       - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.iOS
         run: nuget push ./output/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+
+      - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.Droid
+        run: nuget push ./outputDroid/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
