@@ -2,7 +2,7 @@ name: CI-Alpha-Xamarin-Nuget
 
 on:
   pull_request:
-    branches: [ alpha ]
+    branches: [ alpha2 ]
 
   workflow_dispatch:
 
