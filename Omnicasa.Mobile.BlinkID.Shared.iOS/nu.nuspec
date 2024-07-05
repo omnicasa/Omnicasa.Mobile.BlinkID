@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Omnicasa.Mobile.BlinkID.Shared.iOS</id>
+    <version>1.0.0</version>
+    <authors>HoangQuach</authors>
+    <owners>HoangQuach</owners>
+    <licenseUrl>https://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/omnicasa/Omnicasa.Mobile.BlinkID</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>BlinkID iOS for Xamarin.iOS</description>
+    <tags>BlinkID</tags>
+  </metadata>
+  <files>
+    <file src="bin/Release/Omnicasa.Mobile.BlinkID.Shared.dll" target="lib/xamarinios10/Omnicasa.Mobile.BlinkID.Shared.dll" />
+    <file src="bin/Release/Omnicasa.Mobile.BlinkID.Shared.pdb" target="lib/xamarinios10/Omnicasa.Mobile.BlinkID.Shared.pdb" />
+    <file src="bin/Release/Omnicasa.Mobile.BlinkID.Shared.iOS.dll" target="lib/xamarinios10/Omnicasa.Mobile.BlinkID.Shared.iOS.dll" />
+    <file src="bin/Release/Omnicasa.Mobile.BlinkID.Shared.iOS.pdb" target="lib/xamarinios10/Omnicasa.Mobile.BlinkID.Shared.iOS.pdb" />
+  </files>
+</package>
