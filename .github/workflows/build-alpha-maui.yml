@@ -2,7 +2,7 @@ name: CI-Alpha-Maui-Nuget
 
 on:
   pull_request:
-    branches: [ alpha ]
+    branches: [ alpha2 ]
 
   workflow_dispatch:
 
@@ -47,7 +47,7 @@ jobs:
           NUGET_SOURCE: https://api.nuget.org
           VERSION_STATIC: ${{ env.VERSION }}
 
-      - name: iOS Publish Omnicasa.Mobile.BlinkID.Droid on version change
+      - name: Droid Publish Omnicasa.Mobile.BlinkID.Droid on version change
         uses: linch90/publish-nuget@v1.0.2
         with:
           PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Maui.Droid/Omnicasa.Mobile.BlinkID.Maui.Droid.csproj
