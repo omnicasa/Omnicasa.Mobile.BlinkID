@@ -1,4 +1,4 @@
-name: CI-Alpha-Maui-Nuget
+name: CI-Alpha-Maui-Shared-Nuget
 
 on:
   pull_request:
