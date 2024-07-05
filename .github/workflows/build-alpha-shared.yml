@@ -55,7 +55,7 @@ jobs:
           version: ${{ env.VERSION }}   
           
       - name: Build Omnicasa.Mobile.BlinkID.Shared project
-        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Shared/Omnicasa.Mobile.BlinkID.Shared.csproj
+        run: MSBuild /t:Restore /p:Configuration=Release Omnicasa.Mobile.BlinkID.Shared/Omnicasa.Mobile.BlinkID.Shared.csproj
 
       - name: Build Omnicasa.Mobile.BlinkID.Shared.iOS project
         run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Shared.iOS/Omnicasa.Mobile.BlinkID.Shared.iOS.csproj

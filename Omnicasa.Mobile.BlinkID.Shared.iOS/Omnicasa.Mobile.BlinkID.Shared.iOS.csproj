@@ -60,9 +60,6 @@
     <Compile Include="PlatformHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Omnicasa.Analyzers">
-      <Version>2024.2.2.7</Version>
-    </PackageReference>
     <PackageReference Include="Omnicasa.Mobile.BlinkID.iOS">
       <Version>2024.7.4.20-preview</Version>
     </PackageReference>
