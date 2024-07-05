@@ -1,0 +1,43 @@
+name: CI-Alpha-Maui-Shared-Nuget
+
+on:
+  pull_request:
+    branches: [ alpha ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install .NET MAUI
+        run: dotnet workload install maui 
+
+      - name: Generate version
+        id: generate_version
+        run: |
+          DATE=$(date +'%Y.%m.%d')
+          BUILD_NUMBER=$(git rev-list --count HEAD)
+          VERSION="$DATE.$BUILD_NUMBER-preview"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Set Omnicasa.Mobile.BlinkID.Shared.Maui.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared.Maui/Omnicasa.Mobile.BlinkID.Shared.Maui.csproj"
+          version: ${{ env.VERSION }}
+        
+      - name: MAUI Publish Omnicasa.Mobile.BlinkID.Shared.Maui on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Shared.Maui/Omnicasa.Mobile.BlinkID.Shared.Maui.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}
+
