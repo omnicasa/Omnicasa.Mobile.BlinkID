@@ -61,7 +61,11 @@ jobs:
         run: MSBuild /t:Restore Omnicasa.Mobile.BlinkID.Shared.iOS/Omnicasa.Mobile.BlinkID.Shared.iOS.csproj /t:Build /p:Configuration=Release 
 
       - name: Build Omnicasa.Mobile.BlinkID.Shared.Droid project
-        run: MSBuild /t:Restore Omnicasa.Mobile.BlinkID.Shared.Droid/Omnicasa.Mobile.BlinkID.Shared.Droid.csproj /t:Build /p:Configuration=Release 
+        run: |
+          cd Omnicasa.Mobile.BlinkID.Shared.Droid
+          msbuild /t:Clean
+          msbuild /t:Restore
+          msbuild /t:Build Omnicasa.Mobile.BlinkID.Shared.Droid.csproj /p:Configuration=Release 
 
       - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.Shared.iOS
         run: nuget pack Omnicasa.Mobile.BlinkID.Shared.iOS/nu.nuspec -OutputDirectory ./outputShared
