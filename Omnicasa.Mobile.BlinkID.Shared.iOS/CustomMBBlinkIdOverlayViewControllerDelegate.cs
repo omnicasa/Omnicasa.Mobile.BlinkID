@@ -1,13 +1,46 @@
 ﻿using System;
+using Omnicasa.Mobile.BlinkID.iOS;
 
-#pragma warning disable SA1300 // Element should begin with upper-case letter
+#pragma warning disable SA1300
 namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 #pragma warning restore SA1300
 {
-    public class CustomMBBlinkIdOverlayViewControllerDelegate : MBBlinkIdOverlayViewControllerDelegate
+    /// <inheritdoc/>
+    public class CustomMBBlinkIdOverlayViewControllerDelegate
+        : MBBlinkIdOverlayViewControllerDelegate
     {
-        public CustomMBBlinkIdOverlayViewControllerDelegate()
+        private readonly IMBBlinkIdOverlayViewControllerDelegate? mBBlinkIdOverlayViewControllerDelegate;
+
+        /// <summary>Scanned.</summary>
+        public EventHandler<RecognizingState>? Scanned { get; set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomMBBlinkIdOverlayViewControllerDelegate"/> class.
+        /// </summary>
+        /// <param name="mBBlinkIdOverlayViewControllerDelegate">IMBBlinkIdOverlayViewControllerDelegate.</param>
+        public CustomMBBlinkIdOverlayViewControllerDelegate(
+            IMBBlinkIdOverlayViewControllerDelegate? mBBlinkIdOverlayViewControllerDelegate)
         {
+            this.mBBlinkIdOverlayViewControllerDelegate = mBBlinkIdOverlayViewControllerDelegate;
+        }
+
+        /// <inheritdoc/>
+        public override void BlinkIdOverlayViewControllerDidFinishScanning(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController,
+            MBRecognizerResultState state)
+        {
+            mBBlinkIdOverlayViewControllerDelegate?
+                .BlinkIdOverlayViewControllerDidFinishScanning(blinkIdOverlayViewController, state);
+            Scanned?.Invoke(this, state.Parse());
+        }
+
+        /// <inheritdoc/>
+        public override void BlinkIdOverlayViewControllerDidTapClose(
+            MBBlinkIdOverlayViewController blinkIdOverlayViewController)
+        {
+            mBBlinkIdOverlayViewControllerDelegate?
+                .BlinkIdOverlayViewControllerDidTapClose(blinkIdOverlayViewController);
+            Scanned?.Invoke(this, RecognizingState.DidTapClose);
         }
     }
 }

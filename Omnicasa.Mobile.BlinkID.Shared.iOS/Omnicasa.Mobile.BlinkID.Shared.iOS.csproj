@@ -13,6 +13,7 @@
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Omnicasa.Mobile.BlinkID.Shared.iOS</AssemblyName>
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,6 +23,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>portable</DebugType>
@@ -29,6 +31,7 @@
     <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,12 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BlinkIDService.cs" />
     <Compile Include="CustomMBBlinkIdOverlayViewControllerDelegate.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.iOS\Omnicasa.Mobile.BlinkID.iOS.csproj">
-      <Project>{F1D8623A-348E-496A-BBB5-B81F4070F2C2}</Project>
-      <Name>Omnicasa.Mobile.BlinkID.iOS</Name>
-    </ProjectReference>
+    <Compile Include="IMBBlinkIdOverlayViewControllerDelegate.cs" />
+    <Compile Include="CardRecognizerExtensions.cs" />
+    <Compile Include="RecognizingStateExtensions.cs" />
+    <Compile Include="PlatformHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Omnicasa.Analyzers">
@@ -57,6 +58,15 @@
     <PackageReference Include="Omnicasa.Mobile.BlinkID.iOS">
       <Version>2024.7.4.20-preview</Version>
     </PackageReference>
+    <PackageReference Include="System.Reactive">
+      <Version>6.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.Shared\Omnicasa.Mobile.BlinkID.Shared.csproj">
+      <Project>{6D00078E-8DCD-48DB-9230-7DC3F23BA577}</Project>
+      <Name>Omnicasa.Mobile.BlinkID.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

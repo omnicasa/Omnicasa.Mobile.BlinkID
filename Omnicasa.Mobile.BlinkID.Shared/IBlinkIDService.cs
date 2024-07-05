@@ -16,6 +16,6 @@ namespace Omnicasa.Mobile.BlinkID.Shared
         /// Limit = -1, scan forever.
         /// </summary>
         /// <returns>CardRecognizer.</returns>
-        IObservable<CardRecognizer?> Scan(int limit = -1);
+        IObservable<CardRecognizer?> Scan(int limit = 1);
     }
 }

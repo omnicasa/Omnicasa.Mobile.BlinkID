@@ -4,7 +4,10 @@
     public enum RecognizingState
     {
         DidFinishedScanning,
+        DidFinishedScanningValid,
+        DidFinishedScanningEmpty,
+        DidFinishedScanningStageValid,
+        DidFinishedScanningStageUncertain,
         DidTapClose,
-        DidFinishedScanningFirstSide,
     }
 }
