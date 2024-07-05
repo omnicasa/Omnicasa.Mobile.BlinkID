@@ -1,0 +1,79 @@
+name: CI-Alpha-Shared-Nuget
+
+on:
+  pull_request:
+    branches: [ alpha ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-12
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Generate version
+        id: generate_version
+        run: |
+          DATE=$(date +'%Y.%m.%d')
+          BUILD_NUMBER=$(git rev-list --count HEAD)
+          VERSION="$DATE.$BUILD_NUMBER-preview"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Set Omnicasa.Mobile.BlinkID.Shared version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared/Omnicasa.Mobile.BlinkID.Shared.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: Set Omnicasa.Mobile.BlinkID.Shared.iOS version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared.iOS/Omnicasa.Mobile.BlinkID.Shared.iOS.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: Set Omnicasa.Mobile.BlinkID.Shared.iOS.nuspec version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared.iOS/nu.nuspec"
+          version: ${{ env.VERSION }}
+      
+      - name: Set Omnicasa.Mobile.BlinkID.Shared.Droid.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared.Droid/Omnicasa.Mobile.BlinkID.Shared.Droid.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: Set Omnicasa.Mobile.BlinkID.Shared.Droid.nuspec version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared.Droid/nu.nuspec"
+          version: ${{ env.VERSION }}   
+          
+      - name: Build Omnicasa.Mobile.BlinkID.Shared project
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Shared/Omnicasa.Mobile.BlinkID.Shared.csproj
+
+      - name: Build Omnicasa.Mobile.BlinkID.Shared.iOS project
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Shared.iOS/Omnicasa.Mobile.BlinkID.Shared.iOS.csproj
+
+      - name: Build Omnicasa.Mobile.BlinkID.Shared.Droid project
+        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.Shared.Droid/Omnicasa.Mobile.BlinkID.Shared.Droid.csproj
+
+      - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.Shared.iOS
+        run: nuget pack Omnicasa.Mobile.BlinkID.Shared.iOS/nu.nuspec -OutputDirectory ./outputShared
+
+      - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.Shared.Droid
+        run: nuget pack Omnicasa.Mobile.BlinkID.Shared.Droid/nu.nuspec -OutputDirectory ./outputSharedDroid
+
+      - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.Shared
+        run: nuget push Omnicasa.Mobile.BlinkID.Shared/bin/Release/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+
+      - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.Shared.iOS
+        run: nuget push ./outputShared/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+
+      - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.Shared.Droid
+        run: nuget push ./outputSharedDroid/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
