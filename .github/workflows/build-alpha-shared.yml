@@ -1,4 +1,4 @@
-name: CI-Alpha-Xamarin-Nuget
+name: CI-Alpha-Shared-Nuget
 
 on:
   pull_request:
