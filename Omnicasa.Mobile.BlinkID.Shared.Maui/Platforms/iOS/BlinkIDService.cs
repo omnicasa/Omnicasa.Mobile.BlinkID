@@ -2,6 +2,7 @@
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Omnicasa.Mobile.BlinkID.Maui.iOS;
+using Omnicasa.Mobile.BlinkID.Shared.Maui;
 using UIKit;
 
 #pragma warning disable SA1300
@@ -9,7 +10,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 #pragma warning restore SA1300
 {
     /// <inheritdoc/>
-    public class BlinkIDService : IBlinkIDService
+    public class BlinkIDService : IBlinkIDServiceExtended
     {
         /// <inheritdoc/>
         public IObservable<bool> Initialize(string licenseKey)
@@ -41,11 +42,17 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         /// <inheritdoc/>
         public IObservable<CardRecognizer?> Scan(int limit = 1)
         {
+            throw new NotImplementedException("Use ScanExtended instead");
+        }
+
+        /// <inheritdoc/>
+        public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1)
+        {
             UIViewController? scannerViewcontroller = null;
             CustomMBBlinkIdOverlayViewControllerDelegate? customDeletegate = null;
             MBBlinkIdMultiSideRecognizer? blinkIdMultiSideRecognizer = null;
 
-            var observable = Observable.Create<CardRecognizer?>(o =>
+            var observable = Observable.Create<CardRecognizerExtended?>(o =>
             {
                 try
                 {
@@ -75,7 +82,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 #pragma warning disable CA1416
                             if (blinkIdMultiSideRecognizer.Result != null)
                             {
-                                o.OnNext(blinkIdMultiSideRecognizer.Result.Parse());
+                                o.OnNext(blinkIdMultiSideRecognizer.Result.ParseExtended());
                             }
 #pragma warning restore CA1416
 
