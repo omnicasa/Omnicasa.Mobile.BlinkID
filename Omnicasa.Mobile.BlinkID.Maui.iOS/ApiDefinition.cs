@@ -130,14 +130,14 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
 
     // @protocol MBRecognizerRunnerViewController <NSObject>
     /*
-  Check whether adding [Model] to this declaration is appropriate.
-  [Model] is used to generate a C# class that implements this protocol,
-  and might be useful for protocols that consumers are supposed to implement,
-  since consumers can subclass the generated class instead of implementing
-  the generated interface. If consumers are not supposed to implement this
-  protocol, then [Model] is redundant and will generate code that will never
-  be used.
-*/
+      Check whether adding [Model] to this declaration is appropriate.
+      [Model] is used to generate a C# class that implements this protocol,
+      and might be useful for protocols that consumers are supposed to implement,
+      since consumers can subclass the generated class instead of implementing
+      the generated interface. If consumers are not supposed to implement this
+      protocol, then [Model] is redundant and will generate code that will never
+      be used.
+    */
     [Protocol, Model]
     [BaseType(typeof(NSObject))]
     interface MBRecognizerRunnerViewController
@@ -207,14 +207,14 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
 
     // @protocol MBOverlayContainerViewController <MBRecognizerRunnerViewController>
     /*
-  Check whether adding [Model] to this declaration is appropriate.
-  [Model] is used to generate a C# class that implements this protocol,
-  and might be useful for protocols that consumers are supposed to implement,
-  since consumers can subclass the generated class instead of implementing
-  the generated interface. If consumers are not supposed to implement this
-  protocol, then [Model] is redundant and will generate code that will never
-  be used.
-*/
+      Check whether adding [Model] to this declaration is appropriate.
+      [Model] is used to generate a C# class that implements this protocol,
+      and might be useful for protocols that consumers are supposed to implement,
+      since consumers can subclass the generated class instead of implementing
+      the generated interface. If consumers are not supposed to implement this
+      protocol, then [Model] is redundant and will generate code that will never
+      be used.
+    */
     [Protocol]
     interface MBOverlayContainerViewController : MBRecognizerRunnerViewController
     {
@@ -1473,9 +1473,11 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
     [Static]
     partial interface Constants
     {
+        /*
         // extern NSString *const MBLicenseErrorNotification;
         [Field("MBLicenseErrorNotification", "__Internal")]
         NSString MBLicenseErrorNotification { get; }
+        */
     }
 
     // typedef void (^MBLicenseErrorBlock)(MBLicenseError);
@@ -1587,33 +1589,35 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
 
     partial interface Constants
     {
+        /*
         // extern const MBExceptionName MBIllegalModificationException;
         [Field("MBIllegalModificationException", "__Internal")]
         NSString MBIllegalModificationException { get; }
-
-        // extern const MBExceptionName MBInvalidLicenseKeyException;
-        [Field("MBInvalidLicenseKeyException", "__Internal")]
-        NSString MBInvalidLicenseKeyException { get; }
-
-        // extern const MBExceptionName MBInvalidLicenseeKeyException;
-        [Field("MBInvalidLicenseeKeyException", "__Internal")]
-        NSString MBInvalidLicenseeKeyException { get; }
-
-        // extern const MBExceptionName MBInvalidLicenseResourceException;
-        [Field("MBInvalidLicenseResourceException", "__Internal")]
-        NSString MBInvalidLicenseResourceException { get; }
+        
+        // extern const MBExceptionName MBInvalidArgumentException;
+        [Field("MBInvalidArgumentException", "__Internal")]
+        NSString MBInvalidArgumentException { get; }
 
         // extern const MBExceptionName MBInvalidBundleException;
         [Field("MBInvalidBundleException", "__Internal")]
         NSString MBInvalidBundleException { get; }
 
+        // extern const MBExceptionName MBInvalidLicenseKeyException;
+        [Field("MBInvalidLicenseKeyException", "__Internal")]
+        NSString MBInvalidLicenseKeyException { get; }
+
+        // extern const MBExceptionName MBInvalidLicenseResourceException;
+        [Field("MBInvalidLicenseResourceException", "__Internal")]
+        NSString MBInvalidLicenseResourceException { get; }
+
+        // extern const MBExceptionName MBInvalidLicenseeKeyException;
+        [Field("MBInvalidLicenseeKeyException", "__Internal")]
+        NSString MBInvalidLicenseeKeyException { get; }
+
         // extern const MBExceptionName MBMissingSettingsException;
         [Field("MBMissingSettingsException", "__Internal")]
         NSString MBMissingSettingsException { get; }
-
-        // extern const MBExceptionName MBInvalidArgumentException;
-        [Field("MBInvalidArgumentException", "__Internal")]
-        NSString MBInvalidArgumentException { get; }
+        */
     }
 
     /*
@@ -4539,7 +4543,7 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
 
         [Wrap("WeakDelegate")]
         [NullAllowed]
-        MBBlinkIdOverlayViewControllerDelegate Delegate { get; }
+        IMBBlinkIdOverlayViewControllerDelegate Delegate { get; }
 
         // @property (readonly, nonatomic, weak) id<MBBlinkIdOverlayViewControllerDelegate> _Nullable delegate;
         [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
@@ -4547,8 +4551,10 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
 
         // -(instancetype _Nonnull)initWithSettings:(MBBlinkIdOverlaySettings * _Nonnull)settings recognizerCollection:(MBRecognizerCollection * _Nonnull)recognizerCollection delegate:(id<MBBlinkIdOverlayViewControllerDelegate> _Nonnull)delegate;
         [Export("initWithSettings:recognizerCollection:delegate:")]
-        IntPtr Constructor(MBBlinkIdOverlaySettings settings, MBRecognizerCollection recognizerCollection, MBBlinkIdOverlayViewControllerDelegate @delegate);
+        IntPtr Constructor(MBBlinkIdOverlaySettings settings, MBRecognizerCollection recognizerCollection, IMBBlinkIdOverlayViewControllerDelegate @delegate);
     }
+
+    public interface IMBBlinkIdOverlayViewControllerDelegate { }
 
     // @protocol MBBlinkIdOverlayViewControllerDelegate <NSObject>
     [Protocol]
