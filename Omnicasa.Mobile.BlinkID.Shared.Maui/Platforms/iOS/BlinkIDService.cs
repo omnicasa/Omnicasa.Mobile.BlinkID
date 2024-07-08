@@ -16,6 +16,9 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         {
             return Observable.Create<bool>(o =>
             {
+#if IOS13_0_OR_GREATER
+                // This package support iOS min 13
+#pragma warning disable CA1416
                 var blinkInstance = MBMicroblinkSDK.SharedInstance();
                 if (blinkInstance == null)
                 {
@@ -26,7 +29,8 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                 {
                     o.OnError(new Exception());
                 });
-
+#pragma warning restore CA1416
+#endif
                 o.OnNext(true);
                 o.OnCompleted();
 
@@ -47,27 +51,33 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                 {
                     int scanTime = 0;
 
+                    // This package support iOS min 13
+#pragma warning disable CA1416
                     blinkIdMultiSideRecognizer = new MBBlinkIdMultiSideRecognizer
                     {
                         ReturnFullDocumentImage = true,
                     };
-
                     var mBBlinkIdOverlaySettings = new MBBlinkIdOverlaySettings();
+
                     var mBRecognizerCollection = new MBRecognizerCollection(
                         new[]
                         {
                             blinkIdMultiSideRecognizer,
                         });
+#pragma warning restore CA1416
 
                     customDeletegate = new CustomMBBlinkIdOverlayViewControllerDelegate(null);
-                    customDeletegate.Scanned += (object s, RecognizingState e) =>
+                    customDeletegate.Scanned += (object? s, RecognizingState e) =>
                     {
                         if (e == RecognizingState.DidFinishedScanningValid)
                         {
+                            // This package support iOS min 13
+#pragma warning disable CA1416
                             if (blinkIdMultiSideRecognizer.Result != null)
                             {
                                 o.OnNext(blinkIdMultiSideRecognizer.Result.Parse());
                             }
+#pragma warning restore CA1416
 
                             if (++scanTime == limit)
                             {
@@ -85,6 +95,8 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                         }
                     };
 
+                    // This package support iOS min 13
+#pragma warning disable CA1416
                     var mBBlinkIdOverlayViewController = new MBBlinkIdOverlayViewController(
                         mBBlinkIdOverlaySettings,
                         mBRecognizerCollection,
@@ -92,6 +104,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 
                     var recognizerRunneViewController = MBViewControllerFactory
                         .RecognizerRunnerViewControllerWithOverlayViewController(mBBlinkIdOverlayViewController);
+#pragma warning restore CA1416
 
                     if (recognizerRunneViewController == null)
                     {
