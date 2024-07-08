@@ -1473,9 +1473,11 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
     [Static]
     partial interface Constants
     {
+        /*
         // extern NSString *const MBLicenseErrorNotification;
         [Field("MBLicenseErrorNotification", "__Internal")]
         NSString MBLicenseErrorNotification { get; }
+        */
     }
 
     // typedef void (^MBLicenseErrorBlock)(MBLicenseError);
@@ -1587,33 +1589,35 @@ namespace Omnicasa.Mobile.BlinkID.Maui.iOS
 
     partial interface Constants
     {
+        /*
         // extern const MBExceptionName MBIllegalModificationException;
         [Field("MBIllegalModificationException", "__Internal")]
         NSString MBIllegalModificationException { get; }
-
-        // extern const MBExceptionName MBInvalidLicenseKeyException;
-        [Field("MBInvalidLicenseKeyException", "__Internal")]
-        NSString MBInvalidLicenseKeyException { get; }
-
-        // extern const MBExceptionName MBInvalidLicenseeKeyException;
-        [Field("MBInvalidLicenseeKeyException", "__Internal")]
-        NSString MBInvalidLicenseeKeyException { get; }
-
-        // extern const MBExceptionName MBInvalidLicenseResourceException;
-        [Field("MBInvalidLicenseResourceException", "__Internal")]
-        NSString MBInvalidLicenseResourceException { get; }
+        
+        // extern const MBExceptionName MBInvalidArgumentException;
+        [Field("MBInvalidArgumentException", "__Internal")]
+        NSString MBInvalidArgumentException { get; }
 
         // extern const MBExceptionName MBInvalidBundleException;
         [Field("MBInvalidBundleException", "__Internal")]
         NSString MBInvalidBundleException { get; }
 
+        // extern const MBExceptionName MBInvalidLicenseKeyException;
+        [Field("MBInvalidLicenseKeyException", "__Internal")]
+        NSString MBInvalidLicenseKeyException { get; }
+
+        // extern const MBExceptionName MBInvalidLicenseResourceException;
+        [Field("MBInvalidLicenseResourceException", "__Internal")]
+        NSString MBInvalidLicenseResourceException { get; }
+
+        // extern const MBExceptionName MBInvalidLicenseeKeyException;
+        [Field("MBInvalidLicenseeKeyException", "__Internal")]
+        NSString MBInvalidLicenseeKeyException { get; }
+
         // extern const MBExceptionName MBMissingSettingsException;
         [Field("MBMissingSettingsException", "__Internal")]
-        NSString MBMissingSettingsException { get; }
-
-        // extern const MBExceptionName MBInvalidArgumentException;
-        [Field("MBInvalidArgumentException", "__Internal")]
-        NSString MBInvalidArgumentException { get; }
+        NSString MBMissingSettingsException { get; } }
+        */
     }
 
     /*
