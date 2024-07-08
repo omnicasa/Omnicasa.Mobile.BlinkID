@@ -1,6 +1,5 @@
 ﻿using Omnicasa.Mobile.BlinkID.Maui.iOS;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
-using UIKit;
 
 #pragma warning disable SA1300
 namespace Omnicasa.Mobile.BlinkID.Shared.iOS
