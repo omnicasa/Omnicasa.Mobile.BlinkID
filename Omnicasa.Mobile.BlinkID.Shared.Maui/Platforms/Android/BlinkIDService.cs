@@ -7,11 +7,12 @@ using Com.Microblink.Entities.Recognizers.Blinkid.Generic;
 using Com.Microblink.Intent;
 using Com.Microblink.Uisettings;
 using Com.Microblink.Util;
+using Omnicasa.Mobile.BlinkID.Shared.Maui;
 
 namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 {
     /// <inheritdoc/>
-    public class BlinkIDService : IBlinkIDService
+    public class BlinkIDService : IBlinkIDService, IBlinkIDServiceExtended
     {
         /// <inheritdoc/>
         public IObservable<bool> Initialize(string licenseKey)
@@ -43,10 +44,16 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
         /// <inheritdoc/>
         public IObservable<CardRecognizer> Scan(int limit = 1)
         {
+            throw new NotImplementedException("Use ScanExtended instead");
+        }
+
+        /// <inheritdoc/>
+        public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1)
+        {
             BlinkIdCombinedRecognizer? blinkIdMultiSideRecognizer = null;
             RecognizerBundle? recognizerBundle = null;
 
-            var observable = Observable.Create<CardRecognizer?>(o =>
+            var observable = Observable.Create<CardRecognizerExtended?>(o =>
             {
                 try
                 {
@@ -73,7 +80,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     {
                         if (blinkIdMultiSideRecognizer.GetResult() is BlinkIdCombinedRecognizer.Result result)
                         {
-                            o.OnNext(result.Parse());
+                            o.OnNext(result.ParseExtended());
                         }
 
                         if (++scanTime == limit)
