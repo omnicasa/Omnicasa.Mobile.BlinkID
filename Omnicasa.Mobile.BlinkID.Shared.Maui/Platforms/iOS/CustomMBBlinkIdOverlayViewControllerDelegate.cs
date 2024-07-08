@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Foundation;
 using Omnicasa.Mobile.BlinkID.Maui.iOS;
 
 #pragma warning disable SA1300
@@ -7,9 +7,9 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 {
     /// <inheritdoc/>
     public class CustomMBBlinkIdOverlayViewControllerDelegate
-        : MBBlinkIdOverlayViewControllerDelegate
+        : NSObject, IMBBlinkIdOverlayViewControllerDelegate
     {
-        private readonly IMBBlinkIdOverlayViewControllerDelegate? mBBlinkIdOverlayViewControllerDelegate;
+        private readonly ICustomMBBlinkIdOverlayViewControllerDelegate? mBBlinkIdOverlayViewControllerDelegate;
 
         /// <summary>Scanned.</summary>
         public EventHandler<RecognizingState>? Scanned { get; set; }
@@ -19,13 +19,13 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         /// </summary>
         /// <param name="mBBlinkIdOverlayViewControllerDelegate">IMBBlinkIdOverlayViewControllerDelegate.</param>
         public CustomMBBlinkIdOverlayViewControllerDelegate(
-            IMBBlinkIdOverlayViewControllerDelegate? mBBlinkIdOverlayViewControllerDelegate)
+            ICustomMBBlinkIdOverlayViewControllerDelegate? mBBlinkIdOverlayViewControllerDelegate)
         {
             this.mBBlinkIdOverlayViewControllerDelegate = mBBlinkIdOverlayViewControllerDelegate;
         }
 
         /// <inheritdoc/>
-        public override void BlinkIdOverlayViewControllerDidFinishScanning(
+        public void BlinkIdOverlayViewControllerDidFinishScanning(
             MBBlinkIdOverlayViewController blinkIdOverlayViewController,
             MBRecognizerResultState state)
         {
@@ -35,7 +35,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         }
 
         /// <inheritdoc/>
-        public override void BlinkIdOverlayViewControllerDidTapClose(
+        public void BlinkIdOverlayViewControllerDidTapClose(
             MBBlinkIdOverlayViewController blinkIdOverlayViewController)
         {
             mBBlinkIdOverlayViewControllerDelegate?
