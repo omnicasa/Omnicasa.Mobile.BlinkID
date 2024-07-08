@@ -1,6 +1,6 @@
 ﻿namespace Omnicasa.Mobile.BlinkID.Maui.iOS.Demo;
 
-interface IMBBlinkIdOverlayViewControllerDelegate
+interface IBlinkScannerOverlayViewControllerDelegate
 {
     void BlinkIdOverlayViewControllerDidFinishScanning(
         MBBlinkIdOverlayViewController blinkIdOverlayViewController,
@@ -10,33 +10,37 @@ interface IMBBlinkIdOverlayViewControllerDelegate
         MBBlinkIdOverlayViewController blinkIdOverlayViewController);
 }
 
-class CustomMBBlinkIdOverlayViewControllerDelegate : MBBlinkIdOverlayViewControllerDelegate
+class CustomMBBlinkIdOverlayViewControllerDelegate : NSObject, IMBBlinkIdOverlayViewControllerDelegate
 {
-    private IMBBlinkIdOverlayViewControllerDelegate controllerDelegate;
+    private IBlinkScannerOverlayViewControllerDelegate controllerDelegate;
 
     public CustomMBBlinkIdOverlayViewControllerDelegate(
-        IMBBlinkIdOverlayViewControllerDelegate controllerDelegate)
+        IBlinkScannerOverlayViewControllerDelegate controllerDelegate)
     {
         this.controllerDelegate = controllerDelegate;
     }
 
-    public override void BlinkIdOverlayViewControllerDidFinishScanning(
-        MBBlinkIdOverlayViewController blinkIdOverlayViewController,
-        MBRecognizerResultState state)
+    public void BlinkIdOverlayViewControllerDidFinishScanning(
+        MBBlinkIdOverlayViewController blinkIdOverlayViewController, MBRecognizerResultState state)
     {
-        controllerDelegate.BlinkIdOverlayViewControllerDidFinishScanning(
+        controllerDelegate?.BlinkIdOverlayViewControllerDidFinishScanning(
             blinkIdOverlayViewController,
             state);
     }
 
-    public override void BlinkIdOverlayViewControllerDidTapClose(MBBlinkIdOverlayViewController blinkIdOverlayViewController)
+    public void BlinkIdOverlayViewControllerDidTapClose(
+        MBBlinkIdOverlayViewController blinkIdOverlayViewController)
     {
-        controllerDelegate.BlinkIdOverlayViewControllerDidTapClose(blinkIdOverlayViewController);
+        controllerDelegate?.BlinkIdOverlayViewControllerDidTapClose(
+            blinkIdOverlayViewController);
     }
 }
 
 [Register ("AppDelegate")]
-public class AppDelegate : UIApplicationDelegate, IMBBlinkIdOverlayViewControllerDelegate
+public class AppDelegate :
+    UIApplicationDelegate,
+    IMBBlinkIdOverlayViewControllerDelegate,
+    IBlinkScannerOverlayViewControllerDelegate
 {
     private UIViewController vc;
     private MBBlinkIdMultiSideRecognizer mBBlinkIdMultiSideRecognizer;
@@ -76,28 +80,33 @@ public class AppDelegate : UIApplicationDelegate, IMBBlinkIdOverlayViewControlle
 		// make the window visible
 		Window.MakeKeyAndVisible ();
 
-        MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic, (MBLicenseError arg0) =>
-        {
-            System.Diagnostics.Debug.WriteLine(arg0.ToString());
-        });
+        MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic,
+            (error) =>
+            {
+
+
+            });
 
         return true;
 	}
 
     private void But_TouchUpInside(object? sender, EventArgs e)
     {
+        MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic, (MBLicenseError arg0) =>
+        {
+            System.Diagnostics.Debug.WriteLine(arg0.ToString());
+        });
+
         mBBlinkIdMultiSideRecognizer = new MBBlinkIdMultiSideRecognizer();
         mBBlinkIdMultiSideRecognizer.ReturnFullDocumentImage = true;
 
         MBBlinkIdOverlaySettings mBBlinkIdOverlaySettings = new MBBlinkIdOverlaySettings();
         MBRecognizerCollection mBRecognizerCollection = new MBRecognizerCollection(new[] { mBBlinkIdMultiSideRecognizer });
 
-
         MBBlinkIdOverlayViewController mBBlinkIdOverlayViewController = new MBBlinkIdOverlayViewController(
             mBBlinkIdOverlaySettings,
             mBRecognizerCollection,
-            new CustomMBBlinkIdOverlayViewControllerDelegate(this)
-            );
+            new CustomMBBlinkIdOverlayViewControllerDelegate(this));
 
         var recognizerRunneViewController = MBViewControllerFactory
             .RecognizerRunnerViewControllerWithOverlayViewController(mBBlinkIdOverlayViewController);

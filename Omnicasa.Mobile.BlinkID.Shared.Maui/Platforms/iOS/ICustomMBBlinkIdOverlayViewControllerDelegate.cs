@@ -5,7 +5,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 #pragma warning restore SA1300
 {
     /// <summary>IMBBlinkIdOverlayViewControllerDelegate.</summary>
-    public interface IMBBlinkIdOverlayViewControllerDelegate
+    public interface ICustomMBBlinkIdOverlayViewControllerDelegate
     {
         /// <summary>
         /// BlinkIdOverlayViewControllerDidFinishScanning.
