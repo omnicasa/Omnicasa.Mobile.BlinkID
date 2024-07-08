@@ -25,8 +25,6 @@ Net8-Droid: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkI
 |  | [Omnicasa.Mobile.BlinkID.Shared.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.Droid/2024.7.8.44-preview) |
 | Shared Net-8 |  |
 |  | [Omnicasa.Mobile.BlinkID.Maui.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Shared/2024.7.8.44-preview) |
-|  | [Omnicasa.Mobile.Maui.BlinkID.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.Maui.BlinkID.iOS) |
-|  | [Omnicasa.Mobile.Maui.BlinkID.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.Maui.BlinkID.Droid) |
 
 ### Use DI
 ```csharp
