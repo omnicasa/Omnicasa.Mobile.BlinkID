@@ -10,6 +10,23 @@ Xamarin-Droid: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.Bli
 
 Net8-Droid: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.Maui.Droid)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/)
 
+## Nuget
+
+|  |  |
+|--|--|
+| Binding |  |
+|  | [Omnicasa.Mobile.BlinkID.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/2024.7.8.44-preview) |
+|  | [Omnicasa.Mobile.BlinkID.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Droid/2024.7.8.44-preview) |
+|  | [Omnicasa.Mobile.BlinkID.Maui.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.iOS/2024.7.8.44-preview) |
+|  | [Omnicasa.Mobile.BlinkID.Maui.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/2024.7.8.44-preview)  |
+| Shared-Xamarin  |  |
+|  | [Omnicasa.Mobile.BlinkID.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared/2024.7.8.44-preview) |
+|  | [Omnicasa.Mobile.BlinkID.Shared.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.iOS/2024.7.8.44-preview) |
+|  | [Omnicasa.Mobile.BlinkID.Shared.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.Droid/2024.7.8.44-preview) |
+| Shared Net-8 |  |
+|  | [Omnicasa.Mobile.BlinkID.Maui.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Shared/2024.7.8.44-preview) |
+|  | [Omnicasa.Mobile.Maui.BlinkID.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.Maui.BlinkID.iOS) |
+|  | [Omnicasa.Mobile.Maui.BlinkID.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.Maui.BlinkID.Droid) |
 
 ### Use DI
 ```csharp
@@ -24,10 +41,10 @@ private IBlinkIDService GetBlinkIDService()
 ### Initialize
 ```csharp
 GetBlinkIDService()
- .Initialize(Omnicasa.Mobile.SingleModules.BlinkIDKit.BlinkIDUtils.iOSLic)
+ .Initialize("License")
  .Subscribe(success =>
  {
- System.Diagnostics.Debug.WriteLine($"Subscribe GetBlinkIDService: {success}");
+   System.Diagnostics.Debug.WriteLine($"Subscribe GetBlinkIDService: {success}");
  });
 ```
 
@@ -37,11 +54,11 @@ BlinkIDService?
  .Scan()
  .Catch((Exception e) =>
  {
- System.Diagnostics.Debug.WriteLine(e.StackTrace);
- return Observable.Return<CardRecognizer>(null);
+   System.Diagnostics.Debug.WriteLine(e.StackTrace);
+   return Observable.Return<CardRecognizer>(null);
  })
  .Subscribe(card =>
  {
- System.Diagnostics.Debug.WriteLine(card.FirstName);
+   System.Diagnostics.Debug.WriteLine(card.FirstName);
  });
 ```
