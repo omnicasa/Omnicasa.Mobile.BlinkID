@@ -11,6 +11,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         /// KeyWindow.
         /// </summary>
         /// <returns>UIWindow.</returns>
+#pragma warning disable CA1416
         public static UIKit.UIWindow? KeyWindow() =>
             UIKit.UIApplication
                 .SharedApplication
@@ -18,5 +19,6 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                 .OfType<UIKit.UIWindowScene>()
                 .SelectMany(s => s.Windows)
                 .FirstOrDefault(w => w.IsKeyWindow);
+#pragma warning restore CA1416
     }
 }
