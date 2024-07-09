@@ -110,9 +110,10 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                 card.DateOfExpiry = ParseDateTime(recognizerResult.DateOfExpiry);
                 card.DateOfIssue = ParseDateTime(recognizerResult.DateOfIssue);
 
-                card.FrontCameraFrame = ParseImage(recognizerResult.FrontCameraFrame);
-                card.BackCameraFrame = ParseImage(recognizerResult.BackCameraFrame);
-                card.BarcodeCameraFrame = ParseImage(recognizerResult.BarcodeCameraFrame);
+                card.FaceImage = ParseImage(recognizerResult.FaceImage);
+                card.SignatureImage = ParseImage(recognizerResult.SignatureImage);
+                card.FullDocumentBackImage = ParseImage(recognizerResult.FullDocumentBackImage);
+                card.FullDocumentFrontImage = ParseImage(recognizerResult.FullDocumentFrontImage);
 #pragma warning restore CA1416
 
                 return card;

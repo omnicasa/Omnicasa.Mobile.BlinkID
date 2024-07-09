@@ -23,10 +23,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Omnicasa.Mobile.BlinkID.Shared\Omnicasa.Mobile.BlinkID.Shared.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="stylecop.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <AdditionalFiles Include="stylecop.json" />
-  </ItemGroup>
 </Project>

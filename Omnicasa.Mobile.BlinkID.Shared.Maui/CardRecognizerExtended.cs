@@ -1,11 +1,31 @@
-﻿namespace Omnicasa.Mobile.BlinkID.Shared.Maui
+﻿using Newtonsoft.Json;
+
+namespace Omnicasa.Mobile.BlinkID.Shared.Maui
 {
     public class CardRecognizerExtended : CardRecognizer
     {
-        public ImageSource? FrontCameraFrame { get; set; }
+        [JsonIgnore]
+        public Stream? EncodedFaceImage { get; set; }
 
-        public ImageSource? BackCameraFrame { get; set; }
+        [JsonIgnore]
+        public Stream? EncodedFullDocumentBackImage { get; set; }
 
-        public ImageSource? BarcodeCameraFrame { get; set; }
+        [JsonIgnore]
+        public Stream? EncodedFullDocumentFrontImage { get; set; }
+
+        [JsonIgnore]
+        public Stream? EncodedSignatureImage { get; set; }
+
+        [JsonIgnore]
+        public ImageSource? FaceImage { get; set; }
+
+        [JsonIgnore]
+        public ImageSource? FullDocumentBackImage { get; set; }
+
+        [JsonIgnore]
+        public ImageSource? FullDocumentFrontImage { get; set; }
+
+        [JsonIgnore]
+        public ImageSource? SignatureImage { get; set; }
     }
 }
