@@ -11,6 +11,12 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Maui
         /// </summary>
         /// <returns>CardRecognizer.</returns>
         IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1);
+
+        /// <summary>
+        /// ScanID.
+        /// </summary>
+        /// <returns></returns>
+        Task<CardRecognizerExtended> ScanID();
     }
 }
 

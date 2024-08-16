@@ -150,5 +150,11 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 
             return observable;
         }
+
+        /// <inheritdoc/>
+        public Task<CardRecognizerExtended> ScanID()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
