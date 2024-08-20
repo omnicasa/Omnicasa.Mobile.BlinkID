@@ -1,25 +1,41 @@
 ﻿namespace Omnicasa.Mobile.BlinkID.Maui.iOS.Demo;
 
-interface IBlinkScannerOverlayViewControllerDelegate
+/// <summary>IBlinkScannerOverlayViewControllerDelegate</summary>
+internal interface IBlinkScannerOverlayViewControllerDelegate
 {
+    /// <summary>
+    /// BlinkIdOverlayViewControllerDidFinishScanning.
+    /// </summary>
+    /// <param name="blinkIdOverlayViewController">MBBlinkIdOverlayViewController.</param>
+    /// <param name="state">MBRecognizerResultState.</param>
     void BlinkIdOverlayViewControllerDidFinishScanning(
         MBBlinkIdOverlayViewController blinkIdOverlayViewController,
         MBRecognizerResultState state);
 
+    /// <summary>
+    /// BlinkIdOverlayViewControllerDidTapClose.
+    /// </summary>
+    /// <param name="blinkIdOverlayViewController">MBBlinkIdOverlayViewController.</param>
     void BlinkIdOverlayViewControllerDidTapClose(
         MBBlinkIdOverlayViewController blinkIdOverlayViewController);
 }
 
-class CustomMBBlinkIdOverlayViewControllerDelegate : NSObject, IMBBlinkIdOverlayViewControllerDelegate
+/// <inheritdoc/>
+internal class CustomMBBlinkIdOverlayViewControllerDelegate : NSObject, IMBBlinkIdOverlayViewControllerDelegate
 {
     private IBlinkScannerOverlayViewControllerDelegate controllerDelegate;
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CustomMBBlinkIdOverlayViewControllerDelegate"/> class.
+    /// </summary>
+    /// <param name="controllerDelegate">IBlinkScannerOverlayViewControllerDelegate.</param>
     public CustomMBBlinkIdOverlayViewControllerDelegate(
         IBlinkScannerOverlayViewControllerDelegate controllerDelegate)
     {
         this.controllerDelegate = controllerDelegate;
     }
 
+    /// <inheritdoc/>
     public void BlinkIdOverlayViewControllerDidFinishScanning(
         MBBlinkIdOverlayViewController blinkIdOverlayViewController, MBRecognizerResultState state)
     {
@@ -28,6 +44,7 @@ class CustomMBBlinkIdOverlayViewControllerDelegate : NSObject, IMBBlinkIdOverlay
             state);
     }
 
+    /// <inheritdoc/>
     public void BlinkIdOverlayViewControllerDidTapClose(
         MBBlinkIdOverlayViewController blinkIdOverlayViewController)
     {
@@ -36,35 +53,43 @@ class CustomMBBlinkIdOverlayViewControllerDelegate : NSObject, IMBBlinkIdOverlay
     }
 }
 
-[Register ("AppDelegate")]
+/// <inheritdoc/>
+[Register("AppDelegate")]
 public class AppDelegate :
     UIApplicationDelegate,
     IMBBlinkIdOverlayViewControllerDelegate,
     IBlinkScannerOverlayViewControllerDelegate
 {
-    private UIViewController vc;
-    private MBBlinkIdMultiSideRecognizer mBBlinkIdMultiSideRecognizer;
+    private UIViewController? vc;
+    private MBBlinkIdMultiSideRecognizer? mBBlinkIdMultiSideRecognizer;
+    private MBLicenseError? mBLicenseError;
+    private UIViewController? scannerViewController;
+
+    /// <inheritdoc/>
     public const string iOSLic = "sRwAAAETY29tLm9tbmljYXNhLm1vYmlsZXEPe6POZt4PSoCbv7EneOY6qMOcReFvL6VLejgXyGu/S7xlYbv6QgiyU/fYd8harXPQGCVH4xKMRD0blOjniQtx5Fv97rt7lrlNpr885nqSXcb83vXEjvxGkhLbN8VFIXCWV/GZpQonCwmVPTgs9jF9a2HX1pu3/mROCDKCQ5KiT5h8MRhMLyih2g2aXWKgtbQ0bcWU";
 
+    /// <inheritdoc/>
+    public override UIWindow? Window
+    {
+        get;
+        set;
+    }
 
-    public override UIWindow? Window {
-		get;
-		set;
-	}
+    /// <inheritdoc/>
+    public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+    {
+        // create a new window instance based on the screen size
+        Window = new UIWindow(UIScreen.MainScreen.Bounds);
 
-	public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
-	{
-		// create a new window instance based on the screen size
-		Window = new UIWindow (UIScreen.MainScreen.Bounds);
-
-		// create a UIViewController with a single UILabel
-		vc = new UIViewController ();
-		vc.View!.AddSubview (new UILabel (Window!.Frame) {
-			BackgroundColor = UIColor.SystemBackground,
-			TextAlignment = UITextAlignment.Center,
-			Text = "Hello, iOS!",
-			AutoresizingMask = UIViewAutoresizing.All,
-		});
+        // create a UIViewController with a single UILabel
+        vc = new UIViewController();
+        vc.View!.AddSubview(new UILabel(Window!.Frame)
+        {
+            BackgroundColor = UIColor.SystemBackground,
+            TextAlignment = UITextAlignment.Center,
+            Text = "Hello, iOS!",
+            AutoresizingMask = UIViewAutoresizing.All,
+        });
 
         var but = new UIButton(new CGRect(100, 100, 100, 100))
         {
@@ -77,25 +102,25 @@ public class AppDelegate :
 
         Window.RootViewController = vc;
 
-		// make the window visible
-		Window.MakeKeyAndVisible ();
+        // make the window visible
+        Window.MakeKeyAndVisible();
 
-        MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic,
+        MBMicroblinkSDK.SharedInstance().SetLicenseKey(
+            iOSLic,
             (error) =>
             {
-
-
+                mBLicenseError = error;
             });
 
         return true;
-	}
+    }
 
     private void But_TouchUpInside(object? sender, EventArgs e)
     {
-        MBMicroblinkSDK.SharedInstance().SetLicenseKey(iOSLic, (MBLicenseError arg0) =>
+        if (mBLicenseError.HasValue || vc == null)
         {
-            System.Diagnostics.Debug.WriteLine(arg0.ToString());
-        });
+            return;
+        }
 
         mBBlinkIdMultiSideRecognizer = new MBBlinkIdMultiSideRecognizer();
         mBBlinkIdMultiSideRecognizer.ReturnFullDocumentImage = true;
@@ -111,31 +136,49 @@ public class AppDelegate :
         var recognizerRunneViewController = MBViewControllerFactory
             .RecognizerRunnerViewControllerWithOverlayViewController(mBBlinkIdOverlayViewController);
 
-        vc.PresentViewController(
-            ObjCRuntime.Runtime.GetINativeObject<UIViewController>(recognizerRunneViewController.Handle, false),
-            true,
-            null);
+        if (recognizerRunneViewController == null)
+        {
+            return;
+        }
+
+        scannerViewController = ObjCRuntime.Runtime.GetINativeObject<UIViewController>(recognizerRunneViewController.Handle, false);
+        if (scannerViewController == null)
+        {
+            return;
+        }
+
+        vc.PresentViewController(scannerViewController, true, null);
     }
 
+    /// <inheritdoc/>
     public void BlinkIdOverlayViewControllerDidFinishScanning(
             MBBlinkIdOverlayViewController blinkIdOverlayViewController,
             MBRecognizerResultState state)
     {
-        System.Diagnostics.Debug.WriteLine($"DidFinishScanning with state={state}");
         if (state == MBRecognizerResultState.Valid)
         {
-            var result = mBBlinkIdMultiSideRecognizer.Result;
+            var result = mBBlinkIdMultiSideRecognizer?.Result;
             if (result != null)
             {
-                System.Diagnostics.Debug.WriteLine(result.FirstName?.ToString() ?? "");
-                System.Diagnostics.Debug.WriteLine(result.LastName?.ToString() ?? "");
+                System.Diagnostics.Debug.WriteLine($"{result.LastName?.ToString() ?? string.Empty} {result.FirstName?.ToString() ?? string.Empty}");
+                DismissScanController();
             }
         }
     }
 
+    /// <inheritdoc/>
     public void BlinkIdOverlayViewControllerDidTapClose(
         MBBlinkIdOverlayViewController blinkIdOverlayViewController)
     {
+        DismissScanController();
+    }
+
+    /// <inheritdoc/>
+    private void DismissScanController()
+    {
+        if (scannerViewController != null)
+        {
+            scannerViewController.DismissViewController(true, null);
+        }
     }
 }
-
