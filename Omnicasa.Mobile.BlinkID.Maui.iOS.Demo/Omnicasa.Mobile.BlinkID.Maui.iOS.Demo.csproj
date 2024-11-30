@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0-ios</TargetFramework>
+    <TargetFramework>net8.0-ios17.5</TargetFramework>
     <OutputType>Exe</OutputType>
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
@@ -15,7 +15,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Omnicasa.Mobile.BlinkID.Maui.iOS">
-      <HintPath>..\Omnicasa.Mobile.BlinkID.Maui.iOS\bin\Debug\net8.0-ios\Omnicasa.Mobile.BlinkID.Maui.iOS.dll</HintPath>
+      <HintPath>..\Omnicasa.Mobile.BlinkID.Maui.iOS\bin\Debug\net8.0-ios17.5\Omnicasa.Mobile.BlinkID.Maui.iOS.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
