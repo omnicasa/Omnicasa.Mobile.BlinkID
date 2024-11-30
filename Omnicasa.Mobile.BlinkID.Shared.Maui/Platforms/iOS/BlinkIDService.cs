@@ -44,7 +44,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         }
 
         /// <inheritdoc/>
-        public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1, bool presentAsModal = false)
+        public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1, bool presentAsModal = true)
         {
             UIViewController? scannerViewcontroller = null;
             CustomMBBlinkIdOverlayViewControllerDelegate? customDeletegate = null;
