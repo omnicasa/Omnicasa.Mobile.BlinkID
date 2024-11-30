@@ -22,8 +22,8 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.72" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.72" />
 		<PackageReference Include="System.Reactive" Version="6.0.1" />
 		<PackageReference Include="Omnicasa.Mobile.BlinkID.Shared" Version="2024.8.16.59-preview" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
