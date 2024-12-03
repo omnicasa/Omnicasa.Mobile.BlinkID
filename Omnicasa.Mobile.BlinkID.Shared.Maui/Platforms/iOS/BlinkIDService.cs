@@ -44,7 +44,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         }
 
         /// <inheritdoc/>
-        public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1)
+        public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1, bool presentAsModal = true)
         {
             UIViewController? scannerViewcontroller = null;
             CustomMBBlinkIdOverlayViewControllerDelegate? customDeletegate = null;
@@ -130,10 +130,22 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                         o.OnError(new InvalidOperationException("Expect KeyWindow"));
                     }
 
-                    keyWindow!.RootViewController!.PresentViewController(
-                        scannerViewcontroller!,
-                        true,
-                        null);
+                    if (presentAsModal)
+                    {
+#pragma warning disable CA1422
+                        keyWindow!.RootViewController!.PresentModalViewController(
+                            scannerViewcontroller!,
+                            true);
+#pragma warning restore CA1422
+                    }
+                    else
+                    {
+                        keyWindow!.RootViewController!.PresentViewController(
+                            scannerViewcontroller!,
+                            true,
+                            null);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
