@@ -129,18 +129,25 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                     {
                         o.OnError(new InvalidOperationException("Expect KeyWindow"));
                     }
+                    
+                    var currentViewController = Platform.GetCurrentUIViewController();
+                    if (currentViewController == null)
+                    {
+                        o.OnError(new InvalidOperationException("Expect active UIViewController"));
+                    }
 
                     if (presentAsModal)
                     {
+                        Platform.GetCurrentUIViewController();
 #pragma warning disable CA1422
-                        keyWindow!.RootViewController!.PresentModalViewController(
+                        currentViewController!.PresentModalViewController(
                             scannerViewcontroller!,
                             true);
 #pragma warning restore CA1422
                     }
                     else
                     {
-                        keyWindow!.RootViewController!.PresentViewController(
+                        currentViewController!.PresentViewController(
                             scannerViewcontroller!,
                             true,
                             null);

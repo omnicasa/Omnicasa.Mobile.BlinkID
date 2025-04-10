@@ -35,6 +35,12 @@
                 Text="Click me to scan"
                 Clicked="OnScanClicked"
                 HorizontalOptions="Fill" />
+            
+            <Button
+                x:Name="ScanBtn2"
+                Text="Click me to OpenModal"
+                Clicked="ScanBtn2_OnClicked"
+                HorizontalOptions="Fill" />
 
             <Image
                 WidthRequest="200"
