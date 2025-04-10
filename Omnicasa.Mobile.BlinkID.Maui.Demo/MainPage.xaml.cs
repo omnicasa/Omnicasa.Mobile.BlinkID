@@ -47,6 +47,11 @@ public partial class MainPage : ContentPage
                 });
         }
     }
+
+    private void ScanBtn2_OnClicked(object? sender, EventArgs e)
+    {
+        Navigation.PushModalAsync(new DetailPage());
+    }
 }
 
 
