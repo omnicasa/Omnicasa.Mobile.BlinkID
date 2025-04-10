@@ -138,7 +138,6 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
 
                     if (presentAsModal)
                     {
-                        Platform.GetCurrentUIViewController();
 #pragma warning disable CA1422
                         currentViewController!.PresentModalViewController(
                             scannerViewcontroller!,
