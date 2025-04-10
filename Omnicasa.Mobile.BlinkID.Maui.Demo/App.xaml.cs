@@ -16,7 +16,7 @@ public partial class App : Application
         var unityServiceLocator = new UnityServiceLocator(Container);
         ServiceLocator.SetLocatorProvider(() => unityServiceLocator);
 
-        MainPage = new AppShell();
+        MainPage = new NavigationPage(new MainPage());
 	}
 }
 
