@@ -1,40 +1,19 @@
 //
-//  Microblink.h
-//  MicroblinkFramework
+//  BlinkID.h
+//  BlinkID
 //
-//  Created by Dino Gustin on 06/06/18.
-//  Copyright (c) 2012 Microblink Ltd. All rights reserved.
+//  Created by Jura Skrlec on 20.01.2025..
 //
 
-// Include Common API
-#import "MBMicroblinkApp.h"
-#import "MBViewControllerFactory.h"
-#import "MBMicroblinkSDK.h"
-#import "MBProductIntegrationInfo.h"
-#import "MBException.h"
-#import "MBImage.h"
-#import "MBBgraImage.h"
-#import "MBDate.h"
-#import "MBSignedPayload.h"
+#import <Foundation/Foundation.h>
 
-// Settings
-#import "MBCameraSettings.h"
 
-// Delegates
-#import "MBRecognizerRunnerViewControllerMetadataDelegates.h"
-#import "MBRecognizerRunnerViewControllerDelegate.h"
-#import "MBScanningRecognizerRunnerViewControllerDelegate.h"
-#import "MBFrameRecognitionRecognizerRunnerViewControllerDelegate.h"
+//! Project version number for SwiftTest.
+FOUNDATION_EXPORT double BlinkIDVersionNumber;
 
-#import "MBRecognizerRunner.h"
-#import "MBRecognizerRunnerMetadataDelegates.h"
-#import "MBScanningRecognizerRunnerDelegate.h"
+//! Project version string for SwiftTest.
+FOUNDATION_EXPORT const unsigned char BlinkIDVersionString[];
 
-// Frame Grabbers
-#import "MBFrameGrabberRecognizer.h"
-#import "MBSuccessFrameGrabberRecognizer.h"
-#import "MBSuccessFrameGrabberRecognizerResult.h"
+// In this header, you should import all the public headers of your framework using statements like #import <BlinkID/PublicHeader.h>
 
-#import "MBEntities.h"
-#import "MBUIComponents.h"
-
+#import <BlinkID/MBSampleBufferWrapper.h>
