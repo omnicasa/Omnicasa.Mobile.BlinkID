@@ -1,5 +1,7 @@
 ### This repository only implements the binding project; the version for Xamarin.Forms/NET MAUI has not been published yet. You can find those packages below on the nuget(preview version)
 
+## Updated Apr-23-2025 Drop support for Xamarin
+
 ## BlinkID for iOS
 Xamarin-iOS: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.iOS)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/)
 

@@ -1,46 +1,46 @@
-name: CI-Prod-Xamarin-Nuget
+# name: CI-Prod-Xamarin-Nuget
 
-on:
-  push:
-    branches: [ master ]
+# on:
+#   push:
+#     branches: [ master ]
 
-  workflow_dispatch:
+#   workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: macos-12
+# jobs:
+#   build:
+#     runs-on: macos-12
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
 
-      - name: Generate version
-        id: generate_version
-        run: |
-          DATE=$(date +'%Y.%m.%d')
-          BUILD_NUMBER=$(git rev-list --count HEAD)
-          VERSION="$DATE.$BUILD_NUMBER"
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+#       - name: Generate version
+#         id: generate_version
+#         run: |
+#           DATE=$(date +'%Y.%m.%d')
+#           BUILD_NUMBER=$(git rev-list --count HEAD)
+#           VERSION="$DATE.$BUILD_NUMBER"
+#           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: Set Omnicasa.Mobile.BlinkID.iOS.csproj version
-        uses: Thundernerd/dotnet-project-version-updater@v1.2
-        with:
-          file: "Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj"
-          version: ${{ env.VERSION }}
+#       - name: Set Omnicasa.Mobile.BlinkID.iOS.csproj version
+#         uses: Thundernerd/dotnet-project-version-updater@v1.2
+#         with:
+#           file: "Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj"
+#           version: ${{ env.VERSION }}
 
-      - name: Set Omnicasa.Mobile.BlinkID.iOS.nuspec version
-        uses: Thundernerd/dotnet-project-version-updater@v1.2
-        with:
-          file: "Omnicasa.Mobile.BlinkID.iOS/nu.nuspec"
-          version: ${{ env.VERSION }}   
+#       - name: Set Omnicasa.Mobile.BlinkID.iOS.nuspec version
+#         uses: Thundernerd/dotnet-project-version-updater@v1.2
+#         with:
+#           file: "Omnicasa.Mobile.BlinkID.iOS/nu.nuspec"
+#           version: ${{ env.VERSION }}   
           
-      - name: Build Omnicasa.Mobile.BlinkID.iOS project
-        run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
+#       - name: Build Omnicasa.Mobile.BlinkID.iOS project
+#         run: MSBuild /p:Configuration=Release Omnicasa.Mobile.BlinkID.iOS/Omnicasa.Mobile.BlinkID.iOS.csproj
 
-      - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.iOS
-        run: nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
+#       - name: Pack NuGet package for Omnicasa.Mobile.BlinkID.iOS
+#         run: nuget pack Omnicasa.Mobile.BlinkID.iOS/nu.nuspec -OutputDirectory ./output
 
-      - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.iOS
-        run: nuget push ./output/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
+#       - name: Publish NuGet package for Omnicasa.Mobile.BlinkID.iOS
+#         run: nuget push ./output/*.nupkg ${{ secrets.NUGET_API_KEY }} -Source https://api.nuget.org/v3/index.json
