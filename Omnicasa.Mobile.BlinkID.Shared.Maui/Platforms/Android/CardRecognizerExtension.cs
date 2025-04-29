@@ -49,32 +49,9 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 IssuingAuthority = recognizerResult.IssuingAuthority,
             };
 
-            try
-            {
-                var blinkB = recognizerResult.DateOfBirth.Date;
-                result.DateOfBirth = new DateTime(blinkB.Year, blinkB.Month, blinkB.Day);
-            }
-            catch
-            {
-            }
-            
-            try
-            {
-                var blinkC = recognizerResult.DateOfExpiry.Date;
-                result.DateOfExpiry = new DateTime(blinkC.Year, blinkC.Month, blinkC.Day);
-            }
-            catch
-            {
-            }
-            
-            try
-            {
-                var blinkD = recognizerResult.DateOfIssue.Date;
-                result.DateOfIssue = new DateTime(blinkD.Year, blinkD.Month, blinkD.Day);
-            }
-            catch
-            {
-            }
+            result.DateOfBirth = ParseDateTime(recognizerResult.DateOfBirth);
+            result.DateOfExpiry = ParseDateTime(recognizerResult.DateOfExpiry);
+            result.DateOfIssue = ParseDateTime(recognizerResult.DateOfIssue);
 
             return result;
         }
