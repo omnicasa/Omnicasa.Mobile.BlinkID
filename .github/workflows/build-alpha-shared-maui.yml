@@ -2,7 +2,7 @@ name: CI-Alpha-Maui-Shared-Nuget
 
 on:
   pull_request:
-    branches: [ alpha ]
+    branches: [ alpha-shared ]
 
   workflow_dispatch:
 
