@@ -9,10 +9,12 @@ public partial class MainPage : ContentPage
 {
     public const string iOSLic = "sRwAAAETY29tLm9tbmljYXNhLm1vYmlsZXEPe6POZt4PSoCbv7EneOY6qMOcReFvL6VLejgXyGu/S7xlYbv6QgiyU/fYd8harXPQGCVH4xKMRD0blOjniQtx5Fv97rt7lrlNpr885nqSXcb83vXEjvxGkhLbN8VFIXCWV/GZpQonCwmVPTgs9jF9a2HX1pu3/mROCDKCQ5KiT5h8MRhMLyih2g2aXWKgtbQ0bcWU";
 
+    public const string droidLic = "sRwAAAATY29tLm9tbmljYXNhLm1vYmlsZWIBD4xeaH4PRjTgkGPcb9r31QSc35hNGegKgsEoRhc4c0FT1RXwrk2OWBo1jzWcdOOqB9jgYCoWxtBLHJTgV1bo77X8aAsEpC93GXnrybsMemrnRY886Cnf5RXtesCjLFq3SzDq6l7uLzNnDmfzSJf+HhLArsD/80fjh6G/O6cgYHzlPy5J94utkLBO3GCaGM1mQFb4";
+
     public MainPage()
-	{
-		InitializeComponent();
-	}
+    {
+        InitializeComponent();
+    }
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
@@ -20,7 +22,8 @@ public partial class MainPage : ContentPage
         if (blinkService != null)
         {
             blinkService
-                .Initialize(iOSLic)
+                .Initialize(Microsoft.Maui.Devices.DeviceInfo.Platform == DevicePlatform.iOS ?
+                    iOSLic : droidLic)
                 .Catch<bool, Exception>(_ => Observable.Return(false))
                 .Subscribe(initialized =>
                 {
