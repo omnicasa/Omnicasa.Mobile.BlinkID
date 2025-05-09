@@ -1,8 +1,7 @@
 framework module BlinkID {
-  umbrella header "BlinkID.h"
-  export *
+    umbrella header "BlinkID.h"
 
-  module * { export * }
+    export *
 }
 
 module BlinkID.Swift {
