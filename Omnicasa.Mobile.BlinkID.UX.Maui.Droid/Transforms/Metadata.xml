@@ -58,11 +58,26 @@
   <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="managedName">BlinkIdSdk</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="visibility">public</attr>
 
+  <!-- Fix missing static Kotlin Companion methods -->
   <add-node path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']">
-    <method name="GetSdkInstance" return="Lcom/microblink/blinkid/core/BlinkIdSdk;" static="true" />
-    <method name="Initialize" return="V" static="true">
-      <parameter name="context" type="Landroid/content/Context;" />
-      <parameter name="license" type="Ljava/lang/String;" />
+    <method abstract="false" final="false" static="true"
+            name="Initialize"
+            return="Com.Microblink.Blinkid.Core.BlinkIdSdk"
+            visibility="public">
+      <parameter name="context" type="android.content.Context" />
+      <parameter name="settings" type="Com.Microblink.Blinkid.Core.BlinkIdSdkSettings" />
+      <body>
+        return Com.Microblink.Blinkid.Core.BlinkIdSdk.Companion.Initialize(context, settings);
+      </body>
+    </method>
+
+    <method abstract="false" final="false" static="true"
+            name="GetSdkInstance"
+            return="Com.Microblink.Blinkid.Core.BlinkIdSdk"
+            visibility="public">
+      <body>
+        return Com.Microblink.Blinkid.Core.BlinkIdSdk.Companion.SdkInstance;
+      </body>
     </method>
   </add-node>
 </metadata>
