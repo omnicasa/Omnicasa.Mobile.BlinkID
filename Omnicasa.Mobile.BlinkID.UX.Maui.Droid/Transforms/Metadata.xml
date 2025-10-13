@@ -54,4 +54,15 @@
   <!-- Fix IParcelableCreator interface implementation for ScanningSettings.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="managedName">BlinkIdSdk</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="visibility">public</attr>
+
+  <add-node path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']">
+    <method name="GetSdkInstance" return="Lcom/microblink/blinkid/core/BlinkIdSdk;" static="true" />
+    <method name="Initialize" return="V" static="true">
+      <parameter name="context" type="Landroid/content/Context;" />
+      <parameter name="license" type="Ljava/lang/String;" />
+    </method>
+  </add-node>
 </metadata>
