@@ -58,26 +58,31 @@
   <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="managedName">BlinkIdSdk</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="visibility">public</attr>
 
-  <!-- Fix missing static Kotlin Companion methods -->
-  <add-node path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']">
-    <method abstract="false" final="false" static="true"
-            name="Initialize"
-            return="Com.Microblink.Blinkid.Core.BlinkIdSdk"
-            visibility="public">
-      <parameter name="context" type="android.content.Context" />
-      <parameter name="settings" type="Com.Microblink.Blinkid.Core.BlinkIdSdkSettings" />
-      <body>
-        return Com.Microblink.Blinkid.Core.BlinkIdSdk.Companion.Initialize(context, settings);
-      </body>
-    </method>
+  <!-- Make BlinkIdSdk class public and expose internal static accessors -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="visibility">public</attr>
 
-    <method abstract="false" final="false" static="true"
-            name="GetSdkInstance"
-            return="Com.Microblink.Blinkid.Core.BlinkIdSdk"
-            visibility="public">
-      <body>
-        return Com.Microblink.Blinkid.Core.BlinkIdSdk.Companion.SdkInstance;
-      </body>
-    </method>
-  </add-node>
+  <!-- Expose internal Kotlin static methods access$getSdkInstance$cp() and access$setSdkInstance$cp(BlinkIdSdk) -->
+  <method
+          path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']"
+          name="access$getSdkInstance$cp"
+          jni-signature="()Lcom/microblink/blinkid/core/BlinkIdSdk;"
+          visibility="public"
+          static="true" />
+
+  <method
+          path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']"
+          name="access$setSdkInstance$cp"
+          jni-signature="(Lcom/microblink/blinkid/core/BlinkIdSdk;)V"
+          visibility="public"
+          static="true" />
+
+  <!-- Optional: Rename for clean C# usage -->
+  <attr
+          path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='access$getSdkInstance$cp']"
+          name="managedName">GetSdkInstance</attr>
+
+  <attr
+          path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='access$setSdkInstance$cp']"
+          name="managedName">SetSdkInstance</attr>
+
 </metadata>
