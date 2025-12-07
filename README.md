@@ -1,6 +1,25 @@
-### This repository only implements the binding project; the version for Xamarin.Forms/NET MAUI has not been published yet. You can find those packages below on the nuget(preview version)
+This repository implements the BlinkID binding project for Xamarin.Forms and .NET MAUI. The binding provides C# wrappers for the BlinkID Android and iOS SDKs.
 
 ## Updated Apr-23-2025 Drop support for Xamarin
+
+## Project Structure
+
+- Omnicasa.Mobile.BlinkID.Droid - Xamarin Android binding for BlinkID Core
+- Omnicasa.Mobile.BlinkID.iOS - Xamarin iOS binding for BlinkID
+- Omnicasa.Mobile.BlinkID.Maui.Droid - .NET MAUI Android binding for BlinkID Core
+- Omnicasa.Mobile.BlinkID.Maui.iOS - .NET MAUI iOS binding for BlinkID
+- Omnicasa.Mobile.BlinkID.UX.Maui.Droid - .NET MAUI Android binding for BlinkID UX (currently uses Core only)
+- Omnicasa.Mobile.BlinkID.Shared - Shared code for Xamarin projects
+- Omnicasa.Mobile.BlinkID.Shared.Maui - Shared code for .NET MAUI projects
+
+## BlinkID Version
+
+Current binding supports BlinkID SDK version 7.5.0.
+
+## Binding Notes
+
+- Kotlin suspend functions (like initializeSdk) cannot be directly bound to C# due to Continuation parameter limitations
+- The binding generates 115+ C# classes from the core BlinkID AAR
 
 ## BlinkID for iOS
 Xamarin-iOS: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.iOS)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/)
@@ -48,7 +67,7 @@ GetBlinkIDService()
  });
 ```
 
-### Scaning
+### Scanning
 ```csharp
 BlinkIDService?
  .Scan()
