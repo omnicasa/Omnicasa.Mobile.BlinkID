@@ -1,0 +1,83 @@
+﻿<metadata>
+  <!-- Remove the entire license package that causes binding issues -->
+  <remove-node path="/api/package[@name='com.microblink.core.license']" />
+  
+  <!-- Remove any methods in other packages that reference license classes -->
+  <remove-node path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='getLicenseToken']" />
+  
+  <!-- Make BlinkIdSdk class public -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']" name="visibility">public</attr>
+  
+  <!-- Make BlinkIdSdk.Companion class public and expose its methods -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk.Companion']" name="visibility">public</attr>
+  
+  <!-- Force inclusion of the initializeSdk method from Companion -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk.Companion']/method[@name='initializeSdk-0E7RQCE' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.microblink.blinkid.core.BlinkIdSdkSettings'] and parameter[3][@type='kotlin.coroutines.Continuation']]" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk.Companion']/method[@name='initializeSdk-0E7RQCE' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.microblink.blinkid.core.BlinkIdSdkSettings'] and parameter[3][@type='kotlin.coroutines.Continuation']]" name="managedName">InitializeSdk</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk.Companion']/method[@name='initializeSdk-0E7RQCE' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.microblink.blinkid.core.BlinkIdSdkSettings'] and parameter[3][@type='kotlin.coroutines.Continuation']]" name="managedReturn">Java.Lang.Object</attr>
+  
+  <!-- Expose the getSdkInstance method from Companion -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk.Companion']/method[@name='getSdkInstance']" name="visibility">public</attr>
+  
+  <!-- Force inclusion of suspend functions from BlinkIdSdk class -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='createScanningSession' and count(parameter)=2 and parameter[1][@type='com.microblink.blinkid.core.session.BlinkIdSessionSettings'] and parameter[2][@type='kotlin.coroutines.Continuation']]" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='createScanningSession' and count(parameter)=2 and parameter[1][@type='com.microblink.blinkid.core.session.BlinkIdSessionSettings'] and parameter[2][@type='kotlin.coroutines.Continuation']]" name="managedName">CreateScanningSession</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='createScanningSession' and count(parameter)=2 and parameter[1][@type='com.microblink.blinkid.core.session.BlinkIdSessionSettings'] and parameter[2][@type='kotlin.coroutines.Continuation']]" name="managedReturn">Java.Lang.Object</attr>
+  
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='internalInitialize$blinkid_core_productionDistribute' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.microblink.blinkid.core.BlinkIdSdkSettings'] and parameter[3][@type='kotlin.coroutines.Continuation']]" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='internalInitialize$blinkid_core_productionDistribute' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.microblink.blinkid.core.BlinkIdSdkSettings'] and parameter[3][@type='kotlin.coroutines.Continuation']]" name="managedName">InitializeSdk</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='internalInitialize$blinkid_core_productionDistribute' and count(parameter)=3 and parameter[1][@type='android.content.Context'] and parameter[2][@type='com.microblink.blinkid.core.BlinkIdSdkSettings'] and parameter[3][@type='kotlin.coroutines.Continuation']]" name="managedReturn">Java.Lang.Object</attr>
+  
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='refreshLicenseLease' and count(parameter)=1 and parameter[1][@type='kotlin.coroutines.Continuation']]" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='refreshLicenseLease' and count(parameter)=1 and parameter[1][@type='kotlin.coroutines.Continuation']]" name="managedName">RefreshLicenseLease</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='refreshLicenseLease' and count(parameter)=1 and parameter[1][@type='kotlin.coroutines.Continuation']]" name="managedReturn">Java.Lang.Object</attr>
+  
+  <!-- Expose other important methods from BlinkIdSdk class -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='close']" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='closeAndDeleteCachedAssets']" name="visibility">public</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdk']/method[@name='getLicenseToken']" name="visibility">public</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdSdkSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdkSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdkSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdSessionSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.session']/class[@name='BlinkIdSessionSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.session']/class[@name='BlinkIdSessionSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for CroppedImageSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='CroppedImageSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='CroppedImageSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for DetailedFieldType.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DetailedFieldType.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DetailedFieldType.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for DocumentAnonymizationSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentAnonymizationSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentAnonymizationSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for DocumentFilter.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentFilter.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentFilter.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for DocumentNumberAnonymizationSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberAnonymizationSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberAnonymizationSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for DocumentRules.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentRules.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentRules.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for RecognitionModeFilter.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RecognitionModeFilter.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RecognitionModeFilter.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+   
+  <!-- Fix IParcelableCreator interface implementation for ScanningSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  
+  <!-- Fix IParcelableCreator interface implementation for RequestTimeout.Creator -->
+  <attr path="/api/package[@name='com.microblink.core.network']/class[@name='RequestTimeout.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.core.network']/class[@name='RequestTimeout.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+</metadata>
