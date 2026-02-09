@@ -1,0 +1,13 @@
+﻿<metadata>
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdScanActivityColors.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdScanActivitySettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdUxSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+</metadata>
