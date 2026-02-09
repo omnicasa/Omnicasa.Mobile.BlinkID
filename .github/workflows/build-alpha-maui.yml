@@ -73,3 +73,11 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           NUGET_SOURCE: https://api.nuget.org
           VERSION_STATIC: ${{ env.VERSION }}    
+      
+      - name: Droid UX Publish Omnicasa.Mobile.BlinkID.Core.Maui.Droid on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Core.Maui.Droid/Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}    
