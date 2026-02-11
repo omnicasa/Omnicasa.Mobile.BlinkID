@@ -1,0 +1,4 @@
+﻿<metadata>
+  <!-- Remove Parcelable.Creator nested classes that produce CS0738 (typed returns vs IParcelableCreator) -->
+  <remove-node path="//class[contains(@name, '.Creator') and implements[@name='android.os.Parcelable.Creator']]" />
+</metadata>

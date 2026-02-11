@@ -49,6 +49,12 @@ jobs:
         with:
           file: "Omnicasa.Mobile.BlinkID.UX.Maui.Droid/Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj"
           version: ${{ env.VERSION }}     
+
+      - name: Set Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Core.Maui.Droid/Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj"
+          version: ${{ env.VERSION }}     
         
       - name: iOS Publish Omnicasa.Mobile.BlinkID.iOS on version change
         uses: linch90/publish-nuget@v1.0.2
@@ -70,6 +76,14 @@ jobs:
         uses: linch90/publish-nuget@v1.0.2
         with:
           PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.UX.Maui.Droid/Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}    
+          
+      - name: Droid Core Publish Omnicasa.Mobile.BlinkID.Core.Maui.Droid on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Core.Maui.Droid/Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           NUGET_SOURCE: https://api.nuget.org
           VERSION_STATIC: ${{ env.VERSION }}    
