@@ -15,6 +15,7 @@
       <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.5" />
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.Core.Maui.Droid\Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj" />
       <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.UX.Maui.Droid\Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj" />
     </ItemGroup>
 </Project>
