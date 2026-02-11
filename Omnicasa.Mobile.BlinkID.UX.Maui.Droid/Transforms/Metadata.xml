@@ -1,0 +1,25 @@
+﻿<metadata>
+<!-- Fix IParcelableCreator interface implementation for BlinkIdScanActivityColors.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdScanActivitySettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Fix IParcelableCreator interface implementation for BlinkIdUxSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- MbBlinkIdScan doesn't bind correctly (generic ActivityResultContract); accessed via JNI helper instead -->
+  <remove-node path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='MbBlinkIdScan']" />
+
+  <!-- Remove all com.microblink.ux packages from binding (runtime-only dependency from microblink-ux AAR) -->
+  <remove-node path="/api/package[@name='com.microblink.ux']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.camera']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.camera.compose']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.components']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.state']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.theme']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.utils']" />
+</metadata>
