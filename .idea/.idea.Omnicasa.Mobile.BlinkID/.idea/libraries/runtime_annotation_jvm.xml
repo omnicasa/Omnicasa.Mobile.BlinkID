@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="runtime-annotation-jvm">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.nuget/packages/xamarin.androidx.compose.runtime.annotation.jvm/1.10.0.1/jar/runtime-annotation-jvm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

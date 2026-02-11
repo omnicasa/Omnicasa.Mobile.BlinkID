@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net9.0-android</TargetFramework>
+        <SupportedOSPlatformVersion>24</SupportedOSPlatformVersion>
+        <OutputType>Exe</OutputType>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <ApplicationId>com.omnicasa.mobile</ApplicationId>
+        <ApplicationVersion>1</ApplicationVersion>
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <!-- Disable aggressive trimming; Compose/CameraX Java deps are only referenced from Kotlin, not C# -->
+        <AndroidLinkMode>None</AndroidLinkMode>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.5" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.UX.Maui.Droid\Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj" />
+    </ItemGroup>
+</Project>
