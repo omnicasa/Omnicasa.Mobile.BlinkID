@@ -6,8 +6,8 @@
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">26.0</SupportedOSPlatformVersion>
 
 		<PackageId>Omnicasa.Mobile.BlinkID.Maui.Shared</PackageId>
 		<Version>1.0.0</Version>
@@ -30,10 +30,10 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.Droid" Version="2025.4.29.66-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.Droid" Version="2026.2.11.88-alpha" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.iOS" Version="2025.4.29.66-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.iOS" Version="2026.2.11.88-alpha" />
 	</ItemGroup>
 </Project>
