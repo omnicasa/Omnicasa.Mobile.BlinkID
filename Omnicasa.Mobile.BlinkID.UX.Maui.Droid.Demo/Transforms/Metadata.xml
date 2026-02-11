@@ -1,0 +1,12 @@
+﻿<metadata>
+  <!-- Remove all com.microblink.ux packages - runtime-only, no C# bindings needed -->
+  <remove-node path="/api/package[@name='com.microblink.ux']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.camera']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.camera.compose']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.components']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.state']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.theme']" />
+  <remove-node path="/api/package[@name='com.microblink.ux.utils']" />
+  <!-- Remove kotlinx.parcelize - runtime-only -->
+  <remove-node path="/api/package[@name='kotlinx.parcelize']" />
+</metadata>

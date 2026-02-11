@@ -1,32 +1,66 @@
-### This repository only implements the binding project; the version for Xamarin.Forms/NET MAUI has not been published yet. You can find those packages below on the nuget(preview version)
+This repository implements the BlinkID binding project for Xamarin.Forms and .NET MAUI. The binding provides C# wrappers for the BlinkID Android and iOS SDKs.
 
 ## Updated Apr-23-2025 Drop support for Xamarin
 
-## BlinkID for iOS
-Xamarin-iOS: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.iOS)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/)
+## Project Structure
 
-Net8-iOS: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.Maui.iOS)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.iOS/)
+- Omnicasa.Mobile.BlinkID.Droid - Xamarin Android binding for BlinkID Core
+- Omnicasa.Mobile.BlinkID.iOS - Xamarin iOS binding for BlinkID
+- Omnicasa.Mobile.BlinkID.Maui.Droid - .NET MAUI Android binding for BlinkID Core
+- Omnicasa.Mobile.BlinkID.Maui.iOS - .NET MAUI iOS binding for BlinkID
+- Omnicasa.Mobile.BlinkID.UX.Maui.Droid - .NET MAUI Android binding for BlinkID UX (currently uses Core only)
+- Omnicasa.Mobile.BlinkID.Shared - Shared code for Xamarin projects
+- Omnicasa.Mobile.BlinkID.Shared.Maui - Shared code for .NET MAUI projects
+
+## BlinkID Version
+
+Current binding supports BlinkID SDK version 7.5.0.
+
+## Binding Notes
+
+- Kotlin suspend functions (like initializeSdk) cannot be directly bound to C# due to Continuation parameter limitations
+- The binding generates 115+ C# classes from the core BlinkID AAR
+
+## BlinkID for iOS
+Xamarin-iOS:  
+[![NuGet Version](https://img.shields.io/nuget/v/Omnicasa.Mobile.BlinkID.iOS.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Omnicasa.Mobile.BlinkID.iOS.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/)
+
+Net8-iOS:  
+[![NuGet Version](https://img.shields.io/nuget/v/Omnicasa.Mobile.BlinkID.Maui.iOS.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.iOS/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Omnicasa.Mobile.BlinkID.Maui.iOS.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.iOS/)
+
+
+---
 
 ## BlinkID for Droid
-Xamarin-Droid: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.Droid)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Droid/)
+Xamarin-Droid:  
+[![NuGet Version](https://img.shields.io/nuget/v/Omnicasa.Mobile.BlinkID.Droid.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Droid/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Omnicasa.Mobile.BlinkID.Droid.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Droid/)
 
-Net8-Droid: [![NuGet Badge](https://buildstats.info/nuget/Omnicasa.Mobile.BlinkID.Maui.Droid)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/)
+Net8-Droid:  
+[![NuGet Version](https://img.shields.io/nuget/v/Omnicasa.Mobile.BlinkID.Maui.Droid.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Omnicasa.Mobile.BlinkID.Maui.Droid.svg)](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/)
 
-## Nuget
+---
 
-| | |
-|--|--|
-| Binding | |
-| | [Omnicasa.Mobile.BlinkID.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/2024.7.8.44-preview) |
-| | [Omnicasa.Mobile.BlinkID.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Droid/2024.7.8.44-preview) |
-| | [Omnicasa.Mobile.BlinkID.Maui.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.iOS/2024.7.8.44-preview) |
-| | [Omnicasa.Mobile.BlinkID.Maui.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/2024.7.8.44-preview) |
-| Shared-Xamarin | |
-| | [Omnicasa.Mobile.BlinkID.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared/2024.7.8.44-preview) |
-| | [Omnicasa.Mobile.BlinkID.Shared.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.iOS/2024.7.8.44-preview) |
-| | [Omnicasa.Mobile.BlinkID.Shared.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.Droid/2024.7.8.44-preview) |
-| Shared Net-8 | |
-| | [Omnicasa.Mobile.BlinkID.Maui.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Shared/2024.7.8.44-preview) |
+## NuGet
+
+| Category | Package |
+|---------|---------|
+| **Binding** | |
+|  | [Omnicasa.Mobile.BlinkID.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.iOS/) |
+|  | [Omnicasa.Mobile.BlinkID.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Droid/) |
+|  | [Omnicasa.Mobile.BlinkID.Maui.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.iOS/) |
+|  | [Omnicasa.Mobile.BlinkID.Maui.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Droid/) |
+| **Shared – Xamarin** | |
+|  | [Omnicasa.Mobile.BlinkID.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared/) |
+|  | [Omnicasa.Mobile.BlinkID.Shared.iOS](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.iOS/) |
+|  | [Omnicasa.Mobile.BlinkID.Shared.Droid](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Shared.Droid/) |
+| **Shared – .NET 8** | |
+|  | [Omnicasa.Mobile.BlinkID.Maui.Shared](https://www.nuget.org/packages/Omnicasa.Mobile.BlinkID.Maui.Shared/) |
+
+
 
 ### Use DI
 ```csharp
@@ -48,7 +82,7 @@ GetBlinkIDService()
  });
 ```
 
-### Scaning
+### Scanning
 ```csharp
 BlinkIDService?
  .Scan()
