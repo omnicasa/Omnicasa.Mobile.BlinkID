@@ -32,6 +32,12 @@ jobs:
           VERSION="$DATE.$BUILD_NUMBER-alpha"
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
+      - name: Set Omnicasa.Mobile.BlinkID.Shared.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Shared/Omnicasa.Mobile.BlinkID.Shared.csproj"
+          version: ${{ env.VERSION }}
+
       - name: Set Omnicasa.Mobile.BlinkID.Shared.Maui.csproj version
         uses: Thundernerd/dotnet-project-version-updater@v1.2
         with:
@@ -45,4 +51,12 @@ jobs:
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
           NUGET_SOURCE: https://api.nuget.org
           VERSION_STATIC: ${{ env.VERSION }}
+
+      - name: MAUI Publish Omnicasa.Mobile.BlinkID.Shared on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Shared/Omnicasa.Mobile.BlinkID.Shared.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}    
 
