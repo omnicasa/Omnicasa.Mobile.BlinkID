@@ -6,7 +6,6 @@ using AndroidX.AppCompat.App;
 using Com.Microblink.Blinkid.Core;
 using Com.Microblink.Blinkid.Core.Result;
 using Com.Microblink.Blinkid.Core.Session;
-using Com.Microblink.Blinkid.UX;
 using Com.Microblink.Blinkid.UX.Contract;
 
 namespace Omnicasa.Mobile.BlinkID.UX.Maui.Droid.Demo;
@@ -60,7 +59,8 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
 
             var sdkSettings = new BlinkIdSdkSettings(DroidLic);
             var settings = new BlinkIdScanActivitySettings(sdkSettings);
-            var intent = MbBlinkIdScanHelper.CreateIntent(this, settings);
+            var contract = new MbBlinkIdScan();
+            var intent = contract.CreateIntent(this, settings);
             _scanLauncher!.Launch(intent);
         }
         catch (Exception ex)
@@ -78,7 +78,8 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
         {
             if (p0 is not ActivityResult activityResult) return;
 
-            var scanResult = MbBlinkIdScanHelper.ParseResult(activityResult.ResultCode, activityResult.Data);
+            var contract = new MbBlinkIdScan();
+            var scanResult = (BlinkIdScanActivityResult)contract.ParseResult(activityResult.ResultCode, activityResult.Data);
 
             if (scanResult.Status == BlinkIdScanActivityResultStatus.DocumentScanned)
             {

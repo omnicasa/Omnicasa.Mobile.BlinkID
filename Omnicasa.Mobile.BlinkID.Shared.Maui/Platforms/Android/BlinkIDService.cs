@@ -1,19 +1,28 @@
-﻿using System;
-using System.Reactive.Disposables;
+﻿using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using Com.Microblink;
-using Com.Microblink.Entities.Recognizers;
-using Com.Microblink.Entities.Recognizers.Blinkid.Generic;
-using Com.Microblink.Intent;
-using Com.Microblink.Uisettings;
-using Com.Microblink.Util;
+using AndroidX.Activity.Result;
+using AndroidX.Activity.Result.Contract;
+using Com.Microblink.Blinkid.Core;
+using Com.Microblink.Blinkid.UX.Contract;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
+using Object = Java.Lang.Object;
 
 namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 {
+    internal class BlinkIDActivityResultCallback : Java.Lang.Object, IActivityResultCallback
+    {
+        public void OnActivityResult(Object? result)
+        {
+            BlinkIDHelper.OnActivityResult(result);
+        }
+    }
+        
     /// <inheritdoc/>
     public class BlinkIDService : IBlinkIDService, IBlinkIDServiceExtended
     {
+        private string license;
+        private BlinkIDActivityResultCallback callback = new BlinkIDActivityResultCallback();
+        
         /// <inheritdoc/>
         public IObservable<bool> Initialize(string licenseKey)
         {
@@ -25,9 +34,8 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     {
                         o.OnError(new ArgumentException("Please call BlinkIDInitializer.Init"));
                     }
-
-                    MicroblinkSDK.SetLicenseKey(licenseKey, BlinkIDInitializer.Context);
-                    MicroblinkSDK.IntentDataTransferMode = IntentDataTransferMode.PersistedOptimised;
+                    
+                    license = licenseKey;
                 }
                 catch (Exception ex)
                 {
@@ -50,9 +58,6 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
         /// <inheritdoc/>
         public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1, bool presentAsModal = true)
         {
-            BlinkIdCombinedRecognizer? blinkIdMultiSideRecognizer = null;
-            RecognizerBundle? recognizerBundle = null;
-
             var observable = Observable.Create<CardRecognizerExtended?>(o =>
             {
                 try
@@ -64,36 +69,22 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                         o.OnError(new ArgumentException("Please call BlinkIDInitializer.Init"));
                     }
 
-                    blinkIdMultiSideRecognizer = new BlinkIdCombinedRecognizer();
-                    blinkIdMultiSideRecognizer.SetReturnFullDocumentImage(true);
-                    blinkIdMultiSideRecognizer.SetReturnFaceImage(true);
-
-                    recognizerBundle = new RecognizerBundle(blinkIdMultiSideRecognizer);
-
-                    if (RecognizerCompatibility.GetRecognizerCompatibilityStatus(BlinkIDInitializer.Context)
-                    != RecognizerCompatibilityStatus.RecognizerSupported)
+                    BlinkIDHelper.Scanned += (sender, args) =>
                     {
-                        o.OnError(new NotSupportedException("BlinkID is not supported!"));
-                    }
-
-                    BlinkIDHelper.Scanned += (object s, RecognizingState e) =>
-                    {
-                        if (blinkIdMultiSideRecognizer.GetResult() is BlinkIdCombinedRecognizer.Result result)
-                        {
-                            o.OnNext(result.ParseExtended());
-                        }
-
                         if (++scanTime == limit)
                         {
                             o.OnCompleted();
                         }
                     };
 
-                    var blinkidUISettings = new BlinkIdUISettings(recognizerBundle);
-                    ActivityRunner.StartActivityForResult(
-                        BlinkIDInitializer.Activity,
-                        BlinkIDConstants.BLINK_SCAN_REQUEST_ID,
-                        blinkidUISettings);
+                    var sdkSettings = new BlinkIdSdkSettings(license);
+                    var settings = new BlinkIdScanActivitySettings(sdkSettings);
+                    var contract = new MbBlinkIdScan();
+                    var intent = contract.CreateIntent(BlinkIDInitializer.Activity, settings);
+                    
+                    var launcher = BlinkIDInitializer.Activity.RegisterForActivityResult(
+                        new ActivityResultContracts.StartActivityForResult(), callback);
+                    launcher.Launch(intent);
                 }
                 catch (Exception ex)
                 {
