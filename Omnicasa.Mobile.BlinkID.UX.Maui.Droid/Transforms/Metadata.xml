@@ -1,20 +1,76 @@
-﻿<metadata>
-<!-- Fix IParcelableCreator interface implementation for BlinkIdScanActivityColors.Creator -->
+<metadata>
+  <!-- Fix IParcelableCreator: Creator.createFromParcel/newArray must return Java.Lang.Object -->
+
+  <!-- Core: BlinkIdSdkSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdkSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdkSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: BlinkIdSessionSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.session']/class[@name='BlinkIdSessionSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.session']/class[@name='BlinkIdSessionSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: CroppedImageSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='CroppedImageSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='CroppedImageSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: DetailedFieldType.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DetailedFieldType.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DetailedFieldType.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: DocumentAnonymizationSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentAnonymizationSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentAnonymizationSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: DocumentFilter.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentFilter.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentFilter.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: DocumentNumberAnonymizationSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberAnonymizationSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberAnonymizationSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: DocumentRules.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentRules.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentRules.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: RecognitionModeFilter.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RecognitionModeFilter.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RecognitionModeFilter.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: ScanningSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Core: RequestTimeout.Creator -->
+  <attr path="/api/package[@name='com.microblink.core.network']/class[@name='RequestTimeout.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.core.network']/class[@name='RequestTimeout.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- UX: BlinkIdScanActivityColors.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
 
-  <!-- Fix IParcelableCreator interface implementation for BlinkIdScanActivitySettings.Creator -->
+  <!-- UX: BlinkIdScanActivitySettings.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
 
-  <!-- Fix IParcelableCreator interface implementation for BlinkIdUxSettings.Creator -->
+  <!-- UX: BlinkIdUxSettings.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
 
-  <!-- MbBlinkIdScan doesn't bind correctly (generic ActivityResultContract); accessed via JNI helper instead -->
-  <remove-node path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='MbBlinkIdScan']" />
+  <!-- Fix MbBlinkIdScan: add bridge createIntent(Context, Object) for ActivityResultContract -->
+  <add-node path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='MbBlinkIdScan']">
+    <method abstract="false" deprecated="not deprecated" final="false" name="createIntent"
+      jni-signature="(Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;"
+      bridge="true" native="false" return="android.content.Intent"
+      jni-return="Landroid/content/Intent;" static="false" synchronized="false"
+      synthetic="true" visibility="public" return-not-null="true">
+      <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;" not-null="true" />
+      <parameter name="input" type="java.lang.Object" jni-type="Ljava/lang/Object;" />
+    </method>
+  </add-node>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='MbBlinkIdScan']/method[@name='parseResult']" name="managedReturn">Java.Lang.Object</attr>
 
-  <!-- Remove all com.microblink.ux packages from binding (runtime-only dependency from microblink-ux AAR) -->
+  <!-- Remove com.microblink.ux packages (runtime-only Compose UI dependency) -->
   <remove-node path="/api/package[@name='com.microblink.ux']" />
   <remove-node path="/api/package[@name='com.microblink.ux.camera']" />
   <remove-node path="/api/package[@name='com.microblink.ux.camera.compose']" />
