@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.UX.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{AA58A2F0-7B63-4B6C-BAE8-AA9232F2C4C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.Core.Maui.Droid", "Omnicasa.Mobile.BlinkID.Core.Maui.Droid\Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj", "{73E553C4-B0A8-4163-AF17-5C99DC69A48A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -131,6 +133,18 @@ Global
 		{1403E505-7785-44BF-940F-3AAC075591E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1403E505-7785-44BF-940F-3AAC075591E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1403E505-7785-44BF-940F-3AAC075591E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Release|iPhone.Build.0 = Release|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -149,5 +163,6 @@ Global
 		{DEB9B17F-BEC2-40BC-BEB4-AEE662CD69F9} = {E1D48000-02A9-40E8-9B7D-B46D877BA106}
 		{B7A58A6C-9F8A-41E7-90FD-7120C600E667} = {809BD0DD-BD25-4843-8425-DC0BCEBC8759}
 		{1403E505-7785-44BF-940F-3AAC075591E4} = {D474ADFF-7AD2-4383-B14D-C0E01DADC3AD}
+		{73E553C4-B0A8-4163-AF17-5C99DC69A48A} = {809BD0DD-BD25-4843-8425-DC0BCEBC8759}
 	EndGlobalSection
 EndGlobal
