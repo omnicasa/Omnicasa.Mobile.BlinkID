@@ -30,7 +30,7 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.Droid" Version="2026.2.12.70-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.UX.Maui.Droid" Version="2026.2.12.70-alpha" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
