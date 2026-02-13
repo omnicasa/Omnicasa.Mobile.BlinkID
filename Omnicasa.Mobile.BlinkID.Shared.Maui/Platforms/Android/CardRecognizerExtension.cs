@@ -10,7 +10,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
     /// <summary>CardRecognizerExtension.</summary>
     public static class CardRecognizerExtension
     {
-        public static CardRecognizerExtended? Parse(this Object? obj)
+        public static CardRecognizer? Parse(this Object? obj)
         {
             try
             {
@@ -26,34 +26,36 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     var recognizerResult = scanResult.Result;
                     var result = new CardRecognizer()
                     {
-                        FirstName = recognizerResult.FirstName?.ToString(),
-                        LastName = recognizerResult.LastName?.ToString(),
-                        FullName = recognizerResult.FullName?.ToString(),
-                        Address = recognizerResult.Address?.ToString(),
-                        DocumentNumber = recognizerResult.DocumentNumber?.ToString(),
-                        FathersName = recognizerResult.FathersName?.ToString(),
-                        MothersName = recognizerResult.MothersName?.ToString(),
-                        Sex = recognizerResult.Sex?.ToString(),
-                        LocalizedName = recognizerResult.LocalizedName?.ToString(),
-                        AdditionalNameInformation = recognizerResult.AdditionalNameInformation?.ToString(),
-                        AdditionalAddressInformation = recognizerResult.AdditionalAddressInformation?.ToString(),
-                        AdditionalOptionalAddressInformation = recognizerResult.AdditionalOptionalAddressInformation?.ToString(),
-                        PlaceOfBirth = recognizerResult.PlaceOfBirth?.ToString(),
-                        Nationality = recognizerResult.Nationality?.ToString(),
-                        Race = recognizerResult.Race?.ToString(),
-                        Religion = recognizerResult.Religion?.ToString(),
-                        Profession = recognizerResult.Profession?.ToString(),
-                        MaritalStatus = recognizerResult.MaritalStatus?.ToString(),
-                        Employer = recognizerResult.Employer?.ToString(),
-                        PersonalIdNumber = recognizerResult.PersonalIdNumber?.ToString(),
-                        DocumentAdditionalNumber = recognizerResult.DocumentAdditionalNumber?.ToString(),
-                        DocumentOptionalAdditionalNumber = recognizerResult.DocumentOptionalAdditionalNumber?.ToString(),
-                        IssuingAuthority = recognizerResult.IssuingAuthority?.ToString(),
+                        FirstName = recognizerResult.FirstName?.ParseStringResult(),
+                        LastName = recognizerResult.LastName?.ParseStringResult(),
+                        FullName = recognizerResult.FullName?.ParseStringResult(),
+                        Address = recognizerResult.Address?.ParseStringResult(),
+                        DocumentNumber = recognizerResult.DocumentNumber?.ParseStringResult(),
+                        FathersName = recognizerResult.FathersName?.ParseStringResult(),
+                        MothersName = recognizerResult.MothersName?.ParseStringResult(),
+                        Sex = recognizerResult.Sex?.ParseStringResult(),
+                        LocalizedName = recognizerResult.LocalizedName?.ParseStringResult(),
+                        AdditionalNameInformation = recognizerResult.AdditionalNameInformation?.ParseStringResult(),
+                        AdditionalAddressInformation = recognizerResult.AdditionalAddressInformation?.ParseStringResult(),
+                        AdditionalOptionalAddressInformation = recognizerResult.AdditionalOptionalAddressInformation?.ParseStringResult(),
+                        PlaceOfBirth = recognizerResult.PlaceOfBirth?.ParseStringResult(),
+                        Nationality = recognizerResult.Nationality?.ParseStringResult(),
+                        Race = recognizerResult.Race?.ParseStringResult(),
+                        Religion = recognizerResult.Religion?.ParseStringResult(),
+                        Profession = recognizerResult.Profession?.ParseStringResult(),
+                        MaritalStatus = recognizerResult.MaritalStatus?.ParseStringResult(),
+                        Employer = recognizerResult.Employer?.ParseStringResult(),
+                        PersonalIdNumber = recognizerResult.PersonalIdNumber?.ParseStringResult(),
+                        DocumentAdditionalNumber = recognizerResult.DocumentAdditionalNumber?.ParseStringResult(),
+                        DocumentOptionalAdditionalNumber = recognizerResult.DocumentOptionalAdditionalNumber?.ParseStringResult(),
+                        IssuingAuthority = recognizerResult.IssuingAuthority?.ParseStringResult(),
                     };
 
                     result.DateOfBirth = ParseDateTime(recognizerResult.DateOfBirth);
                     result.DateOfExpiry = ParseDateTime(recognizerResult.DateOfExpiry);
                     result.DateOfIssue = ParseDateTime(recognizerResult.DateOfIssue);
+
+                    return result;
                 }
 
                 return null;
@@ -80,29 +82,29 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     var recognizerResult = scanResult.Result;
                     var result = new CardRecognizerExtended()
                     {
-                        FirstName = recognizerResult.FirstName?.ToString(),
-                        LastName = recognizerResult.LastName?.ToString(),
-                        FullName = recognizerResult.FullName?.ToString(),
-                        Address = recognizerResult.Address?.ToString(),
-                        DocumentNumber = recognizerResult.DocumentNumber?.ToString(),
-                        FathersName = recognizerResult.FathersName?.ToString(),
-                        MothersName = recognizerResult.MothersName?.ToString(),
-                        Sex = recognizerResult.Sex?.ToString(),
-                        LocalizedName = recognizerResult.LocalizedName?.ToString(),
-                        AdditionalNameInformation = recognizerResult.AdditionalNameInformation?.ToString(),
-                        AdditionalAddressInformation = recognizerResult.AdditionalAddressInformation?.ToString(),
-                        AdditionalOptionalAddressInformation = recognizerResult.AdditionalOptionalAddressInformation?.ToString(),
-                        PlaceOfBirth = recognizerResult.PlaceOfBirth?.ToString(),
-                        Nationality = recognizerResult.Nationality?.ToString(),
-                        Race = recognizerResult.Race?.ToString(),
-                        Religion = recognizerResult.Religion?.ToString(),
-                        Profession = recognizerResult.Profession?.ToString(),
-                        MaritalStatus = recognizerResult.MaritalStatus?.ToString(),
-                        Employer = recognizerResult.Employer?.ToString(),
-                        PersonalIdNumber = recognizerResult.PersonalIdNumber?.ToString(),
-                        DocumentAdditionalNumber = recognizerResult.DocumentAdditionalNumber?.ToString(),
-                        DocumentOptionalAdditionalNumber = recognizerResult.DocumentOptionalAdditionalNumber?.ToString(),
-                        IssuingAuthority = recognizerResult.IssuingAuthority?.ToString(),
+                        FirstName = recognizerResult.FirstName?.ParseStringResult(),
+                        LastName = recognizerResult.LastName?.ParseStringResult(),
+                        FullName = recognizerResult.FullName?.ParseStringResult(),
+                        Address = recognizerResult.Address?.ParseStringResult(),
+                        DocumentNumber = recognizerResult.DocumentNumber?.ParseStringResult(),
+                        FathersName = recognizerResult.FathersName?.ParseStringResult(),
+                        MothersName = recognizerResult.MothersName?.ParseStringResult(),
+                        Sex = recognizerResult.Sex?.ParseStringResult(),
+                        LocalizedName = recognizerResult.LocalizedName?.ParseStringResult(),
+                        AdditionalNameInformation = recognizerResult.AdditionalNameInformation?.ParseStringResult(),
+                        AdditionalAddressInformation = recognizerResult.AdditionalAddressInformation?.ParseStringResult(),
+                        AdditionalOptionalAddressInformation = recognizerResult.AdditionalOptionalAddressInformation?.ParseStringResult(),
+                        PlaceOfBirth = recognizerResult.PlaceOfBirth?.ParseStringResult(),
+                        Nationality = recognizerResult.Nationality?.ParseStringResult(),
+                        Race = recognizerResult.Race?.ParseStringResult(),
+                        Religion = recognizerResult.Religion?.ParseStringResult(),
+                        Profession = recognizerResult.Profession?.ParseStringResult(),
+                        MaritalStatus = recognizerResult.MaritalStatus?.ParseStringResult(),
+                        Employer = recognizerResult.Employer?.ParseStringResult(),
+                        PersonalIdNumber = recognizerResult.PersonalIdNumber?.ParseStringResult(),
+                        DocumentAdditionalNumber = recognizerResult.DocumentAdditionalNumber?.ParseStringResult(),
+                        DocumentOptionalAdditionalNumber = recognizerResult.DocumentOptionalAdditionalNumber?.ParseStringResult(),
+                        IssuingAuthority = recognizerResult.IssuingAuthority?.ParseStringResult(),
                     };
 
                     result.DateOfBirth = ParseDateTime(recognizerResult.DateOfBirth);
@@ -113,6 +115,8 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     result.SignatureImage = ParseImage(recognizerResult.SignatureImage());
                     result.FullDocumentBackImage = ParseImage(recognizerResult.DocumentImage(ScanningSide.Second));
                     result.FullDocumentFrontImage = ParseImage(recognizerResult.DocumentImage(ScanningSide.First));
+
+                    return result;
                 }
 
                 return null;
@@ -182,6 +186,11 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 Console.WriteLine(e);
                 return null;
             }
+        }
+
+        public static string ParseStringResult(this StringResult? stringResult)
+        {
+            return $"{string.Join(" ", stringResult?.GetValues() ?? [])}";
         }
     }
 }
