@@ -1,7 +1,6 @@
 ﻿using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using AndroidX.Activity.Result;
-using AndroidX.Activity.Result.Contract;
 using Com.Microblink.Blinkid.Core;
 using Com.Microblink.Blinkid.UX.Contract;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
@@ -20,8 +19,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
     /// <inheritdoc/>
     public class BlinkIDService : IBlinkIDService, IBlinkIDServiceExtended
     {
-        private string license;
-        private BlinkIDActivityResultCallback callback = new BlinkIDActivityResultCallback();
+        private static string license;
         
         /// <inheritdoc/>
         public IObservable<bool> Initialize(string licenseKey)
@@ -64,13 +62,16 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 {
                     int scanTime = 0;
 
-                    if (BlinkIDInitializer.Context == null || BlinkIDInitializer.Activity == null)
+                    if (BlinkIDInitializer.Context == null || BlinkIDInitializer.Activity == null || string.IsNullOrEmpty(license))
                     {
                         o.OnError(new ArgumentException("Please call BlinkIDInitializer.Init"));
                     }
 
                     BlinkIDHelper.Scanned += (sender, args) =>
                     {
+                        var card = args?.ParseExtended();
+                        o.OnNext(card);
+                        
                         if (++scanTime == limit)
                         {
                             o.OnCompleted();
@@ -81,10 +82,8 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     var settings = new BlinkIdScanActivitySettings(sdkSettings);
                     var contract = new MbBlinkIdScan();
                     var intent = contract.CreateIntent(BlinkIDInitializer.Activity, settings);
-                    
-                    var launcher = BlinkIDInitializer.Activity.RegisterForActivityResult(
-                        new ActivityResultContracts.StartActivityForResult(), callback);
-                    launcher.Launch(intent);
+
+                    BlinkIDInitializer.BlinkIdLauncher!.Launch(intent);
                 }
                 catch (Exception ex)
                 {
