@@ -1,28 +1,18 @@
-﻿using System;
-using Android.App;
-using Android.Content;
-
-namespace Omnicasa.Mobile.BlinkID.Shared.Droid
+﻿namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 {
     /// <summary>BlinkIDHelper.</summary>
     public static class BlinkIDHelper
     {
         /// <summary>Scanned.</summary>
-        public static EventHandler<RecognizingState>? Scanned { get; set; }
+        public static EventHandler<Object?>? Scanned { get; set; }
 
         /// <summary>
-        /// OnActivityResult.
+        /// OnActivityResult
         /// </summary>
-        /// <param name="requestCode">int.</param>
-        /// <param name="resultCode">Result.</param>
-        /// <param name="data">Intent.</param>
-        public static void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        /// <param name="result"></param>
+        public static void OnActivityResult(Object? result)
         {
-            if (requestCode == BlinkIDConstants.BLINK_SCAN_REQUEST_ID
-                && resultCode == Result.Ok)
-            {
-                Scanned?.Invoke(null, RecognizingState.DidFinishedScanning);
-            }
+            Scanned?.Invoke(null, result);
         }
     }
 }

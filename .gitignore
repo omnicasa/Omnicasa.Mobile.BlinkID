@@ -520,3 +520,5 @@ source/SwiftExtension/OmnicasaNative/DerivedData/OmnicasaNative/Build/Products/D
 source/SwiftExtension/OmnicasaNative/DerivedData/OmnicasaNative/Build/Products/Debug-iphonesimulator/OmnicasaNative.swiftmodule/*
 source/SwiftExtension/OmnicasaNative/DerivedData/OmnicasaNative/Build/Products/Debug-iphonesimulator/OmnicasaNative/*
 source/SwiftExtension/OmnicasaNative/DerivedData/OmnicasaNative/Build/Products/Debug-iphonesimulator/OmnicasaNative.app/*
+.idea
+.claude
