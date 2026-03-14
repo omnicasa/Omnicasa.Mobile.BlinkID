@@ -12,9 +12,15 @@
         <AndroidLinkMode>None</AndroidLinkMode>
     </PropertyGroup>
     <ItemGroup>
-      <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.0.5" />
+      <PackageReference Include="Xamarin.AndroidX.AppCompat" Version="1.7.1.1" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.UX.Maui.Droid\Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj" />
     </ItemGroup>
+    <!-- Remove duplicate Compose runtime-annotation JVM jar (already included in the Android AAR variant) -->
+    <Target Name="_RemoveDuplicateComposeAnnotation" BeforeTargets="_CompileToDalvik">
+        <ItemGroup>
+            <_JavaLibrariesToCompileForApp Remove="@(_JavaLibrariesToCompileForApp)" Condition="$([System.String]::Copy('%(Identity)').Contains('runtime-annotation-jvm'))" />
+        </ItemGroup>
+    </Target>
 </Project>
