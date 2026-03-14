@@ -25,6 +25,7 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
     private TextView? _statusText;
     private Button? _scanButton;
     private TextView? _resultText;
+    private ImageView? imgFace, imgSign, imgFront, imgBack;
 
     protected override void OnCreate(Bundle? savedInstanceState)
     {
@@ -34,6 +35,10 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
         _statusText = FindViewById<TextView>(Resource.Id.statusText);
         _scanButton = FindViewById<Button>(Resource.Id.scanButton);
         _resultText = FindViewById<TextView>(Resource.Id.resultText);
+        imgFace = FindViewById<ImageView>(Resource.Id.face);
+        imgSign = FindViewById<ImageView>(Resource.Id.sign);
+        imgFront = FindViewById<ImageView>(Resource.Id.front);
+        imgBack = FindViewById<ImageView>(Resource.Id.back);
 
         // Register for activity result — equivalent to the official Java sample:
         //   registerForActivityResult(new MbBlinkIdScan(), result -> { ... });
@@ -59,6 +64,16 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
 
             var sdkSettings = new BlinkIdSdkSettings(DroidLic);
             var settings = new BlinkIdScanActivitySettings(sdkSettings);
+
+            // Enable image return (disabled by default)
+            var scanSettings = settings.ScanningSessionSettings.ScanningSettings;
+            if (scanSettings?.CroppedImageSettings != null)
+            {
+                scanSettings.CroppedImageSettings.ReturnFaceImage = true;
+                scanSettings.CroppedImageSettings.ReturnDocumentImage = true;
+                scanSettings.CroppedImageSettings.ReturnSignatureImage = true;
+            }
+
             var contract = new MbBlinkIdScan();
             var intent = contract.CreateIntent(this, settings);
             _scanLauncher!.Launch(intent);
@@ -134,6 +149,17 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
         AppendDateField(sb, "Date of Issue", result.DateOfIssue);
         AppendDateField(sb, "Date of Expiry", result.DateOfExpiry);
 
+        var face = result.FaceImage();
+        var signature = result.SignatureImage();
+        var front = result.DocumentImage(ScanningSide.First);
+        var back = result.DocumentImage(ScanningSide.Second);
+        var input = result.InputImage(ScanningSide.First);
+        var input2 = result.InputImage(ScanningSide.Second);
+        
+        imgFace.SetImageBitmap(face.Bitmap);
+        //imgSign.SetImageBitmap(signature.Bitmap);
+        imgFront.SetImageBitmap(front.Bitmap);
+        imgBack.SetImageBitmap(back.Bitmap);
         _resultText!.Text = sb.ToString();
     }
 

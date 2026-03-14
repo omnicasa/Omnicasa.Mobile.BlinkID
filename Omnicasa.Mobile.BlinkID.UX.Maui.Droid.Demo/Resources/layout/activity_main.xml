@@ -22,6 +22,18 @@
         android:textColor="@android:color/white"
         android:layout_marginBottom="16dp" />
 
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:id="@+id/face"/>
+
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:id="@+id/sign"/>
+
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:id="@+id/front"/>
+
+    <ImageView android:layout_width="match_parent" android:layout_height="wrap_content"
+               android:id="@+id/back"/>
+    
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -34,5 +46,7 @@
             android:textSize="14sp"
             android:fontFamily="monospace" />
     </ScrollView>
+    
+    
 
 </LinearLayout>
