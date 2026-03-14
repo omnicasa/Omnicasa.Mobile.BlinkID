@@ -80,6 +80,10 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                     var sdkSettings = new BlinkIdSdkSettings(license);
                     var settings = new BlinkIdScanActivitySettings(sdkSettings);
+                    var scanSettings = settings.ScanningSessionSettings.ScanningSettings;                                                                                                                                    
+                    scanSettings.CroppedImageSettings.ReturnFaceImage = true;                                                                                                                                                
+                    scanSettings.CroppedImageSettings.ReturnDocumentImage = true;                                                                                                                                            
+                    scanSettings.CroppedImageSettings.ReturnSignatureImage = true;
                     var contract = new MbBlinkIdScan();
                     var intent = contract.CreateIntent(BlinkIDInitializer.Activity, settings);
 
