@@ -27,8 +27,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.UX.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.UX.Maui.Droid.Demo", "Omnicasa.Mobile.BlinkID.UX.Maui.Droid.Demo\Omnicasa.Mobile.BlinkID.UX.Maui.Droid.Demo.csproj", "{1403E505-7785-44BF-940F-3AAC075591E4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{AA58A2F0-7B63-4B6C-BAE8-AA9232F2C4C1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.Core.Maui.Droid", "Omnicasa.Mobile.BlinkID.Core.Maui.Droid\Omnicasa.Mobile.BlinkID.Core.Maui.Droid.csproj", "{73E553C4-B0A8-4163-AF17-5C99DC69A48A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Omnicasa.Mobile.BlinkID.Shared", "Omnicasa.Mobile.BlinkID.Shared\Omnicasa.Mobile.BlinkID.Shared.csproj", "{00671F01-7CC7-4EB9-B69A-B3277C4F1D8E}"

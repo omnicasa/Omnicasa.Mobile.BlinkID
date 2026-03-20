@@ -19,7 +19,9 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
     /// <inheritdoc/>
     public class BlinkIDService : IBlinkIDService, IBlinkIDServiceExtended
     {
+#pragma warning disable CS8618
         private static string license;
+#pragma warning restore CS8618
         
         /// <inheritdoc/>
         public IObservable<bool> Initialize(string licenseKey)
@@ -64,7 +66,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                     if (BlinkIDInitializer.Context == null || BlinkIDInitializer.Activity == null || string.IsNullOrEmpty(license))
                     {
-                        o.OnError(new ArgumentException("Please call BlinkIDInitializer.Init"));
+                        throw new ArgumentException("Please call BlinkIDInitializer.Init");
                     }
 
                     BlinkIDHelper.Scanned += (sender, args) =>
@@ -80,11 +82,16 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                     var sdkSettings = new BlinkIdSdkSettings(license);
                     var settings = new BlinkIdScanActivitySettings(sdkSettings);
-                    var scanSettings = settings.ScanningSessionSettings.ScanningSettings;                                                                                                                                    
+                    var scanSettings = settings.ScanningSessionSettings.ScanningSettings;
+                    if (scanSettings == null || scanSettings.CroppedImageSettings == null)
+                    {
+                        throw new ArgumentException("ScanningSettings is null");
+                    }
                     scanSettings.CroppedImageSettings.ReturnFaceImage = true;                                                                                                                                                
                     scanSettings.CroppedImageSettings.ReturnDocumentImage = true;                                                                                                                                            
                     scanSettings.CroppedImageSettings.ReturnSignatureImage = true;
                     var contract = new MbBlinkIdScan();
+                    
                     var intent = contract.CreateIntent(BlinkIDInitializer.Activity, settings);
 
                     BlinkIDInitializer.BlinkIdLauncher!.Launch(intent);
