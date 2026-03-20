@@ -27,5 +27,8 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Maui
 
         [JsonIgnore]
         public ImageSource? SignatureImage { get; set; }
+        
+        [JsonIgnore]
+        public string? ErrorMessage { get; set; }
     }
 }

@@ -121,7 +121,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                 return null;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }    
@@ -131,7 +131,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
         {
             try
             {
-                if (dateResult == null)
+                if (dateResult == null || dateResult.Year == null || dateResult.Month == null || dateResult.Day == null)
                     return null;
 
 #pragma warning disable CA1416
@@ -149,6 +149,9 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
             // TODO: find a more efficient way to convert bitmap without compressing to and decompressing from JPEG
             try
             {
+                if (mBImage == null || mBImage.Bitmap == null || Bitmap.CompressFormat.Jpeg == null)
+                    return null;
+                
                 var bitmap = mBImage.Bitmap;
                 byte[] bitmapData;
                 using (var stream = new MemoryStream())
@@ -171,11 +174,14 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
             // TODO: find a more efficient way to convert bitmap without compressing to and decompressing from JPEG
             try
             {
-                var bitmap = mBImage.Bitmap;
+                if (mBImage == null || mBImage.Bitmap == null || Bitmap.CompressFormat.Jpeg == null)
+                    return null;
+                
+                var bitmap = mBImage?.Bitmap;
                 byte[] bitmapData;
                 using (var stream = new MemoryStream())
                 {
-                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                    bitmap?.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
                     bitmapData = stream.ToArray();
                 }
 
