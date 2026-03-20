@@ -1,0 +1,75 @@
+name: CI-Alpha-Net10-Maui-Nuget
+
+on:
+  pull_request:
+    branches: [ alpha-net10 ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install .NET tools
+        uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Install .NET MAUI
+        run: dotnet workload install maui
+
+      - name: Generate version
+        id: generate_version
+        run: |
+          DATE=$(date +'%Y.%m%d')
+          BUILD_NUMBER=$(git rev-list --count HEAD)
+          VERSION="10.$DATE.$BUILD_NUMBER-alpha"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Set Omnicasa.Mobile.BlinkID.Maui.iOS.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Maui.iOS/Omnicasa.Mobile.BlinkID.Maui.iOS.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: Set Omnicasa.Mobile.BlinkID.Maui.Droid.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.Maui.Droid/Omnicasa.Mobile.BlinkID.Maui.Droid.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: Set Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj version
+        uses: Thundernerd/dotnet-project-version-updater@v1.2
+        with:
+          file: "Omnicasa.Mobile.BlinkID.UX.Maui.Droid/Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj"
+          version: ${{ env.VERSION }}
+
+      - name: iOS Publish Omnicasa.Mobile.BlinkID.iOS on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Maui.iOS/Omnicasa.Mobile.BlinkID.Maui.iOS.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}
+
+      - name: Droid Publish Omnicasa.Mobile.BlinkID.Droid on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.Maui.Droid/Omnicasa.Mobile.BlinkID.Maui.Droid.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}
+
+      - name: Droid UX Publish Omnicasa.Mobile.BlinkID.UX.Maui.Droid on version change
+        uses: linch90/publish-nuget@v1.0.2
+        with:
+          PROJECT_FILE_PATH: Omnicasa.Mobile.BlinkID.UX.Maui.Droid/Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://api.nuget.org
+          VERSION_STATIC: ${{ env.VERSION }}
