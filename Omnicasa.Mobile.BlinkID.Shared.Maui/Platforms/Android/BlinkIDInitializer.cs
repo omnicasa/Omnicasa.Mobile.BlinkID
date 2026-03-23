@@ -15,6 +15,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
         /// <summary>Activity.</summary>
         public static AppCompatActivity? Activity { get; set; }
 
+        /// <summary>BlinkIdLauncher.</summary>
         public static ActivityResultLauncher? BlinkIdLauncher { get; set; }
 
         /// <summary>
