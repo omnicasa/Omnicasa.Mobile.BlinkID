@@ -177,11 +177,11 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 if (mBImage == null || mBImage.Bitmap == null || Bitmap.CompressFormat.Jpeg == null)
                     return null;
                 
-                var bitmap = mBImage?.Bitmap;
+                var bitmap = mBImage.Bitmap;
                 byte[] bitmapData;
                 using (var stream = new MemoryStream())
                 {
-                    bitmap?.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
                     bitmapData = stream.ToArray();
                 }
 
