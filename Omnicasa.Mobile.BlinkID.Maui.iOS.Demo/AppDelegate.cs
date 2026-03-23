@@ -76,10 +76,14 @@ public class AppDelegate :
     }
 
     /// <inheritdoc/>
+#pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
     public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
+#pragma warning restore CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
     {
         // create a new window instance based on the screen size
+#pragma warning disable CA1422
         Window = new UIWindow(UIScreen.MainScreen.Bounds);
+#pragma warning restore CA1422
 
         // create a UIViewController with a single UILabel
         vc = new UIViewController();
