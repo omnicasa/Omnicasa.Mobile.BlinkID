@@ -129,7 +129,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                     {
                         o.OnError(new InvalidOperationException("Expect KeyWindow"));
                     }
-                    
+
                     var currentViewController = Platform.GetCurrentUIViewController();
                     if (currentViewController == null)
                     {
@@ -151,7 +151,6 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
                             true,
                             null);
                     }
-                    
                 }
                 catch (Exception ex)
                 {

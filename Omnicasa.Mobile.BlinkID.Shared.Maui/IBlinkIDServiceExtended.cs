@@ -1,9 +1,11 @@
-﻿
-using System;
+﻿using System;
 
 namespace Omnicasa.Mobile.BlinkID.Shared.Maui
 {
-	public interface IBlinkIDServiceExtended : IBlinkIDService
+    /// <summary>
+    /// IBlinkIDServiceExtended.
+    /// </summary>
+    public interface IBlinkIDServiceExtended : IBlinkIDService
     {
         /// <summary>
         /// Scan.
@@ -15,8 +17,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Maui
         /// <summary>
         /// ScanID.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>CardRecognizerExtended.</returns>
         Task<CardRecognizerExtended> ScanID();
     }
 }
-
