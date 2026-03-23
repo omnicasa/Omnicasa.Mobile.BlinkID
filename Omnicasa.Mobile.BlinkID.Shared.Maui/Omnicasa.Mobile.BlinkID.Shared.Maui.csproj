@@ -32,10 +32,11 @@
 	</ItemGroup>
 	
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.UX.Maui.Droid" Version="2026.2.12.79-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.UX.Maui.Droid" Version="9.2026.320.86-alpha" />
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.9.2" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.iOS" Version="2026.2.12.79-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.iOS" Version="9.2026.320.86-alpha" />
 	</ItemGroup>
 </Project>

@@ -60,7 +60,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                 return null;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }    
