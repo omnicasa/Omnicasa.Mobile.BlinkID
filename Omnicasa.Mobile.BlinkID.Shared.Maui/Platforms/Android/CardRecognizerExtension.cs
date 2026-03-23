@@ -10,12 +10,19 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
     /// <summary>CardRecognizerExtension.</summary>
     public static class CardRecognizerExtension
     {
-        public static CardRecognizer? Parse(this Object? obj)
+        /// <summary>
+        /// Parse.
+        /// </summary>
+        /// <param name="obj">object.</param>
+        /// <returns>CardRecognizer.</returns>
+        public static CardRecognizer? Parse(this object? obj)
         {
             try
             {
                 if (obj is not ActivityResult activityResult)
+                {
                     return null;
+                }
 
                 var contract = new MbBlinkIdScan();
                 var scanResult = (BlinkIdScanActivityResult)contract.ParseResult(activityResult.ResultCode, activityResult.Data);
@@ -60,18 +67,25 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                 return null;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
-            }    
+            }
         }
-        
-        public static CardRecognizerExtended? ParseExtended(this Object? obj)
+
+        /// <summary>
+        /// ParseExtended.
+        /// </summary>
+        /// <param name="obj">object.</param>
+        /// <returns>CardRecognizerExtended.</returns>
+        public static CardRecognizerExtended? ParseExtended(this object? obj)
         {
             try
             {
                 if (obj is not ActivityResult activityResult)
+                {
                     return null;
+                }
 
                 var contract = new MbBlinkIdScan();
                 var scanResult = (BlinkIdScanActivityResult)contract.ParseResult(activityResult.ResultCode, activityResult.Data);
@@ -110,7 +124,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     result.DateOfBirth = ParseDateTime(recognizerResult.DateOfBirth);
                     result.DateOfExpiry = ParseDateTime(recognizerResult.DateOfExpiry);
                     result.DateOfIssue = ParseDateTime(recognizerResult.DateOfIssue);
-                    
+
                     result.FaceImage = ParseImage(recognizerResult.FaceImage());
                     result.SignatureImage = ParseImage(recognizerResult.SignatureImage());
                     result.FullDocumentBackImage = ParseImage(recognizerResult.DocumentImage(ScanningSide.Second));
@@ -121,18 +135,20 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                 return null;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
-            }    
+            }
         }
-        
+
         private static DateTime? ParseDateTime(DateResult? dateResult)
         {
             try
             {
-                if (dateResult == null)
+                if (dateResult == null || dateResult.Year == null || dateResult.Month == null || dateResult.Day == null)
+                {
                     return null;
+                }
 
 #pragma warning disable CA1416
                 return new DateTime((int)dateResult.Year, (int)dateResult.Month, (int)dateResult.Day);
@@ -144,16 +160,28 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
             }
         }
 
+        /// <summary>
+        /// ParseImage.
+        /// </summary>
+        /// <param name="mBImage">DetailedCroppedImageResult.</param>
+        /// <returns>ImageSource.</returns>
         public static ImageSource? ParseImage(DetailedCroppedImageResult? mBImage)
         {
+#pragma warning disable S1135
             // TODO: find a more efficient way to convert bitmap without compressing to and decompressing from JPEG
+#pragma warning restore S1135
             try
             {
-                var bitmap = mBImage.Bitmap;
+                if (mBImage == null || Bitmap.CompressFormat.Jpeg == null)
+                {
+                    return null;
+                }
+
+                var bitmap = mBImage?.Bitmap;
                 byte[] bitmapData;
                 using (var stream = new MemoryStream())
                 {
-                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                    bitmap?.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
                     bitmapData = stream.ToArray();
                 }
 
@@ -165,17 +193,29 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 return null;
             }
         }
-        
+
+        /// <summary>
+        /// ParseImage.
+        /// </summary>
+        /// <param name="mBImage">CroppedImageResult.</param>
+        /// <returns>ImageSource.</returns>
         public static ImageSource? ParseImage(CroppedImageResult? mBImage)
         {
+#pragma warning disable S1135
             // TODO: find a more efficient way to convert bitmap without compressing to and decompressing from JPEG
+#pragma warning restore S1135
             try
             {
+                if (mBImage == null || Bitmap.CompressFormat.Jpeg == null)
+                {
+                    return null;
+                }
+
                 var bitmap = mBImage.Bitmap;
                 byte[] bitmapData;
                 using (var stream = new MemoryStream())
                 {
-                    bitmap.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
+                    bitmap?.Compress(Bitmap.CompressFormat.Jpeg, 100, stream);
                     bitmapData = stream.ToArray();
                 }
 
@@ -188,9 +228,16 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
             }
         }
 
+        /// <summary>
+        /// ParseStringResult.
+        /// </summary>
+        /// <param name="stringResult">StringResult.</param>
+        /// <returns>string.</returns>
         public static string ParseStringResult(this StringResult? stringResult)
         {
+#pragma warning disable SA1010
             return $"{string.Join(" ", stringResult?.GetValues() ?? [])}";
+#pragma warning restore SA1010
         }
     }
 }

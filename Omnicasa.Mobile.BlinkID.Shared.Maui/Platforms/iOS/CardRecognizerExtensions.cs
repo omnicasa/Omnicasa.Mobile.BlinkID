@@ -129,7 +129,9 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
             try
             {
                 if (mBDateResult == null)
+                {
                     return null;
+                }
 
 #pragma warning disable CA1416
                 return new DateTime((int)mBDateResult.Year, (int)mBDateResult.Month, (int)mBDateResult.Day);
@@ -145,14 +147,21 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         {
 #pragma warning disable CA1416
             if (mBImage == null || mBImage.Image == null)
+            {
                 return null;
+            }
 
             var pngImg = mBImage.Image.AsPNG();
             if (pngImg == null)
+            {
                 return null;
+            }
 #pragma warning restore CA1416
 
+#pragma warning disable S1135
+
             // TODO: find a more efficient way to convert bitmap without compressing to and decompressing from PNG
+#pragma warning restore S1135
             return ImageSource.FromStream(() => pngImg.AsStream());
         }
     }

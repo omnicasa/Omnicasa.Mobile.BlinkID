@@ -4,13 +4,13 @@
     public static class BlinkIDHelper
     {
         /// <summary>Scanned.</summary>
-        public static EventHandler<Object?>? Scanned { get; set; }
+        public static EventHandler<object?>? Scanned { get; set; }
 
         /// <summary>
-        /// OnActivityResult
+        /// OnActivityResult.
         /// </summary>
-        /// <param name="result"></param>
-        public static void OnActivityResult(Object? result)
+        /// <param name="result">object.</param>
+        public static void OnActivityResult(object? result)
         {
             Scanned?.Invoke(null, result);
         }
