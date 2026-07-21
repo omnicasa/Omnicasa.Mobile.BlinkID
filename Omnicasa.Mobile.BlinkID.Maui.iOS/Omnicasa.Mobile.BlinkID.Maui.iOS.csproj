@@ -5,7 +5,7 @@
     <ImplicitUsings>true</ImplicitUsings>
     <IsBindingProject>true</IsBindingProject>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <NoBindingEmbedding>false</NoBindingEmbedding>
+    <NoBindingEmbedding>true</NoBindingEmbedding>
     <WarningAsError>false</WarningAsError>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     
@@ -20,10 +20,18 @@
 
   <ItemGroup>
     <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
-    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="..\NativeLib\BlinkID.xcframework\ios-arm64\BlinkID.framework">
+    <!-- The shim carries the ObjC surface; BlinkID/BlinkIDUX are its Swift dependencies. -->
+    <NativeReference Include="..\NativeLib\OmnBlinkIDShim.xcframework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\NativeLib\BlinkID.xcframework">
+      <Kind>Framework</Kind>
+      <SmartLink>False</SmartLink>
+    </NativeReference>
+    <NativeReference Include="..\NativeLib\BlinkIDUX.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>

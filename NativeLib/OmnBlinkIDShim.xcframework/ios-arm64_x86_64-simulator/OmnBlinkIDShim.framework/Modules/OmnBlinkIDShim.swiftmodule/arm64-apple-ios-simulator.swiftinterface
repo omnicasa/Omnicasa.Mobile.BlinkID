@@ -1,0 +1,76 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3 effective-5.10 (swiftlang-6.3.0.123.5 clang-2100.0.123.102)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name OmnBlinkIDShim
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3
+import BlinkID
+import BlinkIDUX
+import Foundation
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_hasMissingDesignatedInitializers @objc(OmnBlinkIDDate) final public class OmnBlinkIDDate : ObjectiveC.NSObject {
+  @objc final public let day: Swift.Int
+  @objc final public let month: Swift.Int
+  @objc final public let year: Swift.Int
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(OmnBlinkIDResult) final public class OmnBlinkIDResult : ObjectiveC.NSObject {
+  @objc final public var firstName: Swift.String?
+  @objc final public var lastName: Swift.String?
+  @objc final public var fullName: Swift.String?
+  @objc final public var address: Swift.String?
+  @objc final public var documentNumber: Swift.String?
+  @objc final public var fathersName: Swift.String?
+  @objc final public var mothersName: Swift.String?
+  @objc final public var sex: Swift.String?
+  @objc final public var localizedName: Swift.String?
+  @objc final public var additionalNameInformation: Swift.String?
+  @objc final public var additionalAddressInformation: Swift.String?
+  @objc final public var additionalOptionalAddressInformation: Swift.String?
+  @objc final public var placeOfBirth: Swift.String?
+  @objc final public var nationality: Swift.String?
+  @objc final public var race: Swift.String?
+  @objc final public var religion: Swift.String?
+  @objc final public var profession: Swift.String?
+  @objc final public var maritalStatus: Swift.String?
+  @objc final public var employer: Swift.String?
+  @objc final public var personalIdNumber: Swift.String?
+  @objc final public var documentAdditionalNumber: Swift.String?
+  @objc final public var documentOptionalAdditionalNumber: Swift.String?
+  @objc final public var issuingAuthority: Swift.String?
+  @objc final public var residentialStatus: Swift.String?
+  @objc final public var documentSubtype: Swift.String?
+  @objc final public var sponsor: Swift.String?
+  @objc final public var bloodType: Swift.String?
+  @objc final public var dateOfBirth: OmnBlinkIDShim.OmnBlinkIDDate?
+  @objc final public var dateOfIssue: OmnBlinkIDShim.OmnBlinkIDDate?
+  @objc final public var dateOfExpiry: OmnBlinkIDShim.OmnBlinkIDDate?
+  @objc final public var faceImage: UIKit.UIImage?
+  @objc final public var signatureImage: UIKit.UIImage?
+  @objc final public var frontImage: UIKit.UIImage?
+  @objc final public var backImage: UIKit.UIImage?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc(OmnBlinkIDErrorCode) public enum OmnBlinkIDErrorCode : Swift.Int {
+  case notInitialized = 1
+  case sdkInitFailed = 2
+  case analyzerFailed = 3
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(OmnBlinkIDScanner) final public class OmnBlinkIDScanner : ObjectiveC.NSObject {
+  @objc public static func initialize(licenseKey: Swift.String, completion: @escaping (Foundation.NSError?) -> Swift.Void)
+  @objc public static func present(from presenter: UIKit.UIViewController, completion: @escaping (OmnBlinkIDShim.OmnBlinkIDResult?, Foundation.NSError?) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension OmnBlinkIDShim.OmnBlinkIDErrorCode : Swift.Equatable {}
+extension OmnBlinkIDShim.OmnBlinkIDErrorCode : Swift.Hashable {}
+extension OmnBlinkIDShim.OmnBlinkIDErrorCode : Swift.RawRepresentable {}

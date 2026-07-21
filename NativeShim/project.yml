@@ -1,0 +1,26 @@
+name: OmnBlinkIDShim
+options:
+  bundleIdPrefix: com.omnicasa
+  deploymentTarget:
+    iOS: "15.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    BUILD_LIBRARY_FOR_DISTRIBUTION: YES
+    SKIP_INSTALL: NO
+    CODE_SIGNING_ALLOWED: NO
+targets:
+  OmnBlinkIDShim:
+    type: framework
+    platform: iOS
+    sources:
+      - Sources
+    dependencies:
+      - framework: ../NativeLib/BlinkID.xcframework
+        embed: false
+      - framework: ../NativeLib/BlinkIDUX.xcframework
+        embed: false
+    settings:
+      base:
+        PRODUCT_NAME: OmnBlinkIDShim
+        DEFINES_MODULE: YES

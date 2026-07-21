@@ -14,7 +14,31 @@ This repository implements the BlinkID binding project for Xamarin.Forms and .NE
 
 ## BlinkID Version
 
-Current binding supports BlinkID SDK version 7.5.0.
+Current binding supports BlinkID SDK version 8000.0.0 (Microblink's version string for v8).
+
+- **Android** — binds `blinkid-core` / `blinkid-ux` directly. v8 folded the old
+  `microblink-ux` artifact into `blinkid-ux`, so there is no separate UI aar.
+- **iOS** — v8 is pure Swift and exports no Objective-C surface, so it cannot be bound
+  directly. `NativeShim/` wraps it in a small `@objc` framework which is what the
+  binding actually targets. Run `NativeShim/build.sh` after changing the shim; the
+  resulting `NativeLib/OmnBlinkIDShim.xcframework` is committed like the other natives.
+
+## Testing unreleased binding changes
+
+The sample app (`Omnicasa.Mobile.BlinkID.Maui.Demo`) consumes the bindings as NuGet
+packages. To build it against the bindings in this repo instead, set `UseLocalBindings`
+**as an environment variable** — `-p:` does not reach the referenced project's restore:
+
+```bash
+UseLocalBindings=true dotnet build Omnicasa.Mobile.BlinkID.Maui.Demo/Omnicasa.Mobile.BlinkID.Maui.Demo.csproj -f net9.0-ios
+UseLocalBindings=true dotnet build Omnicasa.Mobile.BlinkID.Maui.Demo/Omnicasa.Mobile.BlinkID.Maui.Demo.csproj -f net9.0-android
+```
+
+Verify it took effect — the bindings should resolve as `project`, not `package`:
+
+```bash
+grep -o '"Omnicasa.Mobile.BlinkID.UX.Maui.Droid/[^"]*"' Omnicasa.Mobile.BlinkID.Shared.Maui/obj/project.assets.json
+```
 
 ## Binding Notes
 

@@ -1,7 +1,6 @@
 ﻿using Android.Graphics;
 using AndroidX.Activity.Result;
 using Com.Microblink.Blinkid.Core.Result;
-using Com.Microblink.Blinkid.Core.Result.Image;
 using Com.Microblink.Blinkid.UX.Contract;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
 
@@ -20,7 +19,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 var contract = new MbBlinkIdScan();
                 var scanResult = (BlinkIdScanActivityResult)contract.ParseResult(activityResult.ResultCode, activityResult.Data);
 
-                if (scanResult.Status == BlinkIdScanActivityResultStatus.DocumentScanned
+                if (scanResult.Status == ScanActivityResultStatus.Scanned
                     && scanResult.Result != null)
                 {
                     var recognizerResult = scanResult.Result;
@@ -60,12 +59,12 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                 return null;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
-            }    
+            }
         }
-        
+
         public static CardRecognizerExtended? ParseExtended(this Object? obj)
         {
             try
@@ -76,7 +75,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                 var contract = new MbBlinkIdScan();
                 var scanResult = (BlinkIdScanActivityResult)contract.ParseResult(activityResult.ResultCode, activityResult.Data);
 
-                if (scanResult.Status == BlinkIdScanActivityResultStatus.DocumentScanned
+                if (scanResult.Status == ScanActivityResultStatus.Scanned
                     && scanResult.Result != null)
                 {
                     var recognizerResult = scanResult.Result;

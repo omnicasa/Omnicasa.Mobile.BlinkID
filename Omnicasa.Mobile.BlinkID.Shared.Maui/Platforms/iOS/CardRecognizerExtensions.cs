@@ -1,5 +1,6 @@
-﻿using Omnicasa.Mobile.BlinkID.Maui.iOS;
+using Omnicasa.Mobile.BlinkID.Maui.iOS;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
+using UIKit;
 
 #pragma warning disable SA1300
 namespace Omnicasa.Mobile.BlinkID.Shared.iOS
@@ -11,110 +12,51 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         /// <summary>
         /// Parse.
         /// </summary>
-        /// <param name="recognizerResult">MBBlinkIdMultiSideRecognizerResult.</param>
+        /// <param name="result">OmnBlinkIDResult.</param>
         /// <returns>CardRecognizer.</returns>
-        public static CardRecognizer? Parse(this MBBlinkIdMultiSideRecognizerResult recognizerResult)
+        public static CardRecognizer? Parse(this OmnBlinkIDResult? result)
         {
-            if (recognizerResult == null)
+            if (result == null)
             {
                 return null;
             }
 
-#pragma warning disable CA1416
-            var card = new CardRecognizer()
-            {
-                Address = recognizerResult.Address?.Value,
-                DocumentNumber = recognizerResult.DocumentNumber?.Value,
-                FirstName = recognizerResult.FirstName?.Value,
-                FullName = recognizerResult.FullName?.Value,
-                LastName = recognizerResult.LastName?.Value,
-                FathersName = recognizerResult.FathersName?.Value,
-                MothersName = recognizerResult.MothersName?.Value,
-                Sex = recognizerResult.Sex?.Value,
-                LocalizedName = recognizerResult.LocalizedName?.Value,
-                AdditionalNameInformation = recognizerResult.AdditionalNameInformation?.Value,
-                AdditionalAddressInformation = recognizerResult.AdditionalAddressInformation?.Value,
-                AdditionalOptionalAddressInformation = recognizerResult.AdditionalOptionalAddressInformation?.Value,
-                PlaceOfBirth = recognizerResult.PlaceOfBirth?.Value,
-                Nationality = recognizerResult.Nationality?.Value,
-                Race = recognizerResult.Race?.Value,
-                Religion = recognizerResult.Religion?.Value,
-                Profession = recognizerResult.Profession?.Value,
-                MaritalStatus = recognizerResult.MaritalStatus?.Value,
-                ResidentialStatus = recognizerResult.ResidentialStatus?.Value,
-                Employer = recognizerResult.Employer?.Value,
-                PersonalIdNumber = recognizerResult.PersonalIdNumber?.Value,
-                DocumentAdditionalNumber = recognizerResult.DocumentAdditionalNumber?.Value,
-                DocumentOptionalAdditionalNumber = recognizerResult.DocumentOptionalAdditionalNumber?.Value,
-                IssuingAuthority = recognizerResult.IssuingAuthority?.Value,
-                DocumentSubtype = recognizerResult.DocumentSubtype?.Value,
-                Sponsor = recognizerResult.Sponsor?.Value,
-                BloodType = recognizerResult.BloodType?.Value,
-            };
-
-            card.DateOfBirth = ParseDateTime(recognizerResult.DateOfBirth);
-            card.DateOfExpiry = ParseDateTime(recognizerResult.DateOfExpiry);
-            card.DateOfIssue = ParseDateTime(recognizerResult.DateOfIssue);
-#pragma warning restore CA1416
-
-            return card;
-        }
-
-        /// <summary>
-        /// Parse.
-        /// </summary>
-        /// <param name="recognizerResult">MBBlinkIdMultiSideRecognizerResult.</param>
-        /// <returns>CardRecognizer.</returns>
-        public static CardRecognizerExtended? ParseExtended(this MBBlinkIdMultiSideRecognizerResult recognizerResult)
-        {
             try
             {
-                if (recognizerResult == null)
+                var card = new CardRecognizer
                 {
-                    return null;
-                }
-
-#pragma warning disable CA1416
-                var card = new CardRecognizerExtended()
-                {
-                    Address = recognizerResult.Address?.Value,
-                    DocumentNumber = recognizerResult.DocumentNumber?.Value,
-                    FirstName = recognizerResult.FirstName?.Value,
-                    FullName = recognizerResult.FullName?.Value,
-                    LastName = recognizerResult.LastName?.Value,
-                    FathersName = recognizerResult.FathersName?.Value,
-                    MothersName = recognizerResult.MothersName?.Value,
-                    Sex = recognizerResult.Sex?.Value,
-                    LocalizedName = recognizerResult.LocalizedName?.Value,
-                    AdditionalNameInformation = recognizerResult.AdditionalNameInformation?.Value,
-                    AdditionalAddressInformation = recognizerResult.AdditionalAddressInformation?.Value,
-                    AdditionalOptionalAddressInformation = recognizerResult.AdditionalOptionalAddressInformation?.Value,
-                    PlaceOfBirth = recognizerResult.PlaceOfBirth?.Value,
-                    Nationality = recognizerResult.Nationality?.Value,
-                    Race = recognizerResult.Race?.Value,
-                    Religion = recognizerResult.Religion?.Value,
-                    Profession = recognizerResult.Profession?.Value,
-                    MaritalStatus = recognizerResult.MaritalStatus?.Value,
-                    ResidentialStatus = recognizerResult.ResidentialStatus?.Value,
-                    Employer = recognizerResult.Employer?.Value,
-                    PersonalIdNumber = recognizerResult.PersonalIdNumber?.Value,
-                    DocumentAdditionalNumber = recognizerResult.DocumentAdditionalNumber?.Value,
-                    DocumentOptionalAdditionalNumber = recognizerResult.DocumentOptionalAdditionalNumber?.Value,
-                    IssuingAuthority = recognizerResult.IssuingAuthority?.Value,
-                    DocumentSubtype = recognizerResult.DocumentSubtype?.Value,
-                    Sponsor = recognizerResult.Sponsor?.Value,
-                    BloodType = recognizerResult.BloodType?.Value,
+                    Address = result.Address,
+                    DocumentNumber = result.DocumentNumber,
+                    FirstName = result.FirstName,
+                    FullName = result.FullName,
+                    LastName = result.LastName,
+                    FathersName = result.FathersName,
+                    MothersName = result.MothersName,
+                    Sex = result.Sex,
+                    LocalizedName = result.LocalizedName,
+                    AdditionalNameInformation = result.AdditionalNameInformation,
+                    AdditionalAddressInformation = result.AdditionalAddressInformation,
+                    AdditionalOptionalAddressInformation = result.AdditionalOptionalAddressInformation,
+                    PlaceOfBirth = result.PlaceOfBirth,
+                    Nationality = result.Nationality,
+                    Race = result.Race,
+                    Religion = result.Religion,
+                    Profession = result.Profession,
+                    MaritalStatus = result.MaritalStatus,
+                    ResidentialStatus = result.ResidentialStatus,
+                    Employer = result.Employer,
+                    PersonalIdNumber = result.PersonalIdNumber,
+                    DocumentAdditionalNumber = result.DocumentAdditionalNumber,
+                    DocumentOptionalAdditionalNumber = result.DocumentOptionalAdditionalNumber,
+                    IssuingAuthority = result.IssuingAuthority,
+                    DocumentSubtype = result.DocumentSubtype,
+                    Sponsor = result.Sponsor,
+                    BloodType = result.BloodType,
                 };
 
-                card.DateOfBirth = ParseDateTime(recognizerResult.DateOfBirth);
-                card.DateOfExpiry = ParseDateTime(recognizerResult.DateOfExpiry);
-                card.DateOfIssue = ParseDateTime(recognizerResult.DateOfIssue);
-
-                card.FaceImage = ParseImage(recognizerResult.FaceImage);
-                card.SignatureImage = ParseImage(recognizerResult.SignatureImage);
-                card.FullDocumentBackImage = ParseImage(recognizerResult.FullDocumentBackImage);
-                card.FullDocumentFrontImage = ParseImage(recognizerResult.FullDocumentFrontImage);
-#pragma warning restore CA1416
+                card.DateOfBirth = ParseDateTime(result.DateOfBirth);
+                card.DateOfExpiry = ParseDateTime(result.DateOfExpiry);
+                card.DateOfIssue = ParseDateTime(result.DateOfIssue);
 
                 return card;
             }
@@ -124,16 +66,61 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
             }
         }
 
-        private static DateTime? ParseDateTime(MBDateResult? mBDateResult)
+        /// <summary>
+        /// ParseExtended.
+        /// </summary>
+        /// <param name="result">OmnBlinkIDResult.</param>
+        /// <returns>CardRecognizerExtended.</returns>
+        public static CardRecognizerExtended? ParseExtended(this OmnBlinkIDResult? result)
         {
+            if (result == null)
+            {
+                return null;
+            }
+
             try
             {
-                if (mBDateResult == null)
-                    return null;
+                var card = new CardRecognizerExtended
+                {
+                    Address = result.Address,
+                    DocumentNumber = result.DocumentNumber,
+                    FirstName = result.FirstName,
+                    FullName = result.FullName,
+                    LastName = result.LastName,
+                    FathersName = result.FathersName,
+                    MothersName = result.MothersName,
+                    Sex = result.Sex,
+                    LocalizedName = result.LocalizedName,
+                    AdditionalNameInformation = result.AdditionalNameInformation,
+                    AdditionalAddressInformation = result.AdditionalAddressInformation,
+                    AdditionalOptionalAddressInformation = result.AdditionalOptionalAddressInformation,
+                    PlaceOfBirth = result.PlaceOfBirth,
+                    Nationality = result.Nationality,
+                    Race = result.Race,
+                    Religion = result.Religion,
+                    Profession = result.Profession,
+                    MaritalStatus = result.MaritalStatus,
+                    ResidentialStatus = result.ResidentialStatus,
+                    Employer = result.Employer,
+                    PersonalIdNumber = result.PersonalIdNumber,
+                    DocumentAdditionalNumber = result.DocumentAdditionalNumber,
+                    DocumentOptionalAdditionalNumber = result.DocumentOptionalAdditionalNumber,
+                    IssuingAuthority = result.IssuingAuthority,
+                    DocumentSubtype = result.DocumentSubtype,
+                    Sponsor = result.Sponsor,
+                    BloodType = result.BloodType,
+                };
 
-#pragma warning disable CA1416
-                return new DateTime((int)mBDateResult.Year, (int)mBDateResult.Month, (int)mBDateResult.Day);
-#pragma warning restore CA1416
+                card.DateOfBirth = ParseDateTime(result.DateOfBirth);
+                card.DateOfExpiry = ParseDateTime(result.DateOfExpiry);
+                card.DateOfIssue = ParseDateTime(result.DateOfIssue);
+
+                card.FaceImage = ParseImage(result.FaceImage);
+                card.SignatureImage = ParseImage(result.SignatureImage);
+                card.FullDocumentBackImage = ParseImage(result.BackImage);
+                card.FullDocumentFrontImage = ParseImage(result.FrontImage);
+
+                return card;
             }
             catch
             {
@@ -141,19 +128,35 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
             }
         }
 
-        public static ImageSource? ParseImage(MBImage? mBImage)
+        /// <summary>
+        /// ParseImage.
+        /// </summary>
+        /// <param name="image">UIImage.</param>
+        /// <returns>ImageSource.</returns>
+        public static ImageSource? ParseImage(UIImage? image)
         {
-#pragma warning disable CA1416
-            if (mBImage == null || mBImage.Image == null)
+            var png = image?.AsPNG();
+            if (png == null)
                 return null;
 
-            var pngImg = mBImage.Image.AsPNG();
-            if (pngImg == null)
-                return null;
-#pragma warning restore CA1416
+            // TODO: find a more efficient way to convert without compressing to and decompressing from PNG
+            return ImageSource.FromStream(() => png.AsStream());
+        }
 
-            // TODO: find a more efficient way to convert bitmap without compressing to and decompressing from PNG
-            return ImageSource.FromStream(() => pngImg.AsStream());
+        private static DateTime? ParseDateTime(OmnBlinkIDDate? date)
+        {
+            try
+            {
+                // The shim reports 0 for components the SDK could not extract.
+                if (date == null || date.Year == 0 || date.Month == 0 || date.Day == 0)
+                    return null;
+
+                return new DateTime((int)date.Year, (int)date.Month, (int)date.Day);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

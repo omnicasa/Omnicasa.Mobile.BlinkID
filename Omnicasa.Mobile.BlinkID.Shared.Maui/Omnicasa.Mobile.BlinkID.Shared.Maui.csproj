@@ -31,11 +31,24 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 	
+	<!-- Build the bindings from source instead of the published packages, to test
+	     unreleased binding changes. Must be an ENVIRONMENT variable, not -p:, so it
+	     reaches this project's restore when built via a ProjectReference:
+	         UseLocalBindings=true dotnet build ... -->
+	<PropertyGroup>
+		<UseLocalBindings Condition="'$(UseLocalBindings)' == ''">false</UseLocalBindings>
+	</PropertyGroup>
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-android'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.UX.Maui.Droid" Version="2026.2.12.79-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.UX.Maui.Droid" Version="2026.2.12.79-alpha" Condition="'$(UseLocalBindings)' != 'true'" />
+	  <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.UX.Maui.Droid\Omnicasa.Mobile.BlinkID.UX.Maui.Droid.csproj" Condition="'$(UseLocalBindings)' == 'true'" />
+	  <!-- MAUI 9.0.120 pins these below what BlinkID v8's CameraX 1.6.1 pulls in -->
+	  <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.9.3" />
+	  <PackageReference Include="Xamarin.AndroidX.Lifecycle.Common.Java8" Version="2.11.0.1" />
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net9.0-ios'">
-	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.iOS" Version="2026.2.12.79-alpha" />
+	  <PackageReference Include="Omnicasa.Mobile.BlinkID.Maui.iOS" Version="2026.2.12.79-alpha" Condition="'$(UseLocalBindings)' != 'true'" />
+	  <ProjectReference Include="..\Omnicasa.Mobile.BlinkID.Maui.iOS\Omnicasa.Mobile.BlinkID.Maui.iOS.csproj" Condition="'$(UseLocalBindings)' == 'true'" />
 	</ItemGroup>
 </Project>

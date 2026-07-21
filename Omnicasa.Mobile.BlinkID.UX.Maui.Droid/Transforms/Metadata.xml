@@ -1,61 +1,97 @@
 <metadata>
   <!-- Fix IParcelableCreator: Creator.createFromParcel/newArray must return Java.Lang.Object -->
-
-  <!-- Core: BlinkIdSdkSettings.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdkSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core']/class[@name='BlinkIdSdkSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: BlinkIdSessionSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.network']/class[@name='RequestTimeout.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.network']/class[@name='RequestTimeout.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.barcode']/class[@name='BarcodeCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.barcode']/class[@name='BarcodeCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.barcode']/class[@name='BarcodeFieldsCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.barcode']/class[@name='BarcodeFieldsCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='AddressDetailedInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='AddressDetailedInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DateCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DateCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DateResultCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DateResultCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DependentInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DependentInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DependentsInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DependentsInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DriverLicenseDetailedInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='DriverLicenseDetailedInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ImageCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ImageCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ParentInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ParentInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ParentsInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ParentsInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ResultCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='ResultCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='StringCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='StringCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='StringResultCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='StringResultCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='VehicleClassInfoCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.completeness']/class[@name='VehicleClassInfoCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.mrz']/class[@name='MrzCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.mrz']/class[@name='MrzCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.mrz']/class[@name='MrzFieldsCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.mrz']/class[@name='MrzFieldsCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.viz']/class[@name='VizCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.viz']/class[@name='VizCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.viz']/class[@name='VizFieldsCompleteness.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.result.viz']/class[@name='VizFieldsCompleteness.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.session']/class[@name='BlinkIdSessionSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.session']/class[@name='BlinkIdSessionSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: CroppedImageSettings.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='CroppedImageSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='CroppedImageSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: DetailedFieldType.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DetailedFieldType.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DetailedFieldType.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: DocumentAnonymizationSettings.Creator -->
-  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentAnonymizationSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
-  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentAnonymizationSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: DocumentFilter.Creator -->
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentFilter.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentFilter.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: DocumentNumberAnonymizationSettings.Creator -->
-  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberAnonymizationSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
-  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberAnonymizationSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: DocumentRules.Creator -->
-  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentRules.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
-  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentRules.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: RecognitionModeFilter.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberRedactionSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='DocumentNumberRedactionSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RecognitionModeFilter.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RecognitionModeFilter.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: ScanningSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RedactionSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='RedactionSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.core.settings']/class[@name='ScanningSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- Core: RequestTimeout.Creator -->
-  <attr path="/api/package[@name='com.microblink.core.network']/class[@name='RequestTimeout.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
-  <attr path="/api/package[@name='com.microblink.core.network']/class[@name='RequestTimeout.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- UX: BlinkIdScanActivityColors.Creator -->
-  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
-  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivityColors.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- UX: BlinkIdScanActivitySettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='BarcodeModuleSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='BarcodeModuleSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='DocumentCaptureModuleSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='DocumentCaptureModuleSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='MrzModuleSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='MrzModuleSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='VizModuleSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.core.settings.scanning']/class[@name='VizModuleSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.camera']/class[@name='CameraSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.camera']/class[@name='CameraSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='BlinkIdScanActivitySettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
-
-  <!-- UX: BlinkIdUxSettings.Creator -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='ScanActivityColors.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='ScanActivityColors.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.settings']/class[@name='BlinkIdUxSettings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='AccessibilityStrings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='AccessibilityStrings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='BlinkIdScanningStrings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='BlinkIdScanningStrings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='BlinkIdSdkStrings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='BlinkIdSdkStrings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='HelpDialogsStrings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='HelpDialogsStrings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='ScanningStrings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='ScanningStrings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='SdkStrings.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.theme']/class[@name='SdkStrings.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableFont.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableFont.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableTextStyle.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableTextStyle.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableUiTypography.Creator']/method[@name='createFromParcel']" name="managedReturn">Java.Lang.Object</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableUiTypography.Creator']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
 
   <!-- Fix MbBlinkIdScan: add bridge createIntent(Context, Object) for ActivityResultContract -->
   <add-node path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='MbBlinkIdScan']">
@@ -70,12 +106,12 @@
   </add-node>
   <attr path="/api/package[@name='com.microblink.blinkid.ux.contract']/class[@name='MbBlinkIdScan']/method[@name='parseResult']" name="managedReturn">Java.Lang.Object</attr>
 
-  <!-- Remove com.microblink.ux packages (runtime-only Compose UI dependency) -->
-  <remove-node path="/api/package[@name='com.microblink.ux']" />
-  <remove-node path="/api/package[@name='com.microblink.ux.camera']" />
-  <remove-node path="/api/package[@name='com.microblink.ux.camera.compose']" />
-  <remove-node path="/api/package[@name='com.microblink.ux.components']" />
-  <remove-node path="/api/package[@name='com.microblink.ux.state']" />
-  <remove-node path="/api/package[@name='com.microblink.ux.theme']" />
-  <remove-node path="/api/package[@name='com.microblink.ux.utils']" />
+  <!-- v8 folded microblink-ux into blinkid-ux, so these Compose types now land in the bound packages -->
+
+  <!-- IParceler companions need the same Java.Lang.Object return fixup as Creators -->
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableFont.Companion']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+  <attr path="/api/package[@name='com.microblink.blinkid.ux.utils']/class[@name='ParcelableTextStyle.Companion']/method[@name='newArray']" name="managedReturn">Java.Lang.Object[]</attr>
+
+  <!-- Compose-only animation state; @Composable methods don't bind -->
+  <remove-node path="/api/package[@name='com.microblink.blinkid.ux.state']/interface[@name='CardAnimationState']" />
 </metadata>
