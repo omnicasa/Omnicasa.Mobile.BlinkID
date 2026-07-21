@@ -14,7 +14,14 @@ This repository implements the BlinkID binding project for Xamarin.Forms and .NE
 
 ## BlinkID Version
 
-Current binding supports BlinkID SDK version 7.5.0.
+Current binding supports BlinkID SDK version 8000.0.0 (Microblink's version string for v8).
+
+- **Android** — binds `blinkid-core` / `blinkid-ux` directly. v8 folded the old
+  `microblink-ux` artifact into `blinkid-ux`, so there is no separate UI aar.
+- **iOS** — v8 is pure Swift and exports no Objective-C surface, so it cannot be bound
+  directly. `NativeShim/` wraps it in a small `@objc` framework which is what the
+  binding actually targets. Run `NativeShim/build.sh` after changing the shim; the
+  resulting `NativeLib/OmnBlinkIDShim.xcframework` is committed like the other natives.
 
 ## Binding Notes
 
