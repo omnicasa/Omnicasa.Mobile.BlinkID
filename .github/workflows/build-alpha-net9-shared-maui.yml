@@ -44,6 +44,9 @@ jobs:
           file: "Omnicasa.Mobile.BlinkID.Shared.Maui/Omnicasa.Mobile.BlinkID.Shared.Maui.csproj"
           version: ${{ env.VERSION }}
 
+      - name: Pin binding packages to latest published build
+        run: python3 .github/scripts/pin_bindings.py
+
       - name: MAUI Publish Omnicasa.Mobile.BlinkID.Shared.Maui on version change
         uses: linch90/publish-nuget@v1.0.2
         with:
