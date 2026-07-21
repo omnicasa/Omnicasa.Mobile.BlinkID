@@ -2,6 +2,7 @@
 using System.Reactive.Linq;
 using AndroidX.Activity.Result;
 using Com.Microblink.Blinkid.Core;
+using Com.Microblink.Blinkid.Core.Session;
 using Com.Microblink.Blinkid.UX.Contract;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
 using Object = Java.Lang.Object;
@@ -81,15 +82,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
                     };
 
                     var sdkSettings = new BlinkIdSdkSettings(license);
-                    var settings = new BlinkIdScanActivitySettings(sdkSettings);
-                    var scanSettings = settings.ScanningSessionSettings.ScanningSettings;
-                    if (scanSettings == null || scanSettings.CroppedImageSettings == null)
-                    {
-                        throw new ArgumentException("ScanningSettings is null");
-                    }
-                    scanSettings.CroppedImageSettings.ReturnFaceImage = true;                                                                                                                                                
-                    scanSettings.CroppedImageSettings.ReturnDocumentImage = true;                                                                                                                                            
-                    scanSettings.CroppedImageSettings.ReturnSignatureImage = true;
+                    var settings = new BlinkIdScanActivitySettings(sdkSettings, BuildSessionSettings());
                     var contract = new MbBlinkIdScan();
                     
                     var intent = contract.CreateIntent(BlinkIDInitializer.Activity, settings);
@@ -112,6 +105,56 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
         public Task<CardRecognizerExtended> ScanID()
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Enables face/document/signature image return, which is off by default. v8 settings are
+        /// immutable and split across scanner modules, so the tree is rebuilt rather than mutated.
+        /// </summary>
+        private static BlinkIdSessionSettings BuildSessionSettings()
+        {
+            var defaults = new BlinkIdSessionSettings();
+            var scanning = defaults.ScanningSettings
+                ?? throw new ArgumentException("ScanningSettings is null");
+
+            var capture = scanning.DocumentCaptureModule
+                ?? throw new ArgumentException("DocumentCaptureModule is null");
+            capture = capture.Copy(
+                capture.InputImageCropped,
+                capture.UnsupportedDocumentsAllowed,
+                capture.SecondSideWithNoExtractableDataSkipped,
+                capture.PassportDataPageScanOnly,
+                faceImageExtractionEnabled: true,
+                capture.FaceImagePresenceMandatory,
+                capture.InputImageReturnEnabled,
+                documentImageReturnEnabled: true,
+                capture.InputImageMargin,
+                capture.DotsPerInch,
+                capture.ExtensionFactor,
+                capture.BlurSensitivityLevel,
+                capture.ImageWithBlurRejected,
+                capture.GlareSensitivityLevel,
+                capture.ImageWithGlareRejected,
+                capture.TiltSensitivityLevel,
+                capture.ImageWithPoorLightingRejected,
+                capture.ImageWithHandOcclusionRejected)!;
+
+            var viz = scanning.VizModule
+                ?? throw new ArgumentException("VizModule is null");
+            viz = viz.Copy(
+                viz.PresenceMandatory,
+                signatureImageExtractionEnabled: true,
+                viz.CharacterValidationEnabled,
+                viz.ResultAggregationEnabled)!;
+
+            var updated = scanning.Copy(
+                capture,
+                scanning.BarcodeModule,
+                scanning.MrzModule,
+                viz,
+                scanning.MaxAllowedMismatchesPerField)!;
+
+            return new BlinkIdSessionSettings(defaults.InputImageSource, defaults.ScanningMode, updated);
         }
     }
 }

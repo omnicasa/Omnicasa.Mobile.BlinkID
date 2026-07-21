@@ -63,16 +63,7 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
             _resultText!.Text = "";
 
             var sdkSettings = new BlinkIdSdkSettings(DroidLic);
-            var settings = new BlinkIdScanActivitySettings(sdkSettings);
-
-            // Enable image return (disabled by default)
-            var scanSettings = settings.ScanningSessionSettings.ScanningSettings;
-            if (scanSettings?.CroppedImageSettings != null)
-            {
-                scanSettings.CroppedImageSettings.ReturnFaceImage = true;
-                scanSettings.CroppedImageSettings.ReturnDocumentImage = true;
-                scanSettings.CroppedImageSettings.ReturnSignatureImage = true;
-            }
+            var settings = new BlinkIdScanActivitySettings(sdkSettings, BuildSessionSettings());
 
             var contract = new MbBlinkIdScan();
             var intent = contract.CreateIntent(this, settings);
@@ -82,6 +73,53 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
         {
             _statusText!.Text = $"Launch failed: {ex.Message}";
         }
+    }
+
+    /// <summary>
+    /// Enables image return, which is off by default. v8 settings are immutable and split
+    /// across scanner modules, so the tree has to be rebuilt with Copy rather than mutated.
+    /// </summary>
+    private static BlinkIdSessionSettings BuildSessionSettings()
+    {
+        var defaults = new BlinkIdSessionSettings();
+        var scanning = defaults.ScanningSettings!;
+
+        var capture = scanning.DocumentCaptureModule!;
+        capture = capture.Copy(
+            capture.InputImageCropped,
+            capture.UnsupportedDocumentsAllowed,
+            capture.SecondSideWithNoExtractableDataSkipped,
+            capture.PassportDataPageScanOnly,
+            faceImageExtractionEnabled: true,
+            capture.FaceImagePresenceMandatory,
+            capture.InputImageReturnEnabled,
+            documentImageReturnEnabled: true,
+            capture.InputImageMargin,
+            capture.DotsPerInch,
+            capture.ExtensionFactor,
+            capture.BlurSensitivityLevel,
+            capture.ImageWithBlurRejected,
+            capture.GlareSensitivityLevel,
+            capture.ImageWithGlareRejected,
+            capture.TiltSensitivityLevel,
+            capture.ImageWithPoorLightingRejected,
+            capture.ImageWithHandOcclusionRejected)!;
+
+        var viz = scanning.VizModule!;
+        viz = viz.Copy(
+            viz.PresenceMandatory,
+            signatureImageExtractionEnabled: true,
+            viz.CharacterValidationEnabled,
+            viz.ResultAggregationEnabled)!;
+
+        var updated = scanning.Copy(
+            capture,
+            scanning.BarcodeModule,
+            scanning.MrzModule,
+            viz,
+            scanning.MaxAllowedMismatchesPerField)!;
+
+        return new BlinkIdSessionSettings(defaults.InputImageSource, defaults.ScanningMode, updated);
     }
 
     /// <summary>
@@ -96,12 +134,12 @@ public class MainActivity : AppCompatActivity, IActivityResultCallback
             var contract = new MbBlinkIdScan();
             var scanResult = (BlinkIdScanActivityResult)contract.ParseResult(activityResult.ResultCode, activityResult.Data);
 
-            if (scanResult.Status == BlinkIdScanActivityResultStatus.DocumentScanned)
+            if (scanResult.Status == ScanActivityResultStatus.Scanned)
             {
                 _statusText!.Text = "Document scanned!";
                 DisplayResult(scanResult.Result);
             }
-            else if (scanResult.Status == BlinkIdScanActivityResultStatus.Canceled)
+            else if (scanResult.Status == ScanActivityResultStatus.Canceled)
             {
                 _statusText!.Text = "Scan cancelled.";
             }
