@@ -31,8 +31,10 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 	
-	<!-- Build the bindings from source instead of the published packages:
-	     dotnet build -p:UseLocalBindings=true. Needed to test unreleased binding changes. -->
+	<!-- Build the bindings from source instead of the published packages, to test
+	     unreleased binding changes. Must be an ENVIRONMENT variable, not -p:, so it
+	     reaches this project's restore when built via a ProjectReference:
+	         UseLocalBindings=true dotnet build ... -->
 	<PropertyGroup>
 		<UseLocalBindings Condition="'$(UseLocalBindings)' == ''">false</UseLocalBindings>
 	</PropertyGroup>

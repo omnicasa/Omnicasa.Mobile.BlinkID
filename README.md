@@ -23,6 +23,23 @@ Current binding supports BlinkID SDK version 8000.0.0 (Microblink's version stri
   binding actually targets. Run `NativeShim/build.sh` after changing the shim; the
   resulting `NativeLib/OmnBlinkIDShim.xcframework` is committed like the other natives.
 
+## Testing unreleased binding changes
+
+The sample app (`Omnicasa.Mobile.BlinkID.Maui.Demo`) consumes the bindings as NuGet
+packages. To build it against the bindings in this repo instead, set `UseLocalBindings`
+**as an environment variable** — `-p:` does not reach the referenced project's restore:
+
+```bash
+UseLocalBindings=true dotnet build Omnicasa.Mobile.BlinkID.Maui.Demo/Omnicasa.Mobile.BlinkID.Maui.Demo.csproj -f net9.0-ios
+UseLocalBindings=true dotnet build Omnicasa.Mobile.BlinkID.Maui.Demo/Omnicasa.Mobile.BlinkID.Maui.Demo.csproj -f net9.0-android
+```
+
+Verify it took effect — the bindings should resolve as `project`, not `package`:
+
+```bash
+grep -o '"Omnicasa.Mobile.BlinkID.UX.Maui.Droid/[^"]*"' Omnicasa.Mobile.BlinkID.Shared.Maui/obj/project.assets.json
+```
+
 ## Binding Notes
 
 - Kotlin suspend functions (like initializeSdk) cannot be directly bound to C# due to Continuation parameter limitations
