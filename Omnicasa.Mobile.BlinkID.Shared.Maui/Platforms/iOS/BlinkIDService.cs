@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using Omnicasa.Mobile.BlinkID.Maui.iOS;
 using Omnicasa.Mobile.BlinkID.Shared.Maui;
-using UIKit;
 
 #pragma warning disable SA1300
 namespace Omnicasa.Mobile.BlinkID.Shared.iOS
@@ -17,21 +16,17 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         {
             return Observable.Create<bool>(o =>
             {
-                // This package support iOS min 13
-#pragma warning disable CA1416
-                var blinkInstance = MBMicroblinkSDK.SharedInstance();
-                if (blinkInstance == null)
+                OmnBlinkIDScanner.Initialize(licenseKey, error =>
                 {
-                    o.OnError(new NotSupportedException());
-                }
+                    if (error != null)
+                    {
+                        o.OnError(new InvalidOperationException(error.LocalizedDescription));
+                        return;
+                    }
 
-                blinkInstance!.SetLicenseKey(licenseKey, (error) =>
-                {
-                    o.OnError(new Exception());
+                    o.OnNext(true);
+                    o.OnCompleted();
                 });
-#pragma warning restore CA1416
-                o.OnNext(true);
-                o.OnCompleted();
 
                 return Disposable.Empty;
             });
@@ -46,127 +41,55 @@ namespace Omnicasa.Mobile.BlinkID.Shared.iOS
         /// <inheritdoc/>
         public IObservable<CardRecognizerExtended?> ScanExtended(int limit = 1, bool presentAsModal = true)
         {
-            UIViewController? scannerViewcontroller = null;
-            CustomMBBlinkIdOverlayViewControllerDelegate? customDeletegate = null;
-            MBBlinkIdMultiSideRecognizer? blinkIdMultiSideRecognizer = null;
-
-            var observable = Observable.Create<CardRecognizerExtended?>(o =>
+            // v8 always presents modally — the SDK owns its own full-screen host controller.
+            return Observable.Create<CardRecognizerExtended?>(o =>
             {
                 try
                 {
+                    var presenter = Platform.GetCurrentUIViewController()
+                        ?? throw new InvalidOperationException("Expect active UIViewController");
+
                     int scanTime = 0;
 
-                    // This package support iOS min 13
-#pragma warning disable CA1416
-                    blinkIdMultiSideRecognizer = new MBBlinkIdMultiSideRecognizer
+                    void Present()
                     {
-                        ReturnFullDocumentImage = true,
-                    };
-                    var mBBlinkIdOverlaySettings = new MBBlinkIdOverlaySettings();
-
-                    var mBRecognizerCollection = new MBRecognizerCollection(
-                        new[]
+                        OmnBlinkIDScanner.Present(presenter, (result, error) =>
                         {
-                            blinkIdMultiSideRecognizer,
-                        });
-#pragma warning restore CA1416
-
-                    customDeletegate = new CustomMBBlinkIdOverlayViewControllerDelegate(null);
-                    customDeletegate.Scanned += (object? s, RecognizingState e) =>
-                    {
-                        if (e == RecognizingState.DidFinishedScanningValid)
-                        {
-                            // This package support iOS min 13
-#pragma warning disable CA1416
-                            if (blinkIdMultiSideRecognizer.Result != null)
+                            if (error != null)
                             {
-                                o.OnNext(blinkIdMultiSideRecognizer.Result.ParseExtended());
+                                o.OnError(new InvalidOperationException(error.LocalizedDescription));
+                                return;
                             }
-#pragma warning restore CA1416
 
-                            if (++scanTime == limit)
+                            // null result means the user cancelled
+                            if (result == null)
                             {
-                                scannerViewcontroller?.DismissViewController(true, null);
-                                scannerViewcontroller?.Dispose();
-                                scannerViewcontroller = null;
-                                customDeletegate = null;
+                                o.OnCompleted();
+                                return;
+                            }
+
+                            o.OnNext(result.ParseExtended());
+
+                            if (++scanTime >= limit)
+                            {
                                 o.OnCompleted();
                             }
-                        }
-                        else if (e == RecognizingState.DidTapClose)
-                        {
-                            scannerViewcontroller?.DismissViewController(true, null);
-                            o.OnCompleted();
-                        }
-                    };
-
-                    // This package support iOS min 13
-#pragma warning disable CA1416
-                    var mBBlinkIdOverlayViewController = new MBBlinkIdOverlayViewController(
-                        mBBlinkIdOverlaySettings,
-                        mBRecognizerCollection,
-                        customDeletegate);
-
-                    var recognizerRunneViewController = MBViewControllerFactory
-                        .RecognizerRunnerViewControllerWithOverlayViewController(mBBlinkIdOverlayViewController);
-#pragma warning restore CA1416
-
-                    if (recognizerRunneViewController == null)
-                    {
-                        o.OnError(new ArgumentException("recognizerRunneViewController is null"));
+                            else
+                            {
+                                Present();
+                            }
+                        });
                     }
 
-                    scannerViewcontroller = ObjCRuntime.Runtime.GetINativeObject<UIViewController>(
-                            recognizerRunneViewController!.Handle, false);
-                    if (scannerViewcontroller == null)
-                    {
-                        o.OnError(new ArgumentException("scannerViewcontroller is null"));
-                    }
-
-                    var keyWindow = PlatformHelper.KeyWindow();
-                    if (keyWindow == null
-                        || keyWindow.RootViewController == null)
-                    {
-                        o.OnError(new InvalidOperationException("Expect KeyWindow"));
-                    }
-                    
-                    var currentViewController = Platform.GetCurrentUIViewController();
-                    if (currentViewController == null)
-                    {
-                        o.OnError(new InvalidOperationException("Expect active UIViewController"));
-                    }
-
-                    if (presentAsModal)
-                    {
-#pragma warning disable CA1422
-                        currentViewController!.PresentModalViewController(
-                            scannerViewcontroller!,
-                            true);
-#pragma warning restore CA1422
-                    }
-                    else
-                    {
-                        currentViewController!.PresentViewController(
-                            scannerViewcontroller!,
-                            true,
-                            null);
-                    }
-                    
+                    Present();
                 }
                 catch (Exception ex)
                 {
                     o.OnError(ex);
                 }
 
-                return Disposable.Create(() =>
-                {
-                    scannerViewcontroller?.Dispose();
-                    scannerViewcontroller = null;
-                    customDeletegate = null;
-                });
+                return Disposable.Empty;
             });
-
-            return observable;
         }
 
         /// <inheritdoc/>

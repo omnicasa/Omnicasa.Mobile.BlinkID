@@ -1,0 +1,3 @@
+framework module OmnBlinkIDShim {
+  header "OmnBlinkIDShim-Swift.h"
+}

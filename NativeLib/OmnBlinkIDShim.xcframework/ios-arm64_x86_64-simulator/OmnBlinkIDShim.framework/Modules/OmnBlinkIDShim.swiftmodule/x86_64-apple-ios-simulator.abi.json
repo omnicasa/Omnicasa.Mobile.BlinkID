@@ -1,0 +1,5141 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "OmnBlinkIDShim",
+    "printedName": "OmnBlinkIDShim",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "OmnBlinkIDShim"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "OmnBlinkIDShim"
+      },
+      {
+        "kind": "Import",
+        "name": "SwiftUI",
+        "printedName": "SwiftUI",
+        "declKind": "Import",
+        "moduleName": "OmnBlinkIDShim"
+      },
+      {
+        "kind": "Import",
+        "name": "BlinkID",
+        "printedName": "BlinkID",
+        "declKind": "Import",
+        "moduleName": "OmnBlinkIDShim"
+      },
+      {
+        "kind": "Import",
+        "name": "BlinkIDUX",
+        "printedName": "BlinkIDUX",
+        "declKind": "Import",
+        "moduleName": "OmnBlinkIDShim"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OmnBlinkIDDate",
+        "printedName": "OmnBlinkIDDate",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "day",
+            "printedName": "day",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(py)day",
+            "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC3daySivp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(im)day",
+                "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC3daySivg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "month",
+            "printedName": "month",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(py)month",
+            "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC5monthSivp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(im)month",
+                "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC5monthSivg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "year",
+            "printedName": "year",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(py)year",
+            "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC4yearSivp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(im)year",
+                "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC4yearSivg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OmnBlinkIDDate",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate(im)init",
+            "mangledName": "$s14OmnBlinkIDShim0aB6IDDateCACycfc",
+            "moduleName": "OmnBlinkIDShim",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate",
+        "mangledName": "$s14OmnBlinkIDShim0aB6IDDateC",
+        "moduleName": "OmnBlinkIDShim",
+        "objc_name": "OmnBlinkIDDate",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OmnBlinkIDResult",
+        "printedName": "OmnBlinkIDResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "firstName",
+            "printedName": "firstName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)firstName",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9firstNameSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)firstName",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9firstNameSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setFirstName:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9firstNameSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC9firstNameSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9firstNameSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "lastName",
+            "printedName": "lastName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)lastName",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8lastNameSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)lastName",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8lastNameSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setLastName:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8lastNameSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC8lastNameSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8lastNameSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fullName",
+            "printedName": "fullName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)fullName",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8fullNameSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)fullName",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8fullNameSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setFullName:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8fullNameSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC8fullNameSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8fullNameSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "address",
+            "printedName": "address",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)address",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7addressSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)address",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7addressSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setAddress:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7addressSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC7addressSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7addressSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "documentNumber",
+            "printedName": "documentNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)documentNumber",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14documentNumberSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)documentNumber",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14documentNumberSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDocumentNumber:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14documentNumberSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC14documentNumberSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14documentNumberSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fathersName",
+            "printedName": "fathersName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)fathersName",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11fathersNameSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)fathersName",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11fathersNameSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setFathersName:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11fathersNameSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC11fathersNameSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11fathersNameSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mothersName",
+            "printedName": "mothersName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)mothersName",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11mothersNameSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)mothersName",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11mothersNameSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setMothersName:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11mothersNameSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC11mothersNameSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11mothersNameSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sex",
+            "printedName": "sex",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)sex",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC3sexSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)sex",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC3sexSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setSex:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC3sexSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC3sexSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC3sexSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "localizedName",
+            "printedName": "localizedName",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)localizedName",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13localizedNameSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)localizedName",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13localizedNameSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setLocalizedName:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13localizedNameSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC13localizedNameSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13localizedNameSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "additionalNameInformation",
+            "printedName": "additionalNameInformation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)additionalNameInformation",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC25additionalNameInformationSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)additionalNameInformation",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC25additionalNameInformationSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setAdditionalNameInformation:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC25additionalNameInformationSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC25additionalNameInformationSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC25additionalNameInformationSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "additionalAddressInformation",
+            "printedName": "additionalAddressInformation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)additionalAddressInformation",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC28additionalAddressInformationSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)additionalAddressInformation",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC28additionalAddressInformationSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setAdditionalAddressInformation:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC28additionalAddressInformationSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC28additionalAddressInformationSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC28additionalAddressInformationSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "additionalOptionalAddressInformation",
+            "printedName": "additionalOptionalAddressInformation",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)additionalOptionalAddressInformation",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC36additionalOptionalAddressInformationSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)additionalOptionalAddressInformation",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC36additionalOptionalAddressInformationSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setAdditionalOptionalAddressInformation:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC36additionalOptionalAddressInformationSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC36additionalOptionalAddressInformationSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC36additionalOptionalAddressInformationSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "placeOfBirth",
+            "printedName": "placeOfBirth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)placeOfBirth",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12placeOfBirthSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)placeOfBirth",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12placeOfBirthSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setPlaceOfBirth:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12placeOfBirthSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC12placeOfBirthSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12placeOfBirthSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nationality",
+            "printedName": "nationality",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)nationality",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11nationalitySSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)nationality",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11nationalitySSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setNationality:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11nationalitySSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC11nationalitySSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11nationalitySSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "race",
+            "printedName": "race",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)race",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC4raceSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)race",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC4raceSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setRace:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC4raceSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC4raceSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC4raceSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "religion",
+            "printedName": "religion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)religion",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8religionSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)religion",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8religionSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setReligion:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8religionSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC8religionSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8religionSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "profession",
+            "printedName": "profession",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)profession",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10professionSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)profession",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10professionSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setProfession:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10professionSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC10professionSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10professionSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "maritalStatus",
+            "printedName": "maritalStatus",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)maritalStatus",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13maritalStatusSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)maritalStatus",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13maritalStatusSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setMaritalStatus:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13maritalStatusSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC13maritalStatusSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC13maritalStatusSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "employer",
+            "printedName": "employer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)employer",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8employerSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)employer",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8employerSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setEmployer:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8employerSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC8employerSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC8employerSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "personalIdNumber",
+            "printedName": "personalIdNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)personalIdNumber",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16personalIdNumberSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)personalIdNumber",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16personalIdNumberSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setPersonalIdNumber:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16personalIdNumberSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC16personalIdNumberSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16personalIdNumberSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "documentAdditionalNumber",
+            "printedName": "documentAdditionalNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)documentAdditionalNumber",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC24documentAdditionalNumberSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)documentAdditionalNumber",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC24documentAdditionalNumberSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDocumentAdditionalNumber:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC24documentAdditionalNumberSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC24documentAdditionalNumberSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC24documentAdditionalNumberSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "documentOptionalAdditionalNumber",
+            "printedName": "documentOptionalAdditionalNumber",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)documentOptionalAdditionalNumber",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC32documentOptionalAdditionalNumberSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)documentOptionalAdditionalNumber",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC32documentOptionalAdditionalNumberSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDocumentOptionalAdditionalNumber:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC32documentOptionalAdditionalNumberSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC32documentOptionalAdditionalNumberSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC32documentOptionalAdditionalNumberSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "issuingAuthority",
+            "printedName": "issuingAuthority",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)issuingAuthority",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16issuingAuthoritySSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)issuingAuthority",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16issuingAuthoritySSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setIssuingAuthority:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16issuingAuthoritySSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC16issuingAuthoritySSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC16issuingAuthoritySSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "residentialStatus",
+            "printedName": "residentialStatus",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)residentialStatus",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC17residentialStatusSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)residentialStatus",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC17residentialStatusSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setResidentialStatus:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC17residentialStatusSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC17residentialStatusSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC17residentialStatusSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "documentSubtype",
+            "printedName": "documentSubtype",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)documentSubtype",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC15documentSubtypeSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)documentSubtype",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC15documentSubtypeSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDocumentSubtype:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC15documentSubtypeSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC15documentSubtypeSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC15documentSubtypeSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sponsor",
+            "printedName": "sponsor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)sponsor",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7sponsorSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)sponsor",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7sponsorSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setSponsor:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7sponsorSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC7sponsorSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC7sponsorSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bloodType",
+            "printedName": "bloodType",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)bloodType",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9bloodTypeSSSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)bloodType",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9bloodTypeSSSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setBloodType:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9bloodTypeSSSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC9bloodTypeSSSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9bloodTypeSSSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dateOfBirth",
+            "printedName": "dateOfBirth",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDDate",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                    "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)dateOfBirth",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfBirthAA0aB6IDDateCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDDate",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)dateOfBirth",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfBirthAA0aB6IDDateCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDDate",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDateOfBirth:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfBirthAA0aB6IDDateCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC11dateOfBirthAA0aB6IDDateCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfBirthAA0aB6IDDateCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dateOfIssue",
+            "printedName": "dateOfIssue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDDate",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                    "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)dateOfIssue",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfIssueAA0aB6IDDateCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDDate",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)dateOfIssue",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfIssueAA0aB6IDDateCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDDate",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDateOfIssue:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfIssueAA0aB6IDDateCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC11dateOfIssueAA0aB6IDDateCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC11dateOfIssueAA0aB6IDDateCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "dateOfExpiry",
+            "printedName": "dateOfExpiry",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDDate",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                    "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)dateOfExpiry",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12dateOfExpiryAA0aB6IDDateCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDDate",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)dateOfExpiry",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12dateOfExpiryAA0aB6IDDateCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDDate?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDDate",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDDate",
+                        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDDate"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setDateOfExpiry:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12dateOfExpiryAA0aB6IDDateCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC12dateOfExpiryAA0aB6IDDateCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC12dateOfExpiryAA0aB6IDDateCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "faceImage",
+            "printedName": "faceImage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)faceImage",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9faceImageSo7UIImageCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)faceImage",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9faceImageSo7UIImageCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setFaceImage:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9faceImageSo7UIImageCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC9faceImageSo7UIImageCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9faceImageSo7UIImageCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "signatureImage",
+            "printedName": "signatureImage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)signatureImage",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14signatureImageSo7UIImageCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)signatureImage",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14signatureImageSo7UIImageCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setSignatureImage:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14signatureImageSo7UIImageCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC14signatureImageSo7UIImageCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC14signatureImageSo7UIImageCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "frontImage",
+            "printedName": "frontImage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)frontImage",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10frontImageSo7UIImageCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)frontImage",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10frontImageSo7UIImageCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setFrontImage:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10frontImageSo7UIImageCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC10frontImageSo7UIImageCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC10frontImageSo7UIImageCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "backImage",
+            "printedName": "backImage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "UIKit.UIImage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UIImage",
+                    "printedName": "UIKit.UIImage",
+                    "usr": "c:objc(cs)UIImage"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(py)backImage",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9backImageSo7UIImageCSgvp",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)backImage",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9backImageSo7UIImageCSgvg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "UIKit.UIImage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UIImage",
+                        "printedName": "UIKit.UIImage",
+                        "usr": "c:objc(cs)UIImage"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)setBackImage:",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9backImageSo7UIImageCSgvs",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB8IDResultC9backImageSo7UIImageCSgvM",
+                "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC9backImageSo7UIImageCSgvM",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OmnBlinkIDResult",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDResult",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult(im)init",
+            "mangledName": "$s14OmnBlinkIDShim0aB8IDResultCACycfc",
+            "moduleName": "OmnBlinkIDShim",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult",
+        "mangledName": "$s14OmnBlinkIDShim0aB8IDResultC",
+        "moduleName": "OmnBlinkIDShim",
+        "objc_name": "OmnBlinkIDResult",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OmnBlinkIDErrorCode",
+        "printedName": "OmnBlinkIDErrorCode",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "notInitialized",
+            "printedName": "notInitialized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OmnBlinkIDShim.OmnBlinkIDErrorCode.Type) -> OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDErrorCode",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                    "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDErrorCode",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                        "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode@OmnBlinkIDErrorCodeNotInitialized",
+            "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO14notInitializedyA2CmF",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "sdkInitFailed",
+            "printedName": "sdkInitFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OmnBlinkIDShim.OmnBlinkIDErrorCode.Type) -> OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDErrorCode",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                    "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDErrorCode",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                        "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode@OmnBlinkIDErrorCodeSdkInitFailed",
+            "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO13sdkInitFailedyA2CmF",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Var",
+            "name": "analyzerFailed",
+            "printedName": "analyzerFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OmnBlinkIDShim.OmnBlinkIDErrorCode.Type) -> OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDErrorCode",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                    "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "OmnBlinkIDErrorCode",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                        "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode@OmnBlinkIDErrorCodeAnalyzerFailed",
+            "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO14analyzerFailedyA2CmF",
+            "moduleName": "OmnBlinkIDShim",
+            "declAttributes": [
+              "ObjC"
+            ],
+            "fixedbinaryorder": 2
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OmnBlinkIDErrorCode",
+                    "printedName": "OmnBlinkIDShim.OmnBlinkIDErrorCode",
+                    "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14OmnBlinkIDShim0aB11IDErrorCodeO8rawValueACSgSi_tcfc",
+            "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO8rawValueACSgSi_tcfc",
+            "moduleName": "OmnBlinkIDShim",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14OmnBlinkIDShim0aB11IDErrorCodeO8rawValueSivp",
+            "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO8rawValueSivp",
+            "moduleName": "OmnBlinkIDShim",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14OmnBlinkIDShim0aB11IDErrorCodeO8rawValueSivg",
+                "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO8rawValueSivg",
+                "moduleName": "OmnBlinkIDShim",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "c:@M@OmnBlinkIDShim@E@OmnBlinkIDErrorCode",
+        "mangledName": "$s14OmnBlinkIDShim0aB11IDErrorCodeO",
+        "moduleName": "OmnBlinkIDShim",
+        "objc_name": "OmnBlinkIDErrorCode",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "enumRawTypeName": "Int",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "OmnBlinkIDScanner",
+        "printedName": "OmnBlinkIDScanner",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize(licenseKey:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.NSError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.NSError?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSError",
+                        "printedName": "Foundation.NSError",
+                        "usr": "c:objc(cs)NSError"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDScanner(cm)initializeWithLicenseKey:completion:",
+            "mangledName": "$s14OmnBlinkIDShim0aB9IDScannerC10initialize10licenseKey10completionySS_ySo7NSErrorCSgctFZ",
+            "moduleName": "OmnBlinkIDShim",
+            "static": true,
+            "objc_name": "initializeWithLicenseKey:completion:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "present",
+            "printedName": "present(from:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(OmnBlinkIDShim.OmnBlinkIDResult?, Foundation.NSError?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(OmnBlinkIDShim.OmnBlinkIDResult?, Foundation.NSError?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "OmnBlinkIDShim.OmnBlinkIDResult?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "OmnBlinkIDResult",
+                            "printedName": "OmnBlinkIDShim.OmnBlinkIDResult",
+                            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDResult"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.NSError?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "NSError",
+                            "printedName": "Foundation.NSError",
+                            "usr": "c:objc(cs)NSError"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDScanner(cm)presentFrom:completion:",
+            "mangledName": "$s14OmnBlinkIDShim0aB9IDScannerC7present4from10completionySo16UIViewControllerC_yAA0aB8IDResultCSg_So7NSErrorCSgtctFZ",
+            "moduleName": "OmnBlinkIDShim",
+            "static": true,
+            "objc_name": "presentFrom:completion:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OmnBlinkIDScanner",
+                "printedName": "OmnBlinkIDShim.OmnBlinkIDScanner",
+                "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDScanner"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDScanner(im)init",
+            "mangledName": "$s14OmnBlinkIDShim0aB9IDScannerCACycfc",
+            "moduleName": "OmnBlinkIDShim",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@OmnBlinkIDShim@objc(cs)OmnBlinkIDScanner",
+        "mangledName": "$s14OmnBlinkIDShim0aB9IDScannerC",
+        "moduleName": "OmnBlinkIDShim",
+        "objc_name": "OmnBlinkIDScanner",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "ObjC",
+          "RawDocComment"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/hoangq\/Projects\/Omnicasa.Mobile.BlinkID\/NativeShim\/Sources\/OmnBlinkID.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4297,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/hoangq\/Projects\/Omnicasa.Mobile.BlinkID\/NativeShim\/Sources\/OmnBlinkID.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4324,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/hoangq\/Projects\/Omnicasa.Mobile.BlinkID\/NativeShim\/Sources\/OmnBlinkID.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4352,
+      "length": 1,
+      "value": "3"
+    }
+  ]
+}
