@@ -58,25 +58,31 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
         {
             var observable = Observable.Create<CardRecognizerExtended?>(o =>
             {
+                int scanTime = 0;
+
+                // Named handler so we can detach it — the static Scanned event must not keep stale
+                // subscribers, or a previous scan's dead observer runs first and swallows this result.
+                EventHandler<object?> handler = null!;
+                handler = (sender, args) =>
+                {
+                    var card = args?.ParseExtended();
+                    o.OnNext(card);
+
+                    if (++scanTime == limit)
+                    {
+                        BlinkIDHelper.Scanned -= handler;
+                        o.OnCompleted();
+                    }
+                };
+
                 try
                 {
-                    int scanTime = 0;
-
                     if (BlinkIDInitializer.Context == null || BlinkIDInitializer.Activity == null || string.IsNullOrEmpty(license))
                     {
                         o.OnError(new ArgumentException("Please call BlinkIDInitializer.Init"));
                     }
 
-                    BlinkIDHelper.Scanned += (sender, args) =>
-                    {
-                        var card = args?.ParseExtended();
-                        o.OnNext(card);
-                        
-                        if (++scanTime == limit)
-                        {
-                            o.OnCompleted();
-                        }
-                    };
+                    BlinkIDHelper.Scanned += handler;
 
                     var sdkSettings = new BlinkIdSdkSettings(license);
                     var settings = new BlinkIdScanActivitySettings(sdkSettings);
@@ -96,6 +102,7 @@ namespace Omnicasa.Mobile.BlinkID.Shared.Droid
 
                 return Disposable.Create(() =>
                 {
+                    BlinkIDHelper.Scanned -= handler;
                 });
             });
 
